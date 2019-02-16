@@ -58,6 +58,19 @@ function CreateGui(index)
         caption = "0"
     }
 
+    -- jobs
+    layout1.add{
+        type = "sprite",
+        name = "lbljobs",
+        tooltip = {"property.jobs"},
+        sprite = "jobs-sprite"
+    }
+    layout1.add{
+        type = "label",
+        name = "jobs",
+        tooltip = {"property.jobs"},
+        caption = "0"
+    }
 
 --    -- waste
 --    local label1_2 = layout1.add{

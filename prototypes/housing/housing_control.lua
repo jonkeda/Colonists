@@ -1,4 +1,4 @@
-local function isHousingEntity(entity)
+function isHousingEntity(entity)
     if entity.name == "colonial-housing-1" or
         entity.name == "colonial-housing-2" or
         entity.name == "colonial-housing-3" then

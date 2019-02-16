@@ -15,10 +15,10 @@ end
 
 local on_gui_tick = function()
 
-    surface = game.surfaces[1]
     if game.tick % 20 ~= 0 then
         return
     end
+--    surface = game.surfaces[1]
 
     for i,p in pairs(global.players) do
         if p.character then
@@ -43,7 +43,7 @@ local on_gui_tick = function()
 --            p.gui.left.coli.layout1.workers.caption = countColonistsjob(p.force, "colonist-productivity-module-")
 --            p.gui.left.coli.layout1.environmentalists.caption = countColonistsjob(p.force, "colonist-pollution-module-")
 
---            p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
+            p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
             p.gui.left.coli.layout1.housing.caption = tostring(global.coli.housing)
 
             -- food needed

@@ -17,4 +17,13 @@ data:extend({
         height = 32
     },
 
+    {
+        type="sprite",
+        name = "jobs-sprite",
+        filename = "__Colonists__/graphics/icons/building/total-building.png",
+        priority = "extra-high",
+        width = 32,
+        height = 32
+    },
+
 })

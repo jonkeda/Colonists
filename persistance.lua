@@ -22,7 +22,6 @@ function setupColi()
 		if not global.force then global.force = {} end
 		if not global.coli.players then global.coli.players = {} end
 		if not global.coli.days then global.coli.days = 0 end
-		if not global.coli.jobs then global.coli.jobs = 0 end
 		if not global.coli.housing then global.coli.housing = 0 end
 
 		if not global.coli.totalWasteLastPeriod then global.coli.totalWasteLastPeriod = 0 end
