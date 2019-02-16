@@ -390,7 +390,7 @@ data:extend(
     {
         type = "recipe",
         name = "ambulance",
-        enabled = true,
+        enabled = false,
         energy_required = 2,
         ingredients =
         {

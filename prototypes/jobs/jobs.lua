@@ -352,89 +352,89 @@ data:extend({
 
     -- technology
 
-    {
-        type = "technology",
-        name = "colonist-job-a",
-        icon = "__Colonists__/graphics/technology/colonists-charter.png",
-        icon_size = 128,
-        effects =
-        {
-            {type = "unlock-recipe", recipe = "colonists-training-1"},
-            {type = "unlock-recipe", recipe = "colonist-speed-module-1"},
-            {type = "unlock-recipe", recipe = "colonist-effectivity-module-1"},
-            {type = "unlock-recipe", recipe = "colonist-productivity-module-1"},
-            {type = "unlock-recipe", recipe = "colonist-pollution-module-1"},
-        },
-        unit =
-        {
-            time = 60,
-            count = 150,
-            ingredients =
-            {
-                {"science-pack-1", 1}
-            },
-        },
-        order = "w",
-    },
-    {
-        type = "technology",
-        name = "colonist-job-b",
-        icon = "__Colonists__/graphics/technology/colonists-charter.png",
-        icon_size = 128,
-        prerequisites =
-        {
-            "colonist-job-a"
-        },
-        effects =
-        {
-            {type = "unlock-recipe", recipe = "colonists-training-2"},
-            {type = "unlock-recipe", recipe = "colonist-speed-module-2"},
-            {type = "unlock-recipe", recipe = "colonist-effectivity-module-2"},
-            {type = "unlock-recipe", recipe = "colonist-productivity-module-2"},
-            {type = "unlock-recipe", recipe = "colonist-pollution-module-2"},
-        },
-        unit =
-        {
-            time = 60,
-            count = 150,
-            ingredients =
-            {
-                {"science-pack-1", 1},
-                {"science-pack-2", 1},
-            },
-        },
-        order = "w",
-    },
-    {
-        type = "technology",
-        name = "colonist-job-c",
-        icon = "__Colonists__/graphics/technology/colonists-charter.png",
-        icon_size = 128,
-        prerequisites =
-        {
-            "colonist-job-b"
-        },
-        effects =
-        {
-            {type = "unlock-recipe", recipe = "colonists-training-3"},
-            {type = "unlock-recipe", recipe = "colonist-speed-module-3"},
-            {type = "unlock-recipe", recipe = "colonist-effectivity-module-3"},
-            {type = "unlock-recipe", recipe = "colonist-productivity-module-3"},
-            {type = "unlock-recipe", recipe = "colonist-pollution-module-3"},
-        },
-        unit =
-        {
-            time = 60,
-            count = 150,
-            ingredients =
-            {
-                {"science-pack-1", 1},
-                {"science-pack-2", 1},
-                {"science-pack-3", 1},
-
-            },
-        },
-        order = "w",
-    },
+--    {
+--        type = "technology",
+--        name = "colonist-job-a",
+--        icon = "__Colonists__/graphics/technology/colonists-charter.png",
+--        icon_size = 128,
+--        effects =
+--        {
+--            {type = "unlock-recipe", recipe = "colonists-training-1"},
+--            {type = "unlock-recipe", recipe = "colonist-speed-module-1"},
+--            {type = "unlock-recipe", recipe = "colonist-effectivity-module-1"},
+--            {type = "unlock-recipe", recipe = "colonist-productivity-module-1"},
+--            {type = "unlock-recipe", recipe = "colonist-pollution-module-1"},
+--        },
+--        unit =
+--        {
+--            time = 60,
+--            count = 150,
+--            ingredients =
+--            {
+--                {"science-pack-1", 1}
+--            },
+--        },
+--        order = "w",
+--    },
+--    {
+--        type = "technology",
+--        name = "colonist-job-b",
+--        icon = "__Colonists__/graphics/technology/colonists-charter.png",
+--        icon_size = 128,
+--        prerequisites =
+--        {
+--            "colonist-job-a"
+--        },
+--        effects =
+--        {
+--            {type = "unlock-recipe", recipe = "colonists-training-2"},
+--            {type = "unlock-recipe", recipe = "colonist-speed-module-2"},
+--            {type = "unlock-recipe", recipe = "colonist-effectivity-module-2"},
+--            {type = "unlock-recipe", recipe = "colonist-productivity-module-2"},
+--            {type = "unlock-recipe", recipe = "colonist-pollution-module-2"},
+--        },
+--        unit =
+--        {
+--            time = 60,
+--            count = 150,
+--            ingredients =
+--            {
+--                {"science-pack-1", 1},
+--                {"science-pack-2", 1},
+--            },
+--        },
+--        order = "w",
+--    },
+--    {
+--        type = "technology",
+--        name = "colonist-job-c",
+--        icon = "__Colonists__/graphics/technology/colonists-charter.png",
+--        icon_size = 128,
+--        prerequisites =
+--        {
+--            "colonist-job-b"
+--        },
+--        effects =
+--        {
+--            {type = "unlock-recipe", recipe = "colonists-training-3"},
+--            {type = "unlock-recipe", recipe = "colonist-speed-module-3"},
+--            {type = "unlock-recipe", recipe = "colonist-effectivity-module-3"},
+--            {type = "unlock-recipe", recipe = "colonist-productivity-module-3"},
+--            {type = "unlock-recipe", recipe = "colonist-pollution-module-3"},
+--        },
+--        unit =
+--        {
+--            time = 60,
+--            count = 150,
+--            ingredients =
+--            {
+--                {"science-pack-1", 1},
+--                {"science-pack-2", 1},
+--                {"science-pack-3", 1},
+--
+--            },
+--        },
+--        order = "w",
+--    },
 
 })

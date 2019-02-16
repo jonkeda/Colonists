@@ -468,7 +468,7 @@ data:extend({
             {"iron-plate", 2},
         },
         result = "colonists-building-food-1",
-        enabled = true,
+        enabled = false,
     },
     {
         type = "recipe",
@@ -494,54 +494,54 @@ data:extend({
     },
 
     -- Food technology
-    {
-        type = "technology",
-        name = "colonist-food-b",
-        icon = "__Colonists__/graphics/technology/colonists-charter.png",
-        icon_size = 128,
-        prerequisites =
-        {
-            "frying"
-        },
-        effects =
-        {
-            {type = "unlock-recipe", recipe = "colonists-building-food-2"},
-        },
-        unit =
-        {
-            time = 60,
-            count = 150,
-            ingredients =
-            {
-                {"science-pack-1", 1},
-                {"science-pack-2", 1},
-            },
-        },
-        order = "w",
-    },
-    {
-        type = "technology",
-        name = "colonist-food-c",
-        icon = "__Colonists__/graphics/technology/colonists-charter.png",
-        icon_size = 128,
-        prerequisites =
-        {
-            "complex-foods"
-        },
-        effects =
-        {
-            {type = "unlock-recipe", recipe = "colonists-building-food-3"},
-        },
-        unit =
-        {
-            time = 60,
-            count = 150,
-            ingredients =
-            {
-                {"science-pack-1", 1},
-                {"science-pack-2", 1},
-            },
-        },
-        order = "w",
-    },
+--    {
+--        type = "technology",
+--        name = "colonist-food-b",
+--        icon = "__Colonists__/graphics/technology/colonists-charter.png",
+--        icon_size = 128,
+--        prerequisites =
+--        {
+--            "frying"
+--        },
+--        effects =
+--        {
+--            {type = "unlock-recipe", recipe = "colonists-building-food-2"},
+--        },
+--        unit =
+--        {
+--            time = 60,
+--            count = 150,
+--            ingredients =
+--            {
+--                {"science-pack-1", 1},
+--                {"science-pack-2", 1},
+--            },
+--        },
+--        order = "w",
+--    },
+--    {
+--        type = "technology",
+--        name = "colonist-food-c",
+--        icon = "__Colonists__/graphics/technology/colonists-charter.png",
+--        icon_size = 128,
+--        prerequisites =
+--        {
+--            "complex-foods"
+--        },
+--        effects =
+--        {
+--            {type = "unlock-recipe", recipe = "colonists-building-food-3"},
+--        },
+--        unit =
+--        {
+--            time = 60,
+--            count = 150,
+--            ingredients =
+--            {
+--                {"science-pack-1", 1},
+--                {"science-pack-2", 1},
+--            },
+--        },
+--        order = "w",
+--    },
 })

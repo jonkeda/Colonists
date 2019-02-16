@@ -561,14 +561,14 @@ data:extend({
     },
 
     -- housing recipe
-
     {
         type = "recipe",
         name = "colonial-housing-1",
         energy_required = 1,
         ingredients =
         {
-            {"iron-plate", 2},
+            {"iron-plate", 5},
+            {"raw-wood", 5},
             {"colonist", 4},
         },
         result = "colonial-housing-1",
@@ -580,7 +580,7 @@ data:extend({
         energy_required = 1,
         ingredients =
         {
-            {"iron-plate", 1},
+            {"steel-plate", 16},
             {"colonist", 8},
         },
         result = "colonial-housing-2",
@@ -592,7 +592,8 @@ data:extend({
         energy_required = 1,
         ingredients =
         {
-            {"iron-plate", 1},
+            {"steel-plate", 32},
+            {"plastic-bar", 16},
             {"colonist", 16},
         },
         result = "colonial-housing-3",

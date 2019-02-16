@@ -1,6 +1,9 @@
 require("prototypes.scripts.util")
 
 
+local MESSAGE_INACTIVE_ALERT = {"description.building_is_inactive"} -- "Building is inactive"
+local MESSAGE_INACTIVE = "Building is inactive"
+
 function isWorkerEntity(entity)
     if entity.type == "lab" or
 
@@ -30,13 +33,14 @@ local on_jobs_tick = function()
         return
     end
 
+    local player = game.players[1]
+
     if #global.coli.inActiveEnities > 0 then
         if global.coli.jobs <= global.coli.housing then
-            player_print("Building is set active")
-
             for _,e in pairs(global.coli.inActiveEnities) do
                 if e.valid then
                     e.active = true
+                    player.remove_alert{entity = e, message = MESSAGE_INACTIVE_ALERT}
                 end
                 table.remove(global.coli.inActiveEnities, entity)
             end
@@ -44,17 +48,27 @@ local on_jobs_tick = function()
     end
 end
 
+local function calculate_jobs(entity)
+
+    return math.floor(entity.prototype.max_health / 100)
+
+end
+
+
 local jobs_added = function(event)
     local entity = event.created_entity
+    local index = event.player_index
+    local player = game.players[index]
+
     if isWorkerEntity(entity) and
         not isHousingEntity(entity) then
-        local e = entity.prototype.max_health
-        global.coli.jobs = global.coli.jobs + e
+        global.coli.jobs = global.coli.jobs + calculate_jobs(entity)
 
         if global.coli.jobs > global.coli.housing then
             entity.active = false
-            player_print("Building is inactive as there are not enough houses")
             table.insert(global.coli.inActiveEnities, entity)
+
+            player.add_custom_alert(entity, { type = "item", name = entity.name }, MESSAGE_INACTIVE_ALERT, true)
         end
     end
 end
@@ -63,8 +77,7 @@ local jobs_removed = function(event)
     local entity = event.entity
     if isWorkerEntity(entity) and
         not isHousingEntity(entity) then
-        local e = entity.prototype.max_health
-        global.coli.jobs = global.coli.jobs - e
+        global.coli.jobs = global.coli.jobs - calculate_jobs(entity)
     end
 end
 

@@ -7,12 +7,19 @@ function isHousingEntity(entity)
         return false
     end
 end
+
+local function calculate_housing(entity)
+
+    return math.floor(entity.prototype.max_health / 50)
+
+end
+
 local housing_added = function(event)
 
     local entity = event.created_entity
     if isHousingEntity(entity) then
         local e = entity.prototype.max_health
-        global.coli.housing = global.coli.housing + e
+        global.coli.housing = global.coli.housing + calculate_housing(entity)
     end
 
 end
@@ -21,8 +28,7 @@ local housing_removed = function(event)
 
     local entity = event.entity
     if isHousingEntity(entity) then
-        local e = entity.prototype.max_health
-        global.coli.housing = global.coli.housing - e
+        global.coli.housing = global.coli.housing - calculate_housing(entity)
     end
 
 end
