@@ -1,0 +1,11 @@
+{
+    "name": "Colonists",
+    "version": "0.1.0",
+    "title": "Colonists",
+    "author": "Jonkeda",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16", "? FoodIndustry >= 0.1"],
+    "description": "It's a mix of ColonialCharter and FoodIndustry. So you'll have colonists to feed and let them stay alive. Luckily they also work for you."
+}
