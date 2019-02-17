@@ -15,10 +15,10 @@ local Colonists_died = function(event)
     end
 end
 
-local isInitColonists = false
-function initColonists()
-    if coli.ticks ~= nil and not isInitColonists then
-        isInitColonists = true
+local isLoad = false
+function loadColonists()
+    if coli.ticks ~= nil and not isLoad then
+        isLoad = true
         table.insert(coli.on_entitydied, Colonists_died)
     end
 end

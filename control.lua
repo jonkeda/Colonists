@@ -16,24 +16,21 @@ local debugset = false
 
 function OnInit()
 
-    setupColi()
-    initFood()
-    initColonists()
+    initColi()
     initJobs()
     initHousing()
-
-    initGui()
-
-    if game ~= nil then
-        for i=1,#game.players do
-            CreateGui(i)
-        end
-    end
 
 end
 
 function OnLoad()
-    --OnInit()
+    loadColi()
+    loadFood()
+    loadColonists()
+    loadHousing()
+    loadJobs()
+    loadGui()
+
+    CreateGuis()
 end
 
 function OnPlayerCreated(event)
@@ -49,7 +46,7 @@ function OnPlayerCreated(event)
 end
 
 function OnTick(event)
-    setupColi()
+    CreateGuis()
 
     if debug then
         if not debugset then

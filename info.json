@@ -1,13 +1,11 @@
 {
     "name": "Colonists",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "Colonists",
     "author": "Jonkeda",
     "contact": "",
     "homepage": "",
     "factorio_version": "0.16",
     "dependencies": ["base >= 0.16", "? FoodIndustry >= 0.1"],
-    "description": "You are not alone on the planet. Hundreds of pods have crashed on the planet and people are waiting to be saved.
-
-    "
+    "description": "You are not alone on the planet. Hundreds of pods have crashed on the planet and people are waiting to be saved."
 }

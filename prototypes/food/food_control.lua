@@ -50,10 +50,10 @@ local FoodControl_tick = function()
 
 end
 
-local isInitFoodControl = false
-function initFood()
-    if coli.ticks ~= nil and not isInitFoodControl then
-        isInitFoodControl = true
+local isLoad = false
+function loadFood()
+    if coli.ticks ~= nil and not isLoad then
+        isLoad = true
         table.insert(coli.ticks, FoodControl_tick)
     end
 end

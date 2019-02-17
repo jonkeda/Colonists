@@ -1,28 +1,41 @@
+require("prototypes.scripts.util")
 
+local created = false
+function CreateGuis()
 
-function CreateGui(index)
-    local player = game.players[index]
-    if player.gui.left.coli then
+    if created then
         return
     end
-    table.insert(global.players, player)
-    global.force = player.force
-    table.insert(
-        global.coli.players,
-        {
-            lv=1,
-            exp=0,
+
+    if game ~= nil then
+        for i=1,#game.players do
+            created = true
+            CreateGui(i)
+        end
+    end
+end
+
+function CreateGui(index)
+
+    local player = game.players[index]
+
+    local root = nil
+    if player.gui.left.coli then
+        root = player.gui.left.coli
+        player.gui.left.coli.clear()
+    else
+        local root = player.gui.left.add{
+            type = "frame",
+            name = "coli",
+            direction = "vertical", --horizontal
+            column_count = 1
         }
-    )
-    local root = player.gui.left.add{
-        type = "frame",
-        name = "coli",
-        direction = "vertical", --horizontal
-        column_count = 1
-    }
-    root.style.top_padding = 4
-    root.style.bottom_padding = 4
-    root.style.minimal_width = 230
+        root.style.top_padding = 4
+        root.style.bottom_padding = 4
+        root.style.minimal_width = 230
+
+    end
+
     --    root.style.maximum_width = 230
     local layout1 = root.add{
         type = "table",
@@ -55,6 +68,12 @@ function CreateGui(index)
         type = "label",
         name = "housing",
         tooltip = {"property.housing"},
+        caption = "0"
+    }
+    layout1.add{
+        type = "label",
+        name = "coldhouses",
+        tooltip = {"property.coldHouses"},
         caption = "0"
     }
 

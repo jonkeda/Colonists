@@ -81,16 +81,27 @@ local jobs_removed = function(event)
     end
 end
 
-local isInitJobs = false
-function initJobs()
-    if not global.coli.jobs then global.coli.jobs = 0 end
-    if not global.coli.inActiveEnities then global.coli.inActiveEnities = { } end
-
-    if coli.ticks ~= nil and not isInitJobs then
-        isInitJobs = true
+local isLoad = false
+function loadJobs()
+    if coli.ticks ~= nil and not isLoad then
+        isLoad = true
 
         table.insert(coli.ticks, on_jobs_tick)
         table.insert(coli.on_added, jobs_added)
         table.insert(coli.on_remove, jobs_removed)
     end
 end
+
+local isInit = false
+function initJobs()
+    if isInit then
+        return
+    end
+    isInit = true
+
+    if not global.coli.jobs then global.coli.jobs = 0 end
+    if not global.coli.inActiveEnities then global.coli.inActiveEnities = { } end
+
+    loadJobs()
+end
+

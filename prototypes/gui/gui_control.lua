@@ -44,7 +44,9 @@ local on_gui_tick = function()
 --            p.gui.left.coli.layout1.environmentalists.caption = countColonistsjob(p.force, "colonist-pollution-module-")
 
             p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
+
             p.gui.left.coli.layout1.housing.caption = tostring(global.coli.housing)
+            p.gui.left.coli.layout1.coldhouses.caption = tostring(global.coli.coldhouses)
 
             -- food needed
 --            p.gui.left.coli.layout1.foodneeded.caption = tostring(global.coli.foodneeded)
@@ -58,10 +60,10 @@ end
 
 
 
-local isInitGui = false
-function initGui()
-    if coli.ticks ~= nil and not isInitGui then
-        isInitTotals = true
+local isLoad = false
+function loadGui()
+    if coli.ticks ~= nil and not isLoad then
+        isLoad = true
         table.insert(coli.ticks, on_gui_tick)
     end
 end
