@@ -37,12 +37,12 @@ local on_jobs_tick = function()
 
     if #global.coli.inActiveEnities > 0 then
         if global.coli.jobs <= global.coli.housing then
-            for _,e in pairs(global.coli.inActiveEnities) do
+            for i,e in pairs(global.coli.inActiveEnities) do
                 if e.valid then
                     e.active = true
                     player.remove_alert{entity = e, message = MESSAGE_INACTIVE_ALERT}
                 end
-                table.remove(global.coli.inActiveEnities, entity)
+                table.remove(global.coli.inActiveEnities, i)
             end
         end
     end
@@ -83,7 +83,7 @@ end
 
 local isLoad = false
 function loadJobs()
-    if coli.ticks ~= nil and not isLoad then
+    if not isLoad then
         isLoad = true
 
         table.insert(coli.ticks, on_jobs_tick)

@@ -17,8 +17,11 @@ local debugset = false
 function OnInit()
 
     initColi()
-    initJobs()
+    initFood()
+    initColonists()
     initHousing()
+    initJobs()
+    initGui()
 
 end
 

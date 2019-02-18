@@ -1,3 +1,5 @@
+require("prototypes.scripts.util")
+
 local function countColonistsjob(force, job)
     return tostring(
         force.item_production_statistics.get_input_count(job.."1") * 4 +
@@ -8,8 +10,10 @@ end
 
 local function calculateTotalWaste()
 
-    return global.force.fluid_production_statistics.get_input_count("waste") +
-            global.force.item_production_statistics.get_input_count("compostwaste")
+    return 0
+
+--    return global.force.fluid_production_statistics.get_input_count("waste") +
+--            global.force.item_production_statistics.get_input_count("compostwaste")
 
 end
 
@@ -20,8 +24,9 @@ local on_gui_tick = function()
     end
 --    surface = game.surfaces[1]
 
-    for i,p in pairs(global.players) do
-        if p.character then
+
+    for i,p in pairs(game.players) do
+        --if p.character then
             --p.gui.left.coli.layout1.days.caption = tostring(global.coli.days)
 
             local buildInput = p.force.entity_build_count_statistics.get_input_count("colonist")
@@ -34,7 +39,7 @@ local on_gui_tick = function()
 
             p.gui.left.coli.layout1.colonistsCount.caption = tostring(totalInput - totalOutput)
 
-            local wasteInput = calculateTotalWaste()
+            --local wasteInput = calculateTotalWaste()
 
 --            p.gui.left.coli.layout1.waste.caption = tostring(wasteInput)
 
@@ -52,13 +57,9 @@ local on_gui_tick = function()
 --            p.gui.left.coli.layout1.foodneeded.caption = tostring(global.coli.foodneeded)
 --            p.gui.left.coli.layout1.foodeaten.caption = tostring(global.coli.foodeaten)
 --            p.gui.left.coli.layout1.hungerstate.caption = tostring(global.coli.hungerstate)
-        end
+        --end
     end
 end
-
-
-
-
 
 local isLoad = false
 function loadGui()
@@ -67,3 +68,15 @@ function loadGui()
         table.insert(coli.ticks, on_gui_tick)
     end
 end
+
+local isInit = false
+function initGui()
+
+    if isInit then
+        return
+    end
+    isInit = true
+
+    loadGui()
+end
+

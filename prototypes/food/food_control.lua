@@ -54,6 +54,16 @@ local isLoad = false
 function loadFood()
     if coli.ticks ~= nil and not isLoad then
         isLoad = true
-        table.insert(coli.ticks, FoodControl_tick)
+        --table.insert(coli.ticks, FoodControl_tick)
     end
+end
+
+local isInit = false
+function initFood()
+    if isInit then
+        return
+    end
+    isInit = true
+
+    loadFood()
 end

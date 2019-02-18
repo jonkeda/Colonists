@@ -24,7 +24,7 @@ function CreateGui(index)
         root = player.gui.left.coli
         player.gui.left.coli.clear()
     else
-        local root = player.gui.left.add{
+        root = player.gui.left.add{
             type = "frame",
             name = "coli",
             direction = "vertical", --horizontal

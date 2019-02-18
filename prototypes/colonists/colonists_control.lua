@@ -22,3 +22,13 @@ function loadColonists()
         table.insert(coli.on_entitydied, Colonists_died)
     end
 end
+
+local isInit = false
+function initColonists()
+    if isInit then
+        return
+    end
+    isInit = true
+
+    loadColonists()
+end
