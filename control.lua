@@ -8,6 +8,7 @@ require("prototypes.housing.housing_control")
 require("prototypes.jobs.jobs_control")
 require("prototypes.colonists.colonists_control")
 require("prototypes.happiness.happiness_control")
+require("prototypes.trees.fruit-scissors-control")
 
 require("prototypes.gui.gui")
 require("prototypes.gui.gui_control")
@@ -24,6 +25,7 @@ function OnInit()
     initJobs()
     initHappiness()
     initGui()
+    initFruitScissors()
 
 end
 

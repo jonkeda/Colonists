@@ -1,7 +1,7 @@
-local function calculateTotalWaste()
+local function calculateTotalWaste(force)
 
-    return global.force.fluid_production_statistics.get_input_count("waste") +
-            global.force.item_production_statistics.get_input_count("compostwaste")
+    return force.fluid_production_statistics.get_input_count("waste") +
+           force.item_production_statistics.get_input_count("compostwaste")
 
 end
 
@@ -11,7 +11,9 @@ local HungerTime = 3600 / 4
 
 local function calculateHunger()
 
-    local totalWaste = calculateTotalWaste()
+    local player = game.player[1]
+
+    local totalWaste = calculateTotalWaste(player.force)
     local totalFoodNeeded = global.coli.housing
 
     global.coli.foodneeded = totalFoodNeeded

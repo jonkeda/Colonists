@@ -4,6 +4,17 @@ if fi == nil then
     data:extend({
 
         {
+            type = "autoplace-control",
+            category = "resource",
+            name = "food-plant",
+            order = "w",
+            richness = false,
+        },
+        {
+            type = "fuel-category",
+            name = "plant",
+        },
+        {
             type = "fuel-category",
             name = "humus"
         },
