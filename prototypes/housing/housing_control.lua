@@ -5,9 +5,9 @@ local HOUSING_2 = "colonial-housing-2"
 local HOUSING_3 = "colonial-housing-3"
 
 local housing = {
-    [HOUSING_1] = { name = HOUSING_1 },
-    [HOUSING_2] = { name = HOUSING_2 },
-    [HOUSING_3] = { name = HOUSING_3 },
+    [HOUSING_1] = { name = HOUSING_1, colonists = 4 },
+    [HOUSING_2] = { name = HOUSING_2, colonists = 8 },
+    [HOUSING_3] = { name = HOUSING_3, colonists = 16 },
 }
 
 local MESSAGE_HOUSE_IS_COLD = {"description.house_is_cold"} -- "house is cold"
@@ -21,6 +21,20 @@ function isHousingEntity(entity)
     end
 end
 
+local function count_housing(house, player, surface)
+    local coldhouses = 0
+    local entities = surface.find_entities_filtered{name=house.name, force=player.force}
+    for _,e in pairs(entities) do
+        if e.valid then
+            if e.energy == 0 then
+                player.add_custom_alert(e, { type = "item", name = e.name }, MESSAGE_HOUSE_IS_COLD, true)
+
+                coldhouses = coldhouses + house.colonists
+            end
+        end
+    end
+    return coldhouses
+end
 
 local on_housing_tick = function()
     if game.tick % 20 ~= 0 then
@@ -30,19 +44,12 @@ local on_housing_tick = function()
     local player = game.players[1]
     local surface = player.surface
 
-    global.coli.coldhouses = 0
-
-    local entities = surface.find_entities_filtered{name=HOUSING_1, force=player.force}
-    --player_print("heat check"..#entities)
-
-    for _,e in pairs(entities) do
-        if e.valid then
-            if e.energy == 0 then
-                player.add_custom_alert(e, { type = "item", name = e.name }, MESSAGE_HOUSE_IS_COLD, true)
-                global.coli.coldhouses = global.coli.coldhouses + 1
-            end
-        end
+    local coldhouses = 0
+    for i,h in pairs(housing) do
+        coldhouses = coldhouses + count_housing(h, player, surface)
     end
+    global.coli.coldhouses = coldhouses
+
 end
 
 

@@ -7,6 +7,7 @@ require("prototypes.food.food_control")
 require("prototypes.housing.housing_control")
 require("prototypes.jobs.jobs_control")
 require("prototypes.colonists.colonists_control")
+require("prototypes.happiness.happiness_control")
 
 require("prototypes.gui.gui")
 require("prototypes.gui.gui_control")
@@ -21,6 +22,7 @@ function OnInit()
     initColonists()
     initHousing()
     initJobs()
+    initHappiness()
     initGui()
 
 end
@@ -31,6 +33,7 @@ function OnLoad()
     loadColonists()
     loadHousing()
     loadJobs()
+    loadHappiness()
     loadGui()
 
     CreateGuis()

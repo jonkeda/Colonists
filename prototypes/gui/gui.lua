@@ -65,16 +65,34 @@ function CreateGui(index)
         sprite = "housing-sprite"
     }
     layout1.add{
-        type = "label",
-        name = "housing",
-        tooltip = {"property.housing"},
-        caption = "0"
+        type = "sprite",
+        name = "lblthermometercold",
+        tooltip = {"property.thermometer-cold"},
+        sprite = "thermometer-cold-sprite"
     }
     layout1.add{
-        type = "label",
-        name = "coldhouses",
-        tooltip = {"property.coldHouses"},
+        type = "progressbar",
+        name = "houses",
+        tooltip = {"property.houses"},
         caption = "0"
+    }
+--    layout1.add{
+--        type = "label",
+--        name = "housing",
+--        tooltip = {"property.housing"},
+--        caption = "0"
+--    }
+--    layout1.add{
+--        type = "label",
+--        name = "coldhouses",
+--        tooltip = {"property.coldHouses"},
+--        caption = "0"
+--    }
+    layout1.add{
+        type = "sprite",
+        name = "lblthermometerwarm",
+        tooltip = {"property.thermometer-warm"},
+        sprite = "thermometer-warm-sprite"
     }
 
     -- jobs
@@ -89,6 +107,26 @@ function CreateGui(index)
         name = "jobs",
         tooltip = {"property.jobs"},
         caption = "0"
+    }
+
+    -- happiness
+    layout1.add{
+        type = "sprite",
+        name = "lblunhappiness",
+        tooltip = {"property.unhappy"},
+        sprite = "unhappyface-sprite"
+    }
+    layout1.add{
+        type = "progressbar",
+        name = "happiness",
+        tooltip = {"property.happiness"},
+        caption = "0"
+    }
+    layout1.add{
+        type = "sprite",
+        name = "lblhappiness",
+        tooltip = {"property.happy"},
+        sprite = "happyface-sprite"
     }
 
 --    -- waste

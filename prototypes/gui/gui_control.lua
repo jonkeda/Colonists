@@ -50,10 +50,23 @@ local on_gui_tick = function()
 
             p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
 
-            p.gui.left.coli.layout1.housing.caption = tostring(global.coli.housing)
-            p.gui.left.coli.layout1.coldhouses.caption = tostring(global.coli.coldhouses)
+--            p.gui.left.coli.layout1.housing.caption = tostring(global.coli.housing)
+--            p.gui.left.coli.layout1.coldhouses.caption = tostring(global.coli.coldhouses)
 
-            -- food needed
+            if not global.coli.coldhouses then global.coli.coldhouses = 100 end
+            if global.coli.housing == 0 then
+                p.gui.left.coli.layout1.houses.value = 1
+                p.gui.left.coli.layout1.houses.tooltip = ""
+            else
+                p.gui.left.coli.layout1.houses.value = (global.coli.housing - global.coli.coldhouses) / global.coli.housing
+                p.gui.left.coli.layout1.houses.tooltip = "("..tostring(global.coli.housing).."/"..tostring(global.coli.coldhouses)..")"
+            end
+
+            if not global.coli.happiness then global.coli.happiness = 100 end
+            p.gui.left.coli.layout1.happiness.value = global.coli.happiness / 100
+
+
+        -- food needed
 --            p.gui.left.coli.layout1.foodneeded.caption = tostring(global.coli.foodneeded)
 --            p.gui.left.coli.layout1.foodeaten.caption = tostring(global.coli.foodeaten)
 --            p.gui.left.coli.layout1.hungerstate.caption = tostring(global.coli.hungerstate)
