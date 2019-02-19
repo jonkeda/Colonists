@@ -22,16 +22,16 @@ data:extend({
     },
     {
         type="sprite",
-        name = "thermometer-cold-sprite",
-        filename = "__Colonists__/graphics/icons/housing/thermometerCold.png",
+        name = "house-cold-sprite",
+        filename = "__Colonists__/graphics/icons/housing/houseCold.png",
         priority = "extra-high",
         width = 32,
         height = 32
     },
     {
         type="sprite",
-        name = "thermometer-warm-sprite",
-        filename = "__Colonists__/graphics/icons/housing/thermometer.png",
+        name = "house-warm-sprite",
+        filename = "__Colonists__/graphics/icons/housing/houseWarm.png",
         priority = "extra-high",
         width = 32,
         height = 32
@@ -46,6 +46,26 @@ data:extend({
         width = 32,
         height = 32
     },
+
+
+    -- food
+    {
+        type="sprite",
+        name = "food-hungry-sprite",
+        filename = "__Colonists__/graphics/icons/foods/cake_slice.png",
+        priority = "extra-high",
+        width = 32,
+        height = 32
+    },
+    {
+        type="sprite",
+        name = "food-full-sprite",
+        filename = "__Colonists__/graphics/icons/foods/cake2.png",
+        priority = "extra-high",
+        width = 32,
+        height = 32
+    },
+
 
     -- happiness
     {

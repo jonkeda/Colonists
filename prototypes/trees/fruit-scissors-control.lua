@@ -1,3 +1,4 @@
+require("prototypes.scripts.util")
 
 local WILDE_ORANGE_TREE = "orange-wild-tree"
 local ORANGE_TREE = "orange-tree"
@@ -30,16 +31,28 @@ local function fruittree_on_FruitScissorClick(event)
     end
 end
 
-local isInitFruitScissors = false
-function initFruitScissors()
-    if isInitFruitScissors then
+local isLoad = false
+function loadFruitScissors()
+    if isLoad then
         return
     end
-    isInitFruitScissors = true
+    isLoad = true
 
     script.on_event("fruit-scissor-click", function(event)
         fruittree_on_FruitScissorClick(event)
     end)
+
+end
+
+
+local isInit = false
+function initFruitScissors()
+    if isInit then
+        return
+    end
+    isInit = true
+
+    loadFruitScissors()
 
 end
 

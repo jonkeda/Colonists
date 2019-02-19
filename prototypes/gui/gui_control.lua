@@ -8,13 +8,10 @@ local function countColonistsjob(force, job)
     )
 end
 
-local function calculateTotalWaste()
-
-    return 0
-
---    return global.force.fluid_production_statistics.get_input_count("waste") +
---            global.force.item_production_statistics.get_input_count("compostwaste")
-
+local function setTooltip(control, text)
+    if control.tooltip ~= text then
+        control.tooltip = text
+    end
 end
 
 local on_gui_tick = function()
@@ -37,29 +34,34 @@ local on_gui_tick = function()
             local productionOutput = p.force.item_production_statistics.get_output_count("colonist")
             local totalOutput = buildOutput + productionOutput
 
-            p.gui.left.coli.layout1.colonistsCount.caption = tostring(totalInput - totalOutput)
-
+            --p.gui.left.coli.layout1.colonistsCount.caption = tostring(totalInput - totalOutput)
             --local wasteInput = calculateTotalWaste()
 
 --            p.gui.left.coli.layout1.waste.caption = tostring(wasteInput)
-
 --            p.gui.left.coli.layout1.managers.caption = countColonistsjob(p.force, "colonist-speed-module-")
 --            p.gui.left.coli.layout1.engineers.caption = countColonistsjob(p.force, "colonist-effectivity-module-")
 --            p.gui.left.coli.layout1.workers.caption = countColonistsjob(p.force, "colonist-productivity-module-")
 --            p.gui.left.coli.layout1.environmentalists.caption = countColonistsjob(p.force, "colonist-pollution-module-")
 
-            p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
+            setTooltip(p.gui.left.coli.layout1.lblColonists, tostring(global.coli.housing))
 
+            if global.coli.housing == 0 or global.coli.jobs > global.coli.housing then
+                p.gui.left.coli.layout1.jobspb.value = 1
+            else
+                p.gui.left.coli.layout1.jobspb.value = global.coli.jobs / global.coli.housing
+            end
+
+--            p.gui.left.coli.layout1.jobs.caption = tostring(global.coli.jobs)
 --            p.gui.left.coli.layout1.housing.caption = tostring(global.coli.housing)
 --            p.gui.left.coli.layout1.coldhouses.caption = tostring(global.coli.coldhouses)
 
             if not global.coli.coldhouses then global.coli.coldhouses = 100 end
             if global.coli.housing == 0 then
                 p.gui.left.coli.layout1.houses.value = 1
-                p.gui.left.coli.layout1.houses.tooltip = ""
+                setTooltip(p.gui.left.coli.layout1.houses, "")
             else
                 p.gui.left.coli.layout1.houses.value = (global.coli.housing - global.coli.coldhouses) / global.coli.housing
-                p.gui.left.coli.layout1.houses.tooltip = "("..tostring(global.coli.housing).."/"..tostring(global.coli.coldhouses)..")"
+                setTooltip(p.gui.left.coli.layout1.houses, "("..tostring(global.coli.housing).."/"..tostring(global.coli.coldhouses)..")")
             end
 
             if not global.coli.happiness then global.coli.happiness = 100 end

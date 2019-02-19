@@ -16,7 +16,7 @@ function CreateGuis()
 end
 
 function CreateGui(index)
-
+    local pbWidth = 100
     local player = game.players[index]
 
     local root = nil
@@ -40,7 +40,7 @@ function CreateGui(index)
     local layout1 = root.add{
         type = "table",
         name = "layout1",
-        column_count = 14
+        column_count = 16
     }
 
     -- colonist count
@@ -50,12 +50,12 @@ function CreateGui(index)
         tooltip = {"property.colonistsCount"},
         sprite = "colonists-sprite"
     }
-    layout1.add{
-        type = "label",
-        name = "colonistsCount",
-        tooltip = {"property.colonistsCount"},
-        caption = "0"
-    }
+--    layout1.add{
+--        type = "label",
+--        name = "colonistsCount",
+--        tooltip = {"property.colonistsCount"},
+--        caption = "0"
+--    }
 
     -- housing
     layout1.add{
@@ -66,16 +66,17 @@ function CreateGui(index)
     }
     layout1.add{
         type = "sprite",
-        name = "lblthermometercold",
-        tooltip = {"property.thermometer-cold"},
-        sprite = "thermometer-cold-sprite"
+        name = "lblhousecold",
+        tooltip = {"property.house-cold"},
+        sprite = "house-cold-sprite"
     }
-    layout1.add{
+    local pb = layout1.add{
         type = "progressbar",
         name = "houses",
         tooltip = {"property.houses"},
-        caption = "0"
+        caption = "0",
     }
+    pb.style.width = pbWidth
 --    layout1.add{
 --        type = "label",
 --        name = "housing",
@@ -90,9 +91,9 @@ function CreateGui(index)
 --    }
     layout1.add{
         type = "sprite",
-        name = "lblthermometerwarm",
-        tooltip = {"property.thermometer-warm"},
-        sprite = "thermometer-warm-sprite"
+        name = "lblhousewarm",
+        tooltip = {"property.house-warm"},
+        sprite = "house-warm-sprite"
     }
 
     -- jobs
@@ -102,11 +103,45 @@ function CreateGui(index)
         tooltip = {"property.jobs"},
         sprite = "jobs-sprite"
     }
-    layout1.add{
-        type = "label",
-        name = "jobs",
+    local pb = layout1.add{
+        type = "progressbar",
+        name = "jobspb",
         tooltip = {"property.jobs"},
         caption = "0"
+    }
+    pb.style.width = pbWidth
+--    layout1.add{
+--        type = "label",
+--        name = "jobs",
+--        tooltip = {"property.jobs"},
+--        caption = "0"
+--    }
+    layout1.add{
+        type = "sprite",
+        name = "lbljobsend",
+        tooltip = {"property.jobs"},
+        sprite = "jobs-sprite"
+    }
+
+    -- food
+    layout1.add{
+        type = "sprite",
+        name = "lblfoodhungry",
+        tooltip = {"property.foodHungry"},
+        sprite = "food-hungry-sprite"
+    }
+    local pb = layout1.add{
+        type = "progressbar",
+        name = "food",
+        tooltip = {"property.food"},
+        caption = "0"
+    }
+    pb.style.width = pbWidth
+    layout1.add{
+        type = "sprite",
+        name = "lblfoodfull",
+        tooltip = {"property.foodfull"},
+        sprite = "food-full-sprite"
     }
 
     -- happiness
@@ -116,12 +151,13 @@ function CreateGui(index)
         tooltip = {"property.unhappy"},
         sprite = "unhappyface-sprite"
     }
-    layout1.add{
+    local pb = layout1.add{
         type = "progressbar",
         name = "happiness",
         tooltip = {"property.happiness"},
         caption = "0"
     }
+    pb.style.width = pbWidth
     layout1.add{
         type = "sprite",
         name = "lblhappiness",
