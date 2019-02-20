@@ -13,9 +13,16 @@ local on_tick = function()
         happinessChange = happinessChange - 1
     end
 
+    if global.coli.hungerstate < 1 then
+        happinessChange = happinessChange - 1
+    end
+
     if happinessChange == 0 then
         happinessChange = 1
     end
+
+    player_print("h "..global.coli.hungerstate)
+
 
     global.coli.happiness = global.coli.happiness + happinessChange
     if global.coli.happiness < MINIMUM_HAPPINESS then

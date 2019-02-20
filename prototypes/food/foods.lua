@@ -1,8 +1,8 @@
 --name,              energy, fullness, effect,      category,       result,   technology,       folder
 --     1                2       3       4               5              6           7              8
 local foods = {
-    {"apple", 			1, 	    30, 	-20,    "colonist-food-1", "compost",   nil,            "foods"},
-    {"orange", 			1, 	    30, 	-20,    "colonist-food-1", "compost",   nil,            "foods"},
+    {"apple", 			2, 	    30, 	-20,    "colonist-food-1", "compost",   nil,            "foods"},
+    {"orange", 			2, 	    30, 	-20,    "colonist-food-1", "compost",   nil,            "foods"},
     {"corn", 			10, 	30, 	-20,    "colonist-food-1", "compost",   nil,            "items"},
     {"cucumber", 		8, 		20, 	-20,    "colonist-food-1", "compost",   nil,            "items"},
     {"tomato", 			4, 		10, 	-15,    "colonist-food-1", "compost",   nil,            "items"},
