@@ -37,60 +37,65 @@ local foods = {
 
 local fi = data.raw["item-group"]["food-industry"]
 
-local modPath
-if fi ~= nil then
-    modPath = "__FoodIndustry__"
-else
-    modPath = "__Colonists__"
-end
 
 -- Food
 for i,f in pairs(foods) do
+
     local food = f[1]
-    if data.raw["capsule"][food] ~= nil then
-    if f[6] == "compost" then
-        data:extend({
-        {
-            type = "recipe",
-            name = f[1].."-waste",
-            icon = modPath.."/graphics/icons/"..f[8].."/"..f[1]..".png",
-            icon_size = 32,
-            category = f[5],
-            subgroup = "colonists-fluids",
-            energy_required = 10,
-            ingredients =
-            {
-                {f[1], 1},
-            },
-            results = {{type="item", name="compostwaste", amount=f[2]} },
-            enabled = true,
-            main_product = ""
-        },
-        })
+
+    local modPath
+    if fi ~= nil and food ~= "apple" then
+        modPath = "__FoodIndustry__"
     else
-        data:extend({
-        {
-            type = "recipe",
-            name = f[1].."-waste",
-            icon = modPath.."/graphics/icons/"..f[8].."/"..f[1]..".png",
-            icon_size = 32,
-            category = f[5],
-            subgroup = "colonists-fluids",
-            energy_required = 10,
-            ingredients =
-            {
-                {f[1], 1},
-            },
-            results = {{type="fluid", name="waste", amount=f[2]}},
-            enabled = false,
-            main_product = ""
-        },
-        })
-        local tech = f[7]
-        if tech ~= nil then
-        local t = data.raw["technology"][tech]["effects"]
-        table.insert(t, {type = "unlock-recipe", recipe = f[1].."-waste"})
-        end
+        modPath = "__Colonists__"
     end
+
+    if data.raw["capsule"][food] ~= nil then
+        local folder = f[8]
+        local folder = "items"
+        if f[6] == "compost" then
+            data:extend({
+            {
+                type = "recipe",
+                name = f[1].."-waste",
+                icon = modPath.."/graphics/icons/"..folder.."/"..f[1]..".png",
+                icon_size = 32,
+                category = f[5],
+                subgroup = "colonists-fluids",
+                energy_required = 10,
+                ingredients =
+                {
+                    {f[1], 1},
+                },
+                results = {{type="item", name="compostwaste", amount=f[2]} },
+                enabled = true,
+                main_product = ""
+            },
+            })
+        else
+            data:extend({
+            {
+                type = "recipe",
+                name = f[1].."-waste",
+                icon = modPath.."/graphics/icons/"..folder.."/"..f[1]..".png",
+                icon_size = 32,
+                category = f[5],
+                subgroup = "colonists-fluids",
+                energy_required = 10,
+                ingredients =
+                {
+                    {f[1], 1},
+                },
+                results = {{type="fluid", name="waste", amount=f[2]}},
+                enabled = false,
+                main_product = ""
+            },
+            })
+            local tech = f[7]
+            if tech ~= nil then
+                local t = data.raw["technology"][tech]["effects"]
+                table.insert(t, {type = "unlock-recipe", recipe = f[1].."-waste"})
+            end
+        end
 end
 end

@@ -27,7 +27,7 @@ local function count_housing(house, player, surface)
     for _,e in pairs(entities) do
         if e.valid then
             if e.energy == 0 then
-                player.add_custom_alert(e, { type = "item", name = e.name }, MESSAGE_HOUSE_IS_COLD, true)
+                player.add_custom_alert(e, { type = "item", name = "cold" }, MESSAGE_HOUSE_IS_COLD, true)
 
                 coldhouses = coldhouses + house.colonists
             end

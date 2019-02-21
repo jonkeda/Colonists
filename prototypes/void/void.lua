@@ -35,12 +35,25 @@ data:extend({
     {
         type = "item",
         name = "heat",
-        icon = "__Colonists__/graphics/icons/fluid/oxygen.png",
+        icon = "__Colonists__/graphics/icons/housing/houseWarm.png",
         icon_size = 32,
         flags = {"goes-to-main-inventory", "hidden"},
         subgroup="colonists-waste",
         --subgroup = "void",
         order = "heat",
+        stack_size = 100
+    },
+
+    -- heat item
+    {
+        type = "item",
+        name = "cold",
+        icon = "__Colonists__/graphics/icons/housing/houseCold.png",
+        icon_size = 32,
+        flags = {"goes-to-main-inventory", "hidden"},
+        subgroup="colonists-waste",
+        --subgroup = "void",
+        order = "cold",
         stack_size = 100
     },
 
