@@ -599,4 +599,46 @@ data:extend({
         result = "colonial-housing-3",
         enabled = false,
     },
+
+    {
+        type = "arrow",
+        name = "cold-arrow",
+        flags = {"placeable-off-grid", "not-on-map"},
+        blinking = true,
+        arrow_picture =
+        {
+            filename = "__core__/graphics/empty.png",
+            priority = "low",
+            width = 1,
+            height = 1
+        },
+        circle_picture =
+        {
+            filename = "__Colonists__/graphics/icons/housing/houseCold.png",
+            priority = "low",
+            width = 32,
+            height = 32
+        }
+    },
+
+    {
+        type = "arrow",
+        name = "inactive-arrow",
+        flags = {"placeable-off-grid", "not-on-map"},
+        blinking = true,
+        arrow_picture =
+        {
+            filename = "__core__/graphics/empty.png",
+            priority = "low",
+            width = 1,
+            height = 1
+        },
+        circle_picture =
+        {
+            filename = "__Colonists__/graphics/icons/housing/inactive-building.png",
+            priority = "low",
+            width = 32,
+            height = 32
+        }
+    },
 })

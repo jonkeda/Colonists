@@ -21,16 +21,44 @@ function isHousingEntity(entity)
     end
 end
 
+local function getColdHouseEntity(entity)
+    for i,e in pairs(global.coli.coldhouseentities) do
+        if e.entity == entity then
+            return i, e
+        end
+    end
+    return nil
+end
+
+local function removeArrow(e, player)
+    player.remove_alert({ entity = e, icon = { type = "item", name = "cold" } })
+    local index, coldHouse = getColdHouseEntity(e)
+    if coldHouse ~= nil then
+        coldHouse.arrow.destroy()
+        table.remove(global.coli.coldhouseentities, index)
+    end
+end
+
 local function count_housing(house, player, surface)
     local coldhouses = 0
-    local entities = surface.find_entities_filtered{name=house.name, force=player.force}
+    local entities = surface.find_entities_filtered{name=house.name, force=player.force }
+    if not global.coli.coldhouseentities then global.coli.coldhouseentities = {} end
     for _,e in pairs(entities) do
         if e.valid then
             if e.energy == 0 then
                 player.add_custom_alert(e, { type = "item", name = "cold" }, MESSAGE_HOUSE_IS_COLD, true)
-
+                local coldHouse = getColdHouseEntity(e)
+                if coldHouse == nil then
+                    local arrow = surface.create_entity({ name = "cold-arrow", position = e.position })
+                    coldHouse = { entity = e, arrow = arrow }
+                    table.insert(global.coli.coldhouseentities, coldHouse)
+                end
                 coldhouses = coldhouses + house.colonists
+            else
+                removeArrow(e, player)
             end
+        else
+            removeArrow(e, player)
         end
     end
     return coldhouses
@@ -64,6 +92,8 @@ local housing_added = function(event)
     local entity = event.created_entity
     if isHousingEntity(entity) then
         global.coli.housing = global.coli.housing + calculate_housing(entity)
+
+        entity.set_recipe("free-air")
     end
 
 end
@@ -74,6 +104,8 @@ local housing_removed = function(event)
     if isHousingEntity(entity) then
         global.coli.housing = global.coli.housing - calculate_housing(entity)
     end
+
+    removeArrow(entity, game.players[1])
 
 end
 

@@ -28,6 +28,25 @@ function isWorkerEntity(entity)
     end
 end
 
+local function getInactiveHouseEntity(entity)
+    for i,e in pairs(global.coli.inActiveEnities) do
+        if e.entity == entity then
+            return i, e
+        end
+    end
+    return nil
+end
+
+
+local function removeArrow(entity, player)
+    player.remove_alert{entity = entity, message = MESSAGE_INACTIVE_ALERT}
+    local index, house = getInactiveHouseEntity(entity)
+    if house ~= nil then
+        house.arrow.destroy()
+        table.remove(global.coli.inActiveEnities, index)
+    end
+end
+
 local on_jobs_tick = function()
     if game.tick % 20 ~= 0 then
         return
@@ -38,9 +57,14 @@ local on_jobs_tick = function()
     if #global.coli.inActiveEnities > 0 then
         if global.coli.jobs <= global.coli.housing then
             for i,e in pairs(global.coli.inActiveEnities) do
-                if e.valid then
-                    e.active = true
-                    player.remove_alert{entity = e, message = MESSAGE_INACTIVE_ALERT}
+                local entity = e
+                if e.arrow ~= nil then
+                    entity = e.entity
+                    e.arrow.destroy()
+                end
+                if entity.valid then
+                    entity.active = true
+                    player.remove_alert{entity = entity, message = MESSAGE_INACTIVE_ALERT}
                 end
                 table.remove(global.coli.inActiveEnities, i)
             end
@@ -66,9 +90,12 @@ local jobs_added = function(event)
 
         if global.coli.jobs > global.coli.housing then
             entity.active = false
-            table.insert(global.coli.inActiveEnities, entity)
 
             player.add_custom_alert(entity, { type = "item", name = entity.name }, MESSAGE_INACTIVE_ALERT, true)
+
+            local arrow = surface.create_entity({ name = "inactive-arrow", position = entity.position })
+            table.insert(global.coli.inActiveEnities, { entity = entity, arrow = arrow } )
+
         end
     end
 end
@@ -79,6 +106,7 @@ local jobs_removed = function(event)
         not isHousingEntity(entity) then
         global.coli.jobs = global.coli.jobs - calculate_jobs(entity)
     end
+    removeArrow(entity, game.players[1])
 end
 
 local isLoad = false
