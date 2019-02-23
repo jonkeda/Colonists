@@ -21,8 +21,8 @@ function isHousingEntity(entity)
     end
 end
 
-local function getColdHouseEntity(entity)
-    for i,e in pairs(global.coli.coldhouseentities) do
+local function getColdHouseEntity(entity, coli)
+    for i,e in pairs(coli.coldhouseentities) do
         if e.entity == entity then
             return i, e
         end
@@ -30,35 +30,35 @@ local function getColdHouseEntity(entity)
     return nil
 end
 
-local function removeArrow(e, player)
+local function removeArrow(e, player, coli)
     player.remove_alert({ entity = e, icon = { type = "item", name = "cold" } })
-    local index, coldHouse = getColdHouseEntity(e)
+    local index, coldHouse = getColdHouseEntity(e, coli)
     if coldHouse ~= nil then
         coldHouse.arrow.destroy()
-        table.remove(global.coli.coldhouseentities, index)
+        table.remove(coli.coldhouseentities, index)
     end
 end
 
-local function count_housing(house, player, surface)
+local function count_housing(house, player, surface, coli)
     local coldhouses = 0
     local entities = surface.find_entities_filtered{name=house.name, force=player.force }
-    if not global.coli.coldhouseentities then global.coli.coldhouseentities = {} end
+    if not coli.coldhouseentities then coli.coldhouseentities = {} end
     for _,e in pairs(entities) do
         if e.valid then
             if e.energy == 0 then
                 player.add_custom_alert(e, { type = "item", name = "cold" }, MESSAGE_HOUSE_IS_COLD, true)
-                local coldHouse = getColdHouseEntity(e)
+                local coldHouse = getColdHouseEntity(e, coli)
                 if coldHouse == nil then
                     local arrow = surface.create_entity({ name = "cold-arrow", position = e.position })
                     coldHouse = { entity = e, arrow = arrow }
-                    table.insert(global.coli.coldhouseentities, coldHouse)
+                    table.insert(coli.coldhouseentities, coldHouse)
                 end
                 coldhouses = coldhouses + house.colonists
             else
-                removeArrow(e, player)
+                removeArrow(e, player, coli)
             end
         else
-            removeArrow(e, player)
+            removeArrow(e, player, coli)
         end
     end
     return coldhouses
@@ -69,15 +69,18 @@ local on_housing_tick = function()
         return
     end
 
-    local player = game.players[1]
-    local surface = player.surface
+    for i,player in pairs(game.players) do
+        local coli = global.coli[i]
 
-    local coldhouses = 0
-    for i,h in pairs(housing) do
-        coldhouses = coldhouses + count_housing(h, player, surface)
+        local surface = player.surface
+
+        local coldhouses = 0
+        for i,h in pairs(housing) do
+            coldhouses = coldhouses + count_housing(h, player, surface, coli)
+        end
+        coli.coldhouses = coldhouses
+
     end
-    global.coli.coldhouses = coldhouses
-
 end
 
 
@@ -89,9 +92,10 @@ end
 
 local housing_added = function(event)
 
+    local coli = global.coli[event.player_index]
     local entity = event.created_entity
     if isHousingEntity(entity) then
-        global.coli.housing = global.coli.housing + calculate_housing(entity)
+        coli.housing = coli.housing + calculate_housing(entity)
 
         entity.set_recipe("free-air")
     end
@@ -100,14 +104,23 @@ end
 
 local housing_removed = function(event)
 
+    local coli = global.coli[event.player_index]
     local entity = event.entity
     if isHousingEntity(entity) then
-        global.coli.housing = global.coli.housing - calculate_housing(entity)
+        coli.housing = coli.housing - calculate_housing(entity)
     end
 
-    removeArrow(entity, game.players[1])
+    removeArrow(entity, game.players[event.player_index], coli)
 
 end
+
+function playerHousing(player_index, player)
+    local i = player_index
+    local coli = global.coli[i]
+
+    if not coli.coldhouses then coli.coldhouses = 0 end
+end
+
 
 local isLoad = false
 function loadHousing()
@@ -125,8 +138,6 @@ function initHousing()
         return
     end
     isInit = true
-
-    if not global.coli.coldhouses then global.coli.coldhouses = 0 end
 
     loadHousing()
 end

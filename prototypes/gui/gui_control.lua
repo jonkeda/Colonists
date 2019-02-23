@@ -19,58 +19,40 @@ local on_gui_tick = function()
     if game.tick % 20 ~= 0 then
         return
     end
---    surface = game.surfaces[1]
-
 
     for i,p in pairs(game.players) do
-        --if p.character then
-            --p.gui.left.coli.layout1.days.caption = tostring(global.coli.days)
 
---            local buildInput = p.force.entity_build_count_statistics.get_input_count("colonist")
---            local productionInput = p.force.item_production_statistics.get_input_count("colonist")
---            local totalInput = buildInput + productionInput
---
---            local buildOutput = p.force.entity_build_count_statistics.get_output_count("colonist")
---            local productionOutput = p.force.item_production_statistics.get_output_count("colonist")
---            local totalOutput = buildOutput + productionOutput
+        local coli = global.coli[i]
+        local layout1 = p.gui.left.coli.layout1
 
-            --p.gui.left.coli.layout1.colonistsCount.caption = tostring(totalInput - totalOutput)
-            --local wasteInput = calculateTotalWaste()
+        setTooltip(layout1.lblColonists, tostring(coli.housing))
 
---            p.gui.left.coli.layout1.waste.caption = tostring(wasteInput)
---            p.gui.left.coli.layout1.managers.caption = countColonistsjob(p.force, "colonist-speed-module-")
---            p.gui.left.coli.layout1.engineers.caption = countColonistsjob(p.force, "colonist-effectivity-module-")
---            p.gui.left.coli.layout1.workers.caption = countColonistsjob(p.force, "colonist-productivity-module-")
---            p.gui.left.coli.layout1.environmentalists.caption = countColonistsjob(p.force, "colonist-pollution-module-")
+        -- jobs
+        if coli.housing == 0 or coli.jobs > coli.housing then
+            layout1.jobspb.value = 1
+        else
+            layout1.jobspb.value = coli.jobs / coli.housing
+            setTooltip(layout1.jobspb, "("..tostring(coli.jobs).."/"..tostring(coli.housing)..")")
+        end
 
-            setTooltip(p.gui.left.coli.layout1.lblColonists, tostring(global.coli.housing))
+        -- heating
+        if not coli.coldhouses then coli.coldhouses = 100 end
+        if coli.housing == 0 then
+            layout1.houses.value = 1
+            setTooltip(layout1.houses, "")
+        else
+            layout1.houses.value = (coli.housing - coli.coldhouses) / coli.housing
+            setTooltip(layout1.houses, "("..tostring(coli.housing).."/"..tostring(coli.coldhouses)..")")
+        end
 
-            -- jobs
-            if global.coli.housing == 0 or global.coli.jobs > global.coli.housing then
-                p.gui.left.coli.layout1.jobspb.value = 1
-            else
-                p.gui.left.coli.layout1.jobspb.value = global.coli.jobs / global.coli.housing
-                setTooltip(p.gui.left.coli.layout1.jobspb, "("..tostring(global.coli.jobs).."/"..tostring(global.coli.housing)..")")
-            end
+        -- food
+        layout1.food.value = coli.hungerstate
+        setTooltip(layout1.food, "("..tostring(coli.foodneeded).."/"..tostring(coli.foodEaten)..")")
 
-            -- heating
-            if not global.coli.coldhouses then global.coli.coldhouses = 100 end
-            if global.coli.housing == 0 then
-                p.gui.left.coli.layout1.houses.value = 1
-                setTooltip(p.gui.left.coli.layout1.houses, "")
-            else
-                p.gui.left.coli.layout1.houses.value = (global.coli.housing - global.coli.coldhouses) / global.coli.housing
-                setTooltip(p.gui.left.coli.layout1.houses, "("..tostring(global.coli.housing).."/"..tostring(global.coli.coldhouses)..")")
-            end
-
-            -- food
-            p.gui.left.coli.layout1.food.value = global.coli.hungerstate
-            setTooltip(p.gui.left.coli.layout1.food, "("..tostring(global.coli.foodneeded).."/"..tostring(global.coli.foodEaten)..")")
-
-            -- happiness
-            if not global.coli.happiness then global.coli.happiness = 100 end
-            p.gui.left.coli.layout1.happiness.value = global.coli.happiness / 100
-            setTooltip(p.gui.left.coli.layout1.happiness, tostring(global.coli.happiness))
+        -- happiness
+        if not coli.happiness then coli.happiness = 100 end
+        layout1.happiness.value = coli.happiness / 100
+        setTooltip(layout1.happiness, tostring(coli.happiness))
 
     end
 end

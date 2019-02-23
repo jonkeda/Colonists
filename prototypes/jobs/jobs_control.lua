@@ -28,8 +28,8 @@ function isWorkerEntity(entity)
     end
 end
 
-local function getInactiveHouseEntity(entity)
-    for i,e in pairs(global.coli.inActiveEnities) do
+local function getInactiveHouseEntity(entity, coli)
+    for i,e in pairs(coli.inActiveEnities) do
         if e.entity == entity then
             return i, e
         end
@@ -38,12 +38,12 @@ local function getInactiveHouseEntity(entity)
 end
 
 
-local function removeArrow(entity, player)
+local function removeArrow(entity, player, coli)
     player.remove_alert{entity = entity, message = MESSAGE_INACTIVE_ALERT}
-    local index, house = getInactiveHouseEntity(entity)
+    local index, house = getInactiveHouseEntity(entity, coli)
     if house ~= nil then
         house.arrow.destroy()
-        table.remove(global.coli.inActiveEnities, index)
+        table.remove(coli.inActiveEnities, index)
     end
 end
 
@@ -52,21 +52,23 @@ local on_jobs_tick = function()
         return
     end
 
-    local player = game.players[1]
+    for i,player in pairs(game.players) do
+        local coli = global.coli[i]
 
-    if #global.coli.inActiveEnities > 0 then
-        if global.coli.jobs <= global.coli.housing then
-            for i,e in pairs(global.coli.inActiveEnities) do
-                local entity = e
-                if e.arrow ~= nil then
-                    entity = e.entity
-                    e.arrow.destroy()
+        if #coli.inActiveEnities > 0 then
+            if coli.jobs <= coli.housing then
+                for i,e in pairs(coli.inActiveEnities) do
+                    local entity = e
+                    if e.arrow ~= nil then
+                        entity = e.entity
+                        e.arrow.destroy()
+                    end
+                    if entity.valid then
+                        entity.active = true
+                        player.remove_alert{entity = entity, message = MESSAGE_INACTIVE_ALERT}
+                    end
+                    table.remove(coli.inActiveEnities, i)
                 end
-                if entity.valid then
-                    entity.active = true
-                    player.remove_alert{entity = entity, message = MESSAGE_INACTIVE_ALERT}
-                end
-                table.remove(global.coli.inActiveEnities, i)
             end
         end
     end
@@ -86,15 +88,18 @@ local jobs_added = function(event)
 
     if isWorkerEntity(entity) and
         not isHousingEntity(entity) then
-        global.coli.jobs = global.coli.jobs + calculate_jobs(entity)
 
-        if global.coli.jobs > global.coli.housing then
+        local coli = global.coli[index]
+
+        coli.jobs = coli.jobs + calculate_jobs(entity)
+
+        if coli.jobs > coli.housing then
             entity.active = false
 
             player.add_custom_alert(entity, { type = "item", name = entity.name }, MESSAGE_INACTIVE_ALERT, true)
 
-            local arrow = surface.create_entity({ name = "inactive-arrow", position = entity.position })
-            table.insert(global.coli.inActiveEnities, { entity = entity, arrow = arrow } )
+            local arrow = entity.surface.create_entity({ name = "inactive-arrow", position = entity.position })
+            table.insert(coli.inActiveEnities, { entity = entity, arrow = arrow } )
 
         end
     end
@@ -102,11 +107,22 @@ end
 
 local jobs_removed = function(event)
     local entity = event.entity
+    local index = event.player_index
+    local coli = global.coli[index]
     if isWorkerEntity(entity) and
         not isHousingEntity(entity) then
-        global.coli.jobs = global.coli.jobs - calculate_jobs(entity)
+        coli.jobs = coli.jobs - calculate_jobs(entity)
     end
-    removeArrow(entity, game.players[1])
+    removeArrow(entity, game.players[index], coli)
+end
+
+function playerJobs(player_index, player)
+    local i = player_index
+    local coli = global.coli[i]
+
+    if not coli.jobs then coli.jobs = 0 end
+    if not coli.inActiveEnities then coli.inActiveEnities = { } end
+
 end
 
 local isLoad = false
@@ -126,9 +142,6 @@ function initJobs()
         return
     end
     isInit = true
-
-    if not global.coli.jobs then global.coli.jobs = 0 end
-    if not global.coli.inActiveEnities then global.coli.inActiveEnities = { } end
 
     loadJobs()
 end

@@ -10,7 +10,6 @@ require("prototypes.jobs.jobs_control")
 require("prototypes.colonists.colonists_control")
 require("prototypes.happiness.happiness_control")
 require("prototypes.trees.fruit-scissors-control")
-
 require("prototypes.gui.gui")
 require("prototypes.gui.gui_control")
 
@@ -18,6 +17,10 @@ local debug = false
 local debugset = false
 
 function OnInit()
+    if not global.coli then global.coli = {} end
+    for i=1,#game.players do
+        if not global.coli[i] then global.coli[i] = {} end
+    end
 
     initColi()
     initFood()
@@ -27,7 +30,6 @@ function OnInit()
     initHappiness()
     initGui()
     initFruitScissors()
-
 end
 
 function OnLoad()
@@ -39,23 +41,64 @@ function OnLoad()
     loadHappiness()
     loadGui()
     loadFruitScissors()
-
     CreateGuis()
 end
 
 function OnPlayerCreated(event)
     local index = event.player_index
+    local player = game.players[index]
+
+    if not global.coli then global.coli = {} end
+    if not global.coli[index] then global.coli[index] = {} end
+
+    playerFood(index, player)
+    playerHousing(index, player)
+    playerJobs(index, player)
+    playerHappiness(index, player)
+
     CreateGui(index)
 
     local player = game.players[index]
+
+
+
     player.insert({name="burner-mining-drill", count=2})
     player.insert({name="colonial-housing-1", count=2})
     player.insert({name="colonists-building-food-1", count=1})
-    --player.insert({name="burner-food-picker", count=1})
-    --player.insert({name="apple", count=10})
+
+    player.insert({name="fruit-scissor", count=1})
+
+end
+
+local function migrate080()
+
+    if not global.coli then global.coli = {} end
+    if  global.coli[1] ~= nil then
+        return
+    end
+
+    local coli = {}
+
+    if not coli.totalWasteLastPeriod then coli.totalWasteLastPeriod = global.coli.totalWasteLastPeriod end
+    if not coli.totalFoodLastPeriod then coli.totalFoodLastPeriod = global.coli.totalFoodLastPeriod end
+    if not coli.foodneeded then coli.foodneeded = global.coli.foodneeded end
+    if not coli.foodeaten then coli.foodeaten = global.coli.foodeaten end
+    if not coli.hungerstate then coli.hungerstate = global.coli.hungerstate end
+    if not coli.housing then coli.housing = global.coli.housing end
+
+    if not coli.coldhouses then coli.coldhouses = global.coli.coldhouses end
+
+    if not coli.jobs then coli.jobs = global.coli.jobs end
+    if not coli.inActiveEnities then coli.inActiveEnities = global.coli.inActiveEnities end
+
+    if not coli.happiness then coli.happiness = global.coli.happiness end
+
+    global.coli[1] = coli
 end
 
 function OnTick(event)
+    migrate080()
+
     CreateGuis()
 
     if debug then
@@ -83,26 +126,18 @@ function OnEntityDied(event)
 end
 
 function OnPlayerRespawned(event)
-    --reset player stats
-    local index = event.player_index
-    local player = global.coli.players[index]
 
 end
 
 function OnPlayerMinedTile(event)
-    --work around to only give xp on mined
-    
+
 end
 
 function OnPlayerJoinedGame(event)
-    local index = event.player_index
-    local player = global.players[index]
 
 end
 
 function OnPlayerLeftGame(event)
-    local index = event.player_index
-    local player = global.players[index]
 
 end
 

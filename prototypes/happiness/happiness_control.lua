@@ -7,27 +7,38 @@ local on_tick = function()
     if game.tick % (60 * 60) ~= 0 then
         return
     end
+    for i,player in pairs(game.players) do
 
-    local happinessChange = 0
-    if global.coli.coldhouses > 0 then
-        happinessChange = happinessChange - 1
-    end
+        local coli = global.coli[i]
 
-    if global.coli.hungerstate < 1 then
-        happinessChange = happinessChange - 1
-    end
+        local happinessChange = 0
+        if coli.coldhouses > 0 then
+            happinessChange = happinessChange - 1
+        end
 
-    if happinessChange == 0 then
-        happinessChange = 1
-    end
+        if coli.hungerstate < 1 then
+            happinessChange = happinessChange - 1
+        end
 
-    global.coli.happiness = global.coli.happiness + happinessChange
-    if global.coli.happiness < MINIMUM_HAPPINESS then
-        global.coli.happiness = MINIMUM_HAPPINESS
+        if happinessChange == 0 then
+            happinessChange = 1
+        end
+
+        coli.happiness = coli.happiness + happinessChange
+        if coli.happiness < MINIMUM_HAPPINESS then
+            coli.happiness = MINIMUM_HAPPINESS
+        end
+        if coli.happiness > MAXIMUM_HAPPINESS then
+            coli.happiness = MAXIMUM_HAPPINESS
+        end
     end
-    if global.coli.happiness > MAXIMUM_HAPPINESS then
-        global.coli.happiness = MAXIMUM_HAPPINESS
-    end
+end
+
+function playerHappiness(player_index, player)
+    local i = player_index
+    local coli = global.coli[i]
+
+    if not coli.happiness then coli.happiness = 100 end
 end
 
 local isLoad = false
@@ -45,8 +56,6 @@ function initHappiness()
         return
     end
     isInit = true
-
-    if not global.coli.happiness then global.coli.happiness = 100 end
 
     loadHappiness()
 end

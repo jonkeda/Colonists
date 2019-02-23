@@ -12,40 +12,60 @@ local MaxHungerState = 5
 local HungerTime = 60 * 60
 local WasteMultiplier = 2
 
-local function calculateHunger()
+local function calculateHunger(player_index, player)
 
-    local player = game.players[1]
+    local i = player_index
+    local coli = global.coli[i]
+
     local totalWaste = calculateTotalWaste(player.force)
-    local totalFoodNeeded = global.coli.housing
+    local totalFoodNeeded = coli.housing
 
-    global.coli.foodneeded = totalFoodNeeded
-    global.coli.foodEaten = (totalWaste - global.coli.totalWasteLastPeriod) * WasteMultiplier
+    coli.foodneeded = totalFoodNeeded
+    coli.foodEaten = (totalWaste - coli.totalWasteLastPeriod) * WasteMultiplier
 
-    if global.coli.foodEaten < global.coli.foodneeded then
-        global.coli.hungerstate = global.coli.foodEaten / global.coli.foodneeded
+    if coli.foodEaten < coli.foodneeded then
+        coli.hungerstate = coli.foodEaten / coli.foodneeded
     else
-        global.coli.hungerstate = 1
+        coli.hungerstate = 1
     end
 
-    if global.coli.NextHungerClick == nil then
-        global.coli.NextHungerClick = HungerTime
+    if coli.NextHungerClick == nil then
+        coli.NextHungerClick = HungerTime
     end
 
-    if (game.tick + 1) > global.coli.NextHungerClick then
-        global.coli.NextHungerClick = global.coli.NextHungerClick + HungerTime
-        global.coli.totalWasteLastPeriod = totalWaste
+    if (game.tick + 1) > coli.NextHungerClick then
+        coli.NextHungerClick = coli.NextHungerClick + HungerTime
+        coli.totalWasteLastPeriod = totalWaste
     end
 
 end
 
 local FoodControl_tick = function()
 
-    surface = game.surfaces[1]
     if game.tick % 20 ~= 0 then
         return
     end
-    calculateHunger()
+
+    for i,player in pairs(game.players) do
+        calculateHunger(i, player)
+    end
+
 end
+
+function playerFood(player_index, player)
+    local i = player_index
+    local coli = global.coli[i]
+
+    if not coli.totalWasteLastPeriod then coli.totalWasteLastPeriod = 0 end
+    if not coli.totalFoodLastPeriod then coli.totalFoodLastPeriod = 0 end
+    if not coli.foodneeded then coli.foodneeded = 0 end
+    if not coli.foodeaten then coli.foodeaten = 0 end
+    if not coli.hungerstate then coli.hungerstate = 5 end
+    if not coli.housing then coli.housing = 0 end
+
+    loadFood()
+end
+
 
 local isLoad = false
 function loadFood()

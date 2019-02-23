@@ -26,19 +26,6 @@ function initColi()
 	if global ~= nil then
 
 		if not global.coli then global.coli = {} end
-		if not global.coli.fishing_inserters then global.coli.fishing_inserters = {} end
-		if not global.players then global.players = {} end
-		if not global.force then global.force = {} end
-		if not global.coli.players then global.coli.players = {} end
-		if not global.coli.days then global.coli.days = 0 end
-		if not global.coli.housing then global.coli.housing = 0 end
-
-		if not global.coli.totalWasteLastPeriod then global.coli.totalWasteLastPeriod = 0 end
-		if not global.coli.totalFoodLastPeriod then global.coli.totalFoodLastPeriod = 0 end
-
-		if not global.coli.foodneeded then global.coli.foodneeded = 0 end
-		if not global.coli.foodeaten then global.coli.foodeaten = 0 end
-		if not global.coli.hungerstate then global.coli.hungerstate = 5 end
 
 	end
 end

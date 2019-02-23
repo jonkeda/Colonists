@@ -3,14 +3,15 @@ require("prototypes.scripts.util")
 require("prototypes.gui.gui_data")
 
 require("prototypes.foodIndustry.foodIndustry")
-
-
+require("prototypes.robotArmy.robotarmy")
 
 require("prototypes.colonists.colonists")
 require("prototypes.fluid.fluid")
-
-require("prototypes.trees.trees")
-require("prototypes.trees.fruit-scissors")
+local fi = data.raw["item-group"]["food-industry"]
+if not fi then
+    require("prototypes.trees.trees")
+    require("prototypes.trees.fruit-scissors")
+end
 require("prototypes.food.food")
 require("prototypes.food.foods")
 

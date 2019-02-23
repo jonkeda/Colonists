@@ -37,6 +37,8 @@ local foods = {
 
 local fi = data.raw["item-group"]["food-industry"]
 
+local fiV2 = data.raw["capsule"]["orange"]
+
 
 -- Food
 for i,f in pairs(foods) do
@@ -44,15 +46,20 @@ for i,f in pairs(foods) do
     local food = f[1]
 
     local modPath
-    if fi ~= nil and food ~= "apple" then
+    if fi ~= nil and (food ~= "apple" or fiV2 ~= nil) then
         modPath = "__FoodIndustry__"
     else
         modPath = "__Colonists__"
     end
 
     if data.raw["capsule"][food] ~= nil then
-        local folder = f[8]
-        local folder = "items"
+        local folder
+        if fiV2 ~= nil then
+            folder = f[8]
+        else
+            folder = "items"
+        end
+
         if f[6] == "compost" then
             data:extend({
             {
