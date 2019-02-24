@@ -13,7 +13,7 @@ require("prototypes.trees.fruit-scissors-control")
 require("prototypes.gui.gui")
 require("prototypes.gui.gui_control")
 
-local debug = false
+local debug = true
 local debugset = false
 
 function OnInit()
@@ -96,10 +96,19 @@ local function migrate080()
     global.coli[1] = coli
 end
 
-function OnTick(event)
+function OnModInit(event)
+
     migrate080()
 
     CreateGuis()
+
+    script.on_event(defines.events.on_tick, OnTick)
+
+    OnTick(event)
+
+end
+
+function OnTick(event)
 
     if debug then
         if not debugset then
@@ -157,7 +166,9 @@ end
 
 script.on_init(OnInit)
 script.on_load(OnLoad)
-script.on_event(defines.events.on_tick, OnTick)
+
+script.on_event(defines.events.on_tick, OnModInit)
+
 script.on_event(defines.events.on_entity_died, OnEntityDied)
 script.on_event(defines.events.on_player_created, OnPlayerCreated)
 script.on_event(defines.events.on_player_respawned, OnPlayerRespawned)
