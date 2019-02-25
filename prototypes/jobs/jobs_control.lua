@@ -84,6 +84,8 @@ end
 local jobs_added = function(event)
     local entity = event.created_entity
     local index = event.player_index
+    if index == nil then return end
+
     local player = game.players[index]
 
     if isWorkerEntity(entity) and
@@ -108,6 +110,8 @@ end
 local jobs_removed = function(event)
     local entity = event.entity
     local index = event.player_index
+    if index == nil then return end
+
     local coli = global.coli[index]
     if isWorkerEntity(entity) and
         not isHousingEntity(entity) then

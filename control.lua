@@ -13,7 +13,7 @@ require("prototypes.trees.fruit-scissors-control")
 require("prototypes.gui.gui")
 require("prototypes.gui.gui_control")
 
-local debug = true
+local debug = false
 local debugset = false
 
 function OnInit()

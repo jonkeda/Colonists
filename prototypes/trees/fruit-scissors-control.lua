@@ -14,6 +14,8 @@ local isFruitTrees = {
 }
 
 local function fruittree_on_FruitScissorClick(event)
+    if event.player_index == nil then return end
+
     local player = game.players[event.player_index]
     if player.selected == nil then
         return

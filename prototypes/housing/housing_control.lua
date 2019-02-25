@@ -91,6 +91,7 @@ local function calculate_housing(entity)
 end
 
 local housing_added = function(event)
+    if event.player_index == nil then return end
 
     local coli = global.coli[event.player_index]
     local entity = event.created_entity
@@ -103,15 +104,15 @@ local housing_added = function(event)
 end
 
 local housing_removed = function(event)
+    if event.player_index == nil then return end
 
-    local coli = global.coli[event.player_index]
     local entity = event.entity
     if isHousingEntity(entity) then
         coli.housing = coli.housing - calculate_housing(entity)
+
+        local coli = global.coli[event.player_index]
+        removeArrow(entity, game.players[event.player_index], coli)
     end
-
-    removeArrow(entity, game.players[event.player_index], coli)
-
 end
 
 function playerHousing(player_index, player)
