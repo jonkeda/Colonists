@@ -40,7 +40,7 @@ function CreateGui(index)
     local layout1 = root.add{
         type = "table",
         name = "layout1",
-        column_count = 16
+        column_count = 5
     }
 
     -- colonist count
@@ -50,46 +50,33 @@ function CreateGui(index)
         tooltip = {"property.colonistsCount"},
         sprite = "colonists-sprite"
     }
---    layout1.add{
---        type = "label",
---        name = "colonistsCount",
---        tooltip = {"property.colonistsCount"},
---        caption = "0"
---    }
 
     -- housing
-    layout1.add{
+    local housing = layout1.add{
+        type = "table",
+        name = "housing",
+        column_count = 4
+    }
+    housing.add{
         type = "sprite",
         name = "lblhousing",
         tooltip = {"property.housing"},
         sprite = "housing-sprite"
     }
-    layout1.add{
+    housing.add{
         type = "sprite",
         name = "lblhousecold",
         tooltip = {"property.house-cold"},
         sprite = "house-cold-sprite"
     }
-    local pb = layout1.add{
+    local pb = housing.add{
         type = "progressbar",
         name = "houses",
         tooltip = {"property.houses"},
         caption = "0",
     }
     pb.style.width = pbWidth
---    layout1.add{
---        type = "label",
---        name = "housing",
---        tooltip = {"property.housing"},
---        caption = "0"
---    }
---    layout1.add{
---        type = "label",
---        name = "coldhouses",
---        tooltip = {"property.coldHouses"},
---        caption = "0"
---    }
-    layout1.add{
+    housing.add{
         type = "sprite",
         name = "lblhousewarm",
         tooltip = {"property.house-warm"},
@@ -97,26 +84,25 @@ function CreateGui(index)
     }
 
     -- jobs
-    layout1.add{
+    local jobs = layout1.add{
+        type = "table",
+        name = "jobs",
+        column_count = 3
+    }
+    jobs.add{
         type = "sprite",
         name = "lbljobs",
         tooltip = {"property.jobs"},
         sprite = "jobs-sprite"
     }
-    local pb = layout1.add{
+    local pb = jobs.add{
         type = "progressbar",
         name = "jobspb",
         tooltip = {"property.jobs"},
         caption = "0"
     }
     pb.style.width = pbWidth
---    layout1.add{
---        type = "label",
---        name = "jobs",
---        tooltip = {"property.jobs"},
---        caption = "0"
---    }
-    layout1.add{
+    jobs.add{
         type = "sprite",
         name = "lbljobsend",
         tooltip = {"property.jobs"},
@@ -124,20 +110,25 @@ function CreateGui(index)
     }
 
     -- food
-    layout1.add{
+    local food = layout1.add{
+        type = "table",
+        name = "food",
+        column_count = 3
+    }
+    food.add{
         type = "sprite",
         name = "lblfoodhungry",
         tooltip = {"property.foodHungry"},
         sprite = "food-hungry-sprite"
     }
-    local pb = layout1.add{
+    local pb = food.add{
         type = "progressbar",
         name = "food",
         tooltip = {"property.food"},
         caption = "0"
     }
     pb.style.width = pbWidth
-    layout1.add{
+    food.add{
         type = "sprite",
         name = "lblfoodfull",
         tooltip = {"property.foodfull"},
@@ -145,146 +136,117 @@ function CreateGui(index)
     }
 
     -- happiness
-    layout1.add{
+    local happiness = layout1.add{
+        type = "table",
+        name = "happiness",
+        column_count = 3
+    }
+    happiness.add{
         type = "sprite",
         name = "lblunhappiness",
         tooltip = {"property.unhappy"},
         sprite = "unhappyface-sprite"
     }
-    local pb = layout1.add{
+    local pb = happiness.add{
         type = "progressbar",
         name = "happiness",
         tooltip = {"property.happiness"},
         caption = "0"
     }
     pb.style.width = pbWidth
-    layout1.add{
+    happiness.add{
         type = "sprite",
         name = "lblhappiness",
         tooltip = {"property.happy"},
         sprite = "happyface-sprite"
     }
 
---    -- waste
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblWaste",
---        caption = {"property.waste"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "waste",
---        caption = "0"
---    }
---
---    -- manager
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblManagers",
---        caption = {"property.manager"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "managers",
---        caption = "0"
---    }
---
---    -- engineer
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblEngineer",
---        caption = {"property.engineer"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "engineers",
---        caption = "0"
---    }
---
---    -- worker
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblWorker",
---        caption = {"property.worker"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "workers",
---        caption = "0"
---    }
---
---    -- environmentalist
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblEnvironmentalist",
---        caption = {"property.environmentalist"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "environmentalists",
---        caption = "0"
---    }
---
---    -- workers needed
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblJobs",
---        caption = {"property.jobs"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "jobs",
---        caption = "0"
---    }
---
---    -- Food needed this turn
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblFoodNeeded",
---        caption = {"property.foodneeded"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "foodneeded",
---        caption = "0"
---    }
---
---    -- Food needed this turn
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblFoodEaten",
---        caption = {"property.foodeaten"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "foodeaten",
---        caption = "0"
---    }
---
---    -- Hunger state
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblHungerState",
---        caption = {"property.hungerstate"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "hungerstate",
---        caption = "0"
---    }
---
---
---    -- Cold state
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "lblColdState",
---        caption = {"property.coldstate"}
---    }
---    local label1_2 = layout1.add{
---        type = "label",
---        name = "coldstate",
---        caption = "0"
---    }
+
+
+
+    -- colonist
+    colonist2.add{
+        type = "label",
+        name = "colonistCount",
+        caption = 50
+    }
+
+    -- housing
+    local housing2 = layout1.add{
+        type = "table",
+        name = "housing2",
+        column_count = 3,
+    }
+    housing2.style.width = 200
+    housing2.style.column_alignments[3] = "right"
+    housing2.style.horizontally_stretchable = true
+    housing2.add{
+        type = "label",
+        name = "house",
+        caption = ""
+    }
+
+    housing2.add{
+        type = "label",
+        name = "cold",
+        caption = 1111
+    }
+    local lbl = housing2.add{
+        type = "label",
+        name = "warm",
+        caption = 2222
+    }
+    lbl.style.align = "right"
+
+    -- jobs
+    local jobs2 = layout1.add{
+        type = "table",
+        name = "jobs2",
+        column_count = 2,
+        column_alignments = { "left", "right" }
+    }
+    jobs2.style.column_alignments[2] = "right"
+    jobs2.add{
+        type = "label",
+        name = "workers",
+        caption = 33
+    }
+    jobs2.add{
+        type = "label",
+        name = "jobs",
+        caption = 44
+    }
+
+
+
+    -- food
+    local food2 = layout1.add{
+        type = "table",
+        name = "food2",
+        column_count = 2,
+        column_alignments = { "left", "right" }
+    }
+    food2.style.column_alignments[2] = "right"
+    food2.add{
+        type = "label",
+        name = "workers",
+        caption = 55
+    }
+    food2.add{
+        type = "label",
+        name = "jobs",
+        caption = 66
+    }
+
+
+
+    -- happiness
+    local happiness2 = layout1.add{
+        type = "table",
+        name = "happiness2",
+        column_count = 3
+    }
+
 end
 
 

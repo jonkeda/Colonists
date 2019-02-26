@@ -26,33 +26,36 @@ local on_gui_tick = function()
         local layout1 = p.gui.left.coli.layout1
 
         setTooltip(layout1.lblColonists, tostring(coli.housing))
+        layout1.colonist2.colonistCount.caption = tostring(coli.housing)
 
         -- jobs
         if coli.housing == 0 or coli.jobs > coli.housing then
-            layout1.jobspb.value = 1
+            layout1.jobs.jobspb.value = 1
         else
-            layout1.jobspb.value = coli.jobs / coli.housing
-            setTooltip(layout1.jobspb, "("..tostring(coli.jobs).."/"..tostring(coli.housing)..")")
+            layout1.jobs.jobspb.value = coli.jobs / coli.housing
+            setTooltip(layout1.jobs.jobspb, "("..tostring(coli.jobs).."/"..tostring(coli.housing)..")")
         end
 
         -- heating
         if not coli.coldhouses then coli.coldhouses = 100 end
         if coli.housing == 0 then
-            layout1.houses.value = 1
-            setTooltip(layout1.houses, "")
+            layout1.housing.houses.value = 1
+            setTooltip(layout1.housing.houses, "")
         else
-            layout1.houses.value = (coli.housing - coli.coldhouses) / coli.housing
-            setTooltip(layout1.houses, "("..tostring(coli.housing).."/"..tostring(coli.coldhouses)..")")
+            layout1.housing.houses.value = (coli.housing - coli.coldhouses) / coli.housing
+            setTooltip(layout1.housing.houses, "("..tostring(coli.housing).."/"..tostring(coli.coldhouses)..")")
         end
 
         -- food
-        layout1.food.value = coli.hungerstate
-        setTooltip(layout1.food, "("..tostring(coli.foodneeded).."/"..tostring(coli.foodEaten)..")")
+        layout1.food.food.value = coli.hungerstate
+        setTooltip(layout1.food.food, "("..tostring(coli.foodneeded).."/"..tostring(coli.foodEaten)..")")
 
         -- happiness
         if not coli.happiness then coli.happiness = 100 end
-        layout1.happiness.value = coli.happiness / 100
-        setTooltip(layout1.happiness, tostring(coli.happiness))
+        layout1.happiness.happiness.value = coli.happiness / 100
+        setTooltip(layout1.happiness.happiness, tostring(coli.happiness))
+
+        -- player_print(layout1.colonist2.colonistCount.style.help())
 
     end
 end
