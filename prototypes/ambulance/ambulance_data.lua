@@ -322,7 +322,7 @@ data:extend({
                 recipe = "ambulance",
             },
         },
-        prerequisites = {"automobilism"},
+        prerequisites = {"automobilism", "automation"},
         unit = {
             count = 20,
             ingredients = {

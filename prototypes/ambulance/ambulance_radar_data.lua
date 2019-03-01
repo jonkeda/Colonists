@@ -17,6 +17,7 @@ data:extend({
         stack_size = 1,
         place_result = "ambulance_radar",
     },
+
     {
         type = "car",
         name = "ambulance_radar",
@@ -322,13 +323,13 @@ data:extend({
                 recipe = "ambulance_radar",
             },
         },
-        prerequisites = {"automobilism"},
-
+        prerequisites = {"ambulance", "construction-robotics", "personal-roboport-equipment"},
         unit = {
             count = 20,
             ingredients = {
                 {"automation-science-pack", 1},
                 {"logistic-science-pack", 1},
+                {"chemical-science-pack", 1}
             },
             time = 10
         },
