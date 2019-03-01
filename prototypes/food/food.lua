@@ -27,7 +27,7 @@ data:extend({
         name = "colonists-building-food-1",
         icon = "__base__/graphics/icons/assembling-machine-1.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-food",
         order = "a[colonists-building-food-1]",
         place_result = "colonists-building-food-1",
@@ -38,7 +38,7 @@ data:extend({
         name = "colonists-building-food-2",
         icon = "__base__/graphics/icons/assembling-machine-2.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-food",
         order = "b[colonists-building-food-2]",
         place_result = "colonists-building-food-2",
@@ -49,7 +49,7 @@ data:extend({
         name = "colonists-building-food-3",
         icon = "__base__/graphics/icons/assembling-machine-3.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-food",
         order = "c[colonists-building-food-3]",
         place_result = "colonists-building-food-3",
@@ -382,41 +382,41 @@ data:extend({
                     filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3.png",
                     priority = "high",
                     width = 108,
-                    height = 110,
+                    height = 119,
                     frame_count = 32,
                     line_length = 8,
-                    shift = util.by_pixel(0, 4),
+                    shift = util.by_pixel(0, -0.5),
                     hr_version =
                     {
                         filename = "__base__/graphics/entity/assembling-machine-3/hr-assembling-machine-3.png",
                         priority = "high",
                         width = 214,
-                        height = 218,
+                        height = 237,
                         frame_count = 32,
                         line_length = 8,
-                        shift = util.by_pixel(0, 4),
+                        shift = util.by_pixel(0, -0.75),
                         scale = 0.5
                     }
                 },
                 {
                     filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-shadow.png",
                     priority = "high",
-                    width = 98,
+                    width = 130,
                     height = 82,
                     frame_count = 32,
                     line_length = 8,
                     draw_as_shadow = true,
-                    shift = util.by_pixel(12, 5),
+                    shift = util.by_pixel(28, 4),
                     hr_version =
                     {
                         filename = "__base__/graphics/entity/assembling-machine-3/hr-assembling-machine-3-shadow.png",
                         priority = "high",
-                        width = 196,
-                        height = 163,
+                        width = 260,
+                        height = 162,
                         frame_count = 32,
                         line_length = 8,
                         draw_as_shadow = true,
-                        shift = util.by_pixel(12, 4.75),
+                        shift = util.by_pixel(28, 4),
                         scale = 0.5
                     }
                 }

@@ -12,7 +12,7 @@ data:extend({
         name = "colonists-training-1",
         icon = "__Colonists__/graphics/icons/colonial-workshop.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-training",
         order = "a[colonists-training-1]",
         place_result = "colonists-training-1",
@@ -23,7 +23,7 @@ data:extend({
         name = "colonists-training-2",
         icon = "__Colonists__/graphics/icons/colonial-workshop.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-training",
         order = "b[colonists-training-1]",
         place_result = "colonists-training-2",
@@ -34,7 +34,7 @@ data:extend({
         name = "colonists-training-3",
         icon = "__Colonists__/graphics/icons/colonial-workshop.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-training",
         order = "b[colonists-training-1]",
         place_result = "colonists-training-3",

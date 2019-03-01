@@ -36,11 +36,13 @@ function CreateGui(index)
 
     end
 
+    local pb
+
     --    root.style.maximum_width = 230
     local layout1 = root.add{
         type = "table",
         name = "layout1",
-        column_count = 5
+        column_count = 13
     }
 
     -- colonist count
@@ -52,31 +54,20 @@ function CreateGui(index)
     }
 
     -- housing
-    local housing = layout1.add{
-        type = "table",
-        name = "housing",
-        column_count = 4
-    }
-    housing.add{
-        type = "sprite",
-        name = "lblhousing",
-        tooltip = {"property.housing"},
-        sprite = "housing-sprite"
-    }
-    housing.add{
+    layout1.add{
         type = "sprite",
         name = "lblhousecold",
         tooltip = {"property.house-cold"},
         sprite = "house-cold-sprite"
     }
-    local pb = housing.add{
+    pb = layout1.add{
         type = "progressbar",
         name = "houses",
         tooltip = {"property.houses"},
         caption = "0",
     }
     pb.style.width = pbWidth
-    housing.add{
+    layout1.add{
         type = "sprite",
         name = "lblhousewarm",
         tooltip = {"property.house-warm"},
@@ -84,77 +75,62 @@ function CreateGui(index)
     }
 
     -- jobs
-    local jobs = layout1.add{
-        type = "table",
-        name = "jobs",
-        column_count = 3
-    }
-    jobs.add{
+    layout1.add{
         type = "sprite",
         name = "lbljobs",
-        tooltip = {"property.jobs"},
+        tooltip = {"property.vacancies"},
         sprite = "jobs-sprite"
     }
-    local pb = jobs.add{
+    pb = layout1.add{
         type = "progressbar",
         name = "jobspb",
         tooltip = {"property.jobs"},
         caption = "0"
     }
     pb.style.width = pbWidth
-    jobs.add{
+    layout1.add{
         type = "sprite",
         name = "lbljobsend",
-        tooltip = {"property.jobs"},
+        tooltip = {"property.employed"},
         sprite = "jobs-sprite"
     }
 
     -- food
-    local food = layout1.add{
-        type = "table",
-        name = "food",
-        column_count = 3
-    }
-    food.add{
+    layout1.add{
         type = "sprite",
         name = "lblfoodhungry",
         tooltip = {"property.foodHungry"},
         sprite = "food-hungry-sprite"
     }
-    local pb = food.add{
+    pb = layout1.add{
         type = "progressbar",
         name = "food",
         tooltip = {"property.food"},
         caption = "0"
     }
     pb.style.width = pbWidth
-    food.add{
+    layout1.add{
         type = "sprite",
         name = "lblfoodfull",
         tooltip = {"property.foodfull"},
-        sprite = "food-full-sprite"
+        sprite = "food-hungry-sprite"
     }
 
     -- happiness
-    local happiness = layout1.add{
-        type = "table",
-        name = "happiness",
-        column_count = 3
-    }
-    happiness.add{
+    layout1.add{
         type = "sprite",
         name = "lblunhappiness",
         tooltip = {"property.unhappy"},
         sprite = "unhappyface-sprite"
     }
-    local pb = happiness.add{
+    pb = layout1.add{
         type = "progressbar",
         name = "happiness",
         tooltip = {"property.happiness"},
         caption = "0"
     }
     pb.style.width = pbWidth
-    happiness.add{
+    layout1.add{
         type = "sprite",
         name = "lblhappiness",
         tooltip = {"property.happy"},
@@ -165,86 +141,68 @@ function CreateGui(index)
 
 
     -- colonist
-    colonist2.add{
+    layout1.add{
         type = "label",
-        name = "colonistCount",
-        caption = 50
+        name = "colonistCount"
     }
 
     -- housing
-    local housing2 = layout1.add{
-        type = "table",
-        name = "housing2",
-        column_count = 3,
-    }
-    housing2.style.width = 200
-    housing2.style.column_alignments[3] = "right"
-    housing2.style.horizontally_stretchable = true
-    housing2.add{
+    layout1.add{
         type = "label",
-        name = "house",
-        caption = ""
+        name = "cold"
     }
-
-    housing2.add{
+    layout1.add{
         type = "label",
-        name = "cold",
-        caption = 1111
+        name = "warmth"
     }
-    local lbl = housing2.add{
+    layout1.add{
         type = "label",
-        name = "warm",
-        caption = 2222
+        name = "warm"
     }
-    lbl.style.align = "right"
 
     -- jobs
-    local jobs2 = layout1.add{
-        type = "table",
-        name = "jobs2",
-        column_count = 2,
-        column_alignments = { "left", "right" }
-    }
-    jobs2.style.column_alignments[2] = "right"
-    jobs2.add{
+    layout1.add{
         type = "label",
-        name = "workers",
-        caption = 33
+        name = "vacancies"
     }
-    jobs2.add{
+    layout1.add{
         type = "label",
-        name = "jobs",
-        caption = 44
+        name = "employment"
+    }
+    layout1.add{
+        type = "label",
+        name = "employed"
     }
 
 
 
     -- food
-    local food2 = layout1.add{
-        type = "table",
-        name = "food2",
-        column_count = 2,
-        column_alignments = { "left", "right" }
-    }
-    food2.style.column_alignments[2] = "right"
-    food2.add{
+    layout1.add{
         type = "label",
-        name = "workers",
-        caption = 55
+        name = "full"
     }
-    food2.add{
+    layout1.add{
         type = "label",
-        name = "jobs",
-        caption = 66
+        name = "foodsp"
     }
-
+    layout1.add{
+        type = "label",
+        name = "hungry"
+    }
 
 
     -- happiness
-    local happiness2 = layout1.add{
-        type = "table",
-        name = "happiness2",
-        column_count = 3
+    layout1.add{
+        type = "label",
+        name = "happy"
+    }
+    layout1.add{
+        type = "label",
+        name = "happiness2"
+    }
+    layout1.add{
+        type = "label",
+        name = "unhappy"
     }
 
 end

@@ -8,6 +8,7 @@ function loadColi()
 	if not coli then coli = {} end
 	if not coli.ticks then coli.ticks = {} end
 	if not coli.on_added then coli.on_added = {} end
+	if not coli.on_changedPosition then coli.on_changedPosition = {} end
 	if not coli.on_remove then coli.on_remove = {} end
 	if not coli.on_adjust then coli.on_adjust = {} end
 	if not coli.on_pick_up then coli.on_pick_up = {} end

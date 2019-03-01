@@ -48,9 +48,7 @@ local function removeArrow(entity, player, coli)
 end
 
 local on_jobs_tick = function()
-    if game.tick % 20 ~= 0 then
-        return
-    end
+    if game.tick % 20 ~= 0 then return end
 
     for i,player in pairs(game.players) do
         local coli = global.coli[i]

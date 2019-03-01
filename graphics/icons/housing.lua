@@ -12,7 +12,7 @@ data:extend({
         name = "colonial-housing-1",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-1]",
         place_result = "colonial-housing-1",
@@ -23,7 +23,7 @@ data:extend({
         name = "colonial-housing-2",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-2]",
         place_result = "colonial-housing-2",
@@ -34,7 +34,7 @@ data:extend({
         name = "colonial-housing-3",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-3]",
         place_result = "colonial-housing-3",

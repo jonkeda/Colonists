@@ -120,7 +120,7 @@ data:extend(
         --            type = "item",
         --            name = "angels-ore1",
         --            icon = "__angelsrefining__/graphics/icons/angels-ore1.png",
-        --            flags = {"goes-to-main-inventory"},
+        --
         --            subgroup = "angels-ores",
         --            order = "a[angels-ore1]",
         --            stack_size = 200

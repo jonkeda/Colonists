@@ -25,37 +25,64 @@ local on_gui_tick = function()
         local coli = global.coli[i]
         local layout1 = p.gui.left.coli.layout1
 
+        local colonists = coli.housing
+
         setTooltip(layout1.lblColonists, tostring(coli.housing))
-        layout1.colonist2.colonistCount.caption = tostring(coli.housing)
+        layout1.colonistCount.caption = tostring(colonists)
+
 
         -- jobs
-        if coli.housing == 0 or coli.jobs > coli.housing then
-            layout1.jobs.jobspb.value = 1
-        else
-            layout1.jobs.jobspb.value = coli.jobs / coli.housing
-            setTooltip(layout1.jobs.jobspb, "("..tostring(coli.jobs).."/"..tostring(coli.housing)..")")
+        local vacancies = coli.jobs - colonists
+        local employed
+        if vacancies < 0 then
+            vacancies = 0
         end
+        if colonists > coli.jobs then
+            employed = coli.jobs
+        else
+            employed = colonists
+        end
+        if (employed + vacancies) == 0 then
+            layout1.jobspb.value = 0
+        else
+            layout1.jobspb.value = employed / (employed + vacancies)
+            setTooltip(layout1.jobspb, "("..tostring(employed).."/"..tostring(vacancies)..")")
+        end
+        layout1.vacancies.caption = tostring(vacancies)
+        layout1.employed.caption = tostring(employed)
+
 
         -- heating
+        local coldcolonists = coli.coldhouses
+        local warmcolonists = colonists - coli.coldhouses
         if not coli.coldhouses then coli.coldhouses = 100 end
-        if coli.housing == 0 then
-            layout1.housing.houses.value = 1
-            setTooltip(layout1.housing.houses, "")
+        if colonists == 0 then
+            layout1.houses.value = 0
+            setTooltip(layout1.houses, "")
         else
-            layout1.housing.houses.value = (coli.housing - coli.coldhouses) / coli.housing
-            setTooltip(layout1.housing.houses, "("..tostring(coli.housing).."/"..tostring(coli.coldhouses)..")")
+            layout1.houses.value = (colonists - coli.coldhouses) / colonists
+            setTooltip(layout1.houses, "("..tostring(colonists).."/"..tostring(coli.coldhouses)..")")
         end
+        layout1.cold.caption = tostring(coli.coldhouses)
+        layout1.warm.caption = tostring(warmcolonists)
+
 
         -- food
-        layout1.food.food.value = coli.hungerstate
-        setTooltip(layout1.food.food, "("..tostring(coli.foodneeded).."/"..tostring(coli.foodEaten)..")")
+        local fed
+        local hungry
+        layout1.food.value = coli.hungerstate
+        setTooltip(layout1.food, "("..tostring(coli.foodneeded).."/"..tostring(coli.foodEaten)..")")
+        layout1.full.caption = tostring(coli.foodEaten)
+        layout1.hungry.caption = tostring(coli.foodneeded)
+
 
         -- happiness
-        if not coli.happiness then coli.happiness = 100 end
-        layout1.happiness.happiness.value = coli.happiness / 100
-        setTooltip(layout1.happiness.happiness, tostring(coli.happiness))
+        if not coli.happiness then coli.happiness = 0 end
+        layout1.happiness.value = coli.happiness / 100
+        setTooltip(layout1.happiness, tostring(coli.happiness))
 
-        -- player_print(layout1.colonist2.colonistCount.style.help())
+
+        -- player_print(layout1.colonist2.style.help())
 
     end
 end

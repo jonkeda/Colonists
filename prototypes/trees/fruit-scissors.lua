@@ -5,7 +5,7 @@ data:extend({
     name = "fruit-scissor",
     icon = "__Colonists__/graphics/icons/items/fruit-scissor.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+
     subgroup = "apple",
     order = "w-a-a",
     stack_size = 1,

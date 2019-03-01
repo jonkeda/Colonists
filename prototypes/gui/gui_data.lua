@@ -60,7 +60,7 @@ data:extend({
     {
         type="sprite",
         name = "food-full-sprite",
-        filename = "__Colonists__/graphics/icons/foods/cake2.png",
+        filename = "__Colonists__/graphics/icons/foods/cake.png",
         priority = "extra-high",
         width = 32,
         height = 32

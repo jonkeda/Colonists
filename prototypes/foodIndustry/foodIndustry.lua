@@ -25,7 +25,7 @@ if fi == nil then
             name = "fertilizer",
             icon = "__Colonists__/graphics/icons/items/fertilizer.png",
             icon_size = 32,
-            flags = {"goes-to-main-inventory"},
+
             subgroup = "colonists-food-items",
             order = "w-b-g",
             stack_size = 50
@@ -71,7 +71,7 @@ if fi == nil then
                 count = 30,
                 ingredients =
                 {
-                    {"science-pack-1", 1}
+                    {"automation-science-pack", 1},
                 },
             },
             order = "w",
@@ -91,7 +91,7 @@ if fi == nil then
                 count = 200,
                 ingredients =
                 {
-                    {"science-pack-1", 1},
+                    {"automation-science-pack", 1},
                 },
             },
             order = "w",

@@ -33,7 +33,7 @@ data:extend({
         name = "latrine",
         icon = "__base__/graphics/icons/storage-tank.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-waste",
         order = "b[fluid]-a[latrine]",
         place_result = "latrine",
@@ -45,7 +45,7 @@ data:extend({
         name = "waste-disposal",
         icon = "__Colonists__/graphics/icons/waste-disposal.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-buildings-waste",
         order = "c[waste-disposal]",
         place_result = "waste-disposal",
@@ -57,7 +57,7 @@ data:extend({
         name = "compostwaste",
         icon = "__Colonists__/graphics/icons/items/compost.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         fuel_category = "humus", -- changed by Oceanel
         fuel_value = "100KJ",
         subgroup = "colonists-food-items",
@@ -337,7 +337,7 @@ data:extend({
         enabled = false,
         ingredients =
         {
-            {"raw-wood", 4},
+            {"wood", 4},
             {"stone", 10}
         },
         result= "latrine"

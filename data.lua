@@ -28,4 +28,6 @@ require("prototypes.vehicles.ambulance")
 
 require("prototypes.categories.groups")
 
+require("prototypes.ambulance.ambulance_data")
+
 require("data_raw_edits")

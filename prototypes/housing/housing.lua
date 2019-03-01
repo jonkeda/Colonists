@@ -12,7 +12,6 @@ data:extend({
         name = "colonial-housing-1",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-1]",
         place_result = "colonial-housing-1",
@@ -23,7 +22,6 @@ data:extend({
         name = "colonial-housing-2",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-2]",
         place_result = "colonial-housing-2",
@@ -34,7 +32,6 @@ data:extend({
         name = "colonial-housing-3",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
         subgroup = "colonists-buildings-housing",
         order = "a[colonial-housing-3]",
         place_result = "colonial-housing-3",
@@ -278,30 +275,30 @@ data:extend({
                         scale = 0.5
                     }
                 },
-                {
-                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
-                    width = 122,
-                    height = 68,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 33,
-                    animation_speed = 1 / 3,
-                    shift = util.by_pixel(13, 11),
-                    draw_as_shadow = true,
-                    hr_version =
-                    {
-                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
-                        width = 242,
-                        height = 136,
-                        frame_count = 1,
-                        line_length = 1,
-                        repeat_count = 33,
-                        animation_speed = 1 / 3,
-                        shift = util.by_pixel(13, 11),
-                        scale = 0.5,
-                        draw_as_shadow = true
-                    }
-                }
+--                {
+--                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
+--                    width = 122,
+--                    height = 68,
+--                    frame_count = 1,
+--                    line_length = 1,
+--                    repeat_count = 33,
+--                    animation_speed = 1 / 3,
+--                    shift = util.by_pixel(13, 11),
+--                    draw_as_shadow = true,
+--                    hr_version =
+--                    {
+--                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
+--                        width = 242,
+--                        height = 136,
+--                        frame_count = 1,
+--                        line_length = 1,
+--                        repeat_count = 33,
+--                        animation_speed = 1 / 3,
+--                        shift = util.by_pixel(13, 11),
+--                        scale = 0.5,
+--                        draw_as_shadow = true
+--                    }
+--                }
             }
         },
         overlay =
@@ -349,30 +346,30 @@ data:extend({
                         scale = 0.5
                     }
                 },
-                {
-                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
-                    width = 122,
-                    height = 68,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 33,
-                    animation_speed = 1 / 3,
-                    shift = util.by_pixel(13, 11),
-                    draw_as_shadow = true,
-                    hr_version =
-                    {
-                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
-                        width = 242,
-                        height = 136,
-                        frame_count = 1,
-                        line_length = 1,
-                        repeat_count = 33,
-                        animation_speed = 1 / 3,
-                        shift = util.by_pixel(13, 11),
-                        scale = 0.5,
-                        draw_as_shadow = true
-                    }
-                }
+--                {
+--                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
+--                    width = 122,
+--                    height = 68,
+--                    frame_count = 1,
+--                    line_length = 1,
+--                    repeat_count = 33,
+--                    animation_speed = 1 / 3,
+--                    shift = util.by_pixel(13, 11),
+--                    draw_as_shadow = true,
+--                    hr_version =
+--                    {
+--                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
+--                        width = 242,
+--                        height = 136,
+--                        frame_count = 1,
+--                        line_length = 1,
+--                        repeat_count = 33,
+--                        animation_speed = 1 / 3,
+--                        shift = util.by_pixel(13, 11),
+--                        scale = 0.5,
+--                        draw_as_shadow = true
+--                    }
+--                }
             }
         },
         --        signal_to_color_mapping =
@@ -441,31 +438,31 @@ data:extend({
                         scale = 0.666
                     }
                 },
-                {
-                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
-                    width = 122,
-                    height = 68,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 33,
-                    animation_speed = 1 / 3,
-                    shift = util.by_pixel(13, 11),
-                    draw_as_shadow = true,
-                    scale = 1.33,
-                    hr_version =
-                    {
-                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
-                        width = 242,
-                        height = 136,
-                        frame_count = 1,
-                        line_length = 1,
-                        repeat_count = 33,
-                        animation_speed = 1 / 3,
-                        shift = util.by_pixel(13, 11),
-                        scale = 0.666,
-                        draw_as_shadow = true
-                    }
-                }
+--                {
+--                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
+--                    width = 122,
+--                    height = 68,
+--                    frame_count = 1,
+--                    line_length = 1,
+--                    repeat_count = 33,
+--                    animation_speed = 1 / 3,
+--                    shift = util.by_pixel(13, 11),
+--                    draw_as_shadow = true,
+--                    scale = 1.33,
+--                    hr_version =
+--                    {
+--                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
+--                        width = 242,
+--                        height = 136,
+--                        frame_count = 1,
+--                        line_length = 1,
+--                        repeat_count = 33,
+--                        animation_speed = 1 / 3,
+--                        shift = util.by_pixel(13, 11),
+--                        scale = 0.666,
+--                        draw_as_shadow = true
+--                    }
+--                }
             }
         },
         overlay =
@@ -515,31 +512,31 @@ data:extend({
                         scale = 0.666
                     }
                 },
-                {
-                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
-                    width = 122,
-                    height = 68,
-                    frame_count = 1,
-                    line_length = 1,
-                    repeat_count = 33,
-                    animation_speed = 1 / 3,
-                    shift = util.by_pixel(13, 11),
-                    draw_as_shadow = true,
-                    scale = 1.33,
-                    hr_version =
-                    {
-                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
-                        width = 242,
-                        height = 136,
-                        frame_count = 1,
-                        line_length = 1,
-                        repeat_count = 33,
-                        animation_speed = 1 / 3,
-                        shift = util.by_pixel(13, 11),
-                        scale = 0.666,
-                        draw_as_shadow = true
-                    }
-                }
+--                {
+--                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
+--                    width = 122,
+--                    height = 68,
+--                    frame_count = 1,
+--                    line_length = 1,
+--                    repeat_count = 33,
+--                    animation_speed = 1 / 3,
+--                    shift = util.by_pixel(13, 11),
+--                    draw_as_shadow = true,
+--                    scale = 1.33,
+--                    hr_version =
+--                    {
+--                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
+--                        width = 242,
+--                        height = 136,
+--                        frame_count = 1,
+--                        line_length = 1,
+--                        repeat_count = 33,
+--                        animation_speed = 1 / 3,
+--                        shift = util.by_pixel(13, 11),
+--                        scale = 0.666,
+--                        draw_as_shadow = true
+--                    }
+--                }
             }
         },
         height = 1,
@@ -568,7 +565,7 @@ data:extend({
         ingredients =
         {
             {"iron-plate", 5},
-            {"raw-wood", 5},
+            {"wood", 5},
             {"colonist", 4},
         },
         result = "colonial-housing-1",

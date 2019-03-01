@@ -12,7 +12,7 @@ for index, crop in pairs(trees) do
 			name = crop[1].."-"..crop[13],
 			icon = "__Colonists__/graphics/icons/trees/"..crop[1].."-"..crop[13]..".png",
 			icon_size = 32,
-			flags = {"goes-to-main-inventory"},
+
 			subgroup = crop[1],
 			order = "w-e-"..index.."-y",
 			stack_size = 10
@@ -47,7 +47,7 @@ for index, crop in pairs(trees) do
 			name = crop[1],
 			icon = "__Colonists__/graphics/icons/foods/"..crop[1]..".png",
 			icon_size = 32,
-			flags = {"goes-to-main-inventory"},
+
 			subgroup = crop[1],
 			order = "w-d-"..index.."-x",
 			stack_size = crop[7],
@@ -132,7 +132,7 @@ for index, crop in pairs(trees) do
 				mining_hardness = 0.1,
 				mining_time = 0.5,
 				results = {
-					{type = "item", name = "raw-wood", amount = 4 },
+					{type = "item", name = "wood", amount = 4 },
 					{type = "item", name = crop[1], amount = 1, probability = crop[18] }
 				},
 			},

@@ -4,6 +4,7 @@
 require("prototypes.scripts.util")
 
 require("persistance")
+require("prototypes.ambulance.ambulance_control")
 require("prototypes.food.food_control")
 require("prototypes.housing.housing_control")
 require("prototypes.jobs.jobs_control")
@@ -30,6 +31,7 @@ function OnInit()
     initHappiness()
     initGui()
     initFruitScissors()
+    initAmbulance()
 end
 
 function OnLoad()
@@ -41,6 +43,7 @@ function OnLoad()
     loadHappiness()
     loadGui()
     loadFruitScissors()
+    loadAmbulance()
     CreateGuis()
 end
 
@@ -150,6 +153,12 @@ function OnPlayerLeftGame(event)
 
 end
 
+local OnPlayerChangedPosition = function(event)
+    for k=1, #coli.on_changedPosition do
+        local v = coli.on_changedPosition[k]
+        v(event)
+    end
+end
 
 local local_on_added = function(event)
     for k=1, #coli.on_added do
@@ -170,10 +179,13 @@ script.on_load(OnLoad)
 script.on_event(defines.events.on_tick, OnModInit)
 
 script.on_event(defines.events.on_entity_died, OnEntityDied)
+
 script.on_event(defines.events.on_player_created, OnPlayerCreated)
 script.on_event(defines.events.on_player_respawned, OnPlayerRespawned)
 script.on_event(defines.events.on_player_joined_game, OnPlayerJoinedGame)
 script.on_event(defines.events.on_player_left_game, OnPlayerLeftGame)
+script.on_event(defines.events.on_player_changed_position, OnPlayerChangedPosition)
+
 
 local build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity}-- defines.events.on_player_built_tile, defines.events.on_robot_built_tile}
 local remove_events = {defines.events.on_entity_died,defines.events.on_robot_pre_mined,defines.events.on_robot_mined_entity,defines.events.on_pre_player_mined_entity,defines.events.on_player_mined_entity}

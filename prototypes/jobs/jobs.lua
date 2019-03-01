@@ -22,7 +22,7 @@ data:extend({
         name = "colonist-speed-module-1",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "speed",
         tier = 1,
@@ -37,7 +37,7 @@ data:extend({
         name = "colonist-effectivity-module-1",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "effectivity",
         tier = 1,
@@ -52,7 +52,7 @@ data:extend({
         name = "colonist-productivity-module-1",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "productivity",
         tier = 1,
@@ -67,7 +67,7 @@ data:extend({
         name = "colonist-pollution-module-1",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "pollution",
         tier = 1,
@@ -83,7 +83,7 @@ data:extend({
         name = "colonist-speed-module-2",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "speed",
         tier = 1,
@@ -98,7 +98,7 @@ data:extend({
         name = "colonist-effectivity-module-2",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "effectivity",
         tier = 1,
@@ -113,7 +113,7 @@ data:extend({
         name = "colonist-productivity-module-2",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "productivity",
         tier = 1,
@@ -128,7 +128,7 @@ data:extend({
         name = "colonist-pollution-module-2",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "pollution",
         tier = 1,
@@ -144,7 +144,7 @@ data:extend({
         name = "colonist-speed-module-3",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "speed",
         tier = 1,
@@ -159,7 +159,7 @@ data:extend({
         name = "colonist-effectivity-module-3",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "effectivity",
         tier = 1,
@@ -174,7 +174,7 @@ data:extend({
         name = "colonist-productivity-module-3",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "productivity",
         tier = 1,
@@ -189,7 +189,7 @@ data:extend({
         name = "colonist-pollution-module-3",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
-        flags = {"goes-to-main-inventory"},
+
         subgroup = "colonists-colonist",
         category = "pollution",
         tier = 1,

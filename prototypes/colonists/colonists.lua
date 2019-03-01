@@ -19,7 +19,7 @@ data:extend({
         name = "colonist",
         icon = "__Colonists__/graphics/icons/colonist.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         order = "c[colonist]",
         subgroup = "colonists-colonist",
         stack_size = 12

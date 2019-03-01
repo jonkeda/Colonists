@@ -12,7 +12,7 @@ data:extend(
         name = "ambulance",
         icon = "__base__/graphics/icons/car.png",
         icon_size = 32,
-        flags = {"goes-to-quickbar"},
+
         subgroup = "colonists-transport",
         order = "b[personal-transport]-a[car]",
         place_result = "ambulance",
@@ -24,8 +24,8 @@ data:extend(
         name = "ambulance",
         icon = "__base__/graphics/icons/car.png",
         icon_size = 32,
-        flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
-        minable = {mining_time = 1, result = "ambulance"},
+        flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-flammable"},
+        minable = {mining_time = 0.4, result = "car"},
         mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
         max_health = 450,
         corpse = "medium-remnants",
@@ -43,16 +43,21 @@ data:extend(
                 type = "impact",
                 percent = 30,
                 decrease = 50
-            }
+            },
+            {
+                type = "acid",
+                percent = 20
+            },
         },
         collision_box = {{-0.7, -1}, {0.7, 1}},
         selection_box = {{-0.7, -1}, {0.7, 1}},
-        effectivity = 0.5,
+        effectivity = 0.6,
         braking_power = "200kW",
+
         burner =
         {
             fuel_category = "chemical",
-            effectivity = 0.6,
+            effectivity = 1,
             fuel_inventory_size = 1,
             smoke =
             {
@@ -140,7 +145,7 @@ data:extend(
                     hr_version =
                     {
                         priority = "low",
-                        width = 202,
+                        width = 201,
                         height = 172,
                         frame_count = 2,
                         scale = 0.5,

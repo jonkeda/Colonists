@@ -92,10 +92,10 @@ end
 
 local housing_added = function(event)
     if event.player_index == nil then return end
-
-    local coli = global.coli[event.player_index]
     local entity = event.created_entity
     if isHousingEntity(entity) then
+        local coli = global.coli[event.player_index]
+
         coli.housing = coli.housing + calculate_housing(entity)
 
         entity.set_recipe("free-air")
@@ -108,9 +108,10 @@ local housing_removed = function(event)
 
     local entity = event.entity
     if isHousingEntity(entity) then
+        local coli = global.coli[event.player_index]
+
         coli.housing = coli.housing - calculate_housing(entity)
 
-        local coli = global.coli[event.player_index]
         removeArrow(entity, game.players[event.player_index], coli)
     end
 end
