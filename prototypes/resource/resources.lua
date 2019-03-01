@@ -47,7 +47,7 @@ data:extend(
             name = "colonist"
         },
         {
-            type = "resource",
+            type = "simple-entity",
             name = "colonist",
             icon = "__Colonists__/graphics/icons/colonist.png",
             icon_size=32,
@@ -103,18 +103,27 @@ data:extend(
                 },
             },
             stage_counts = {1},
-            stages =
+            picture =
             {
-                sheet =
-                {
-                    filename = "__Colonists__/graphics/icons/colonist.png",
-                    priority = "extra-high",
-                    width = 32,
-                    height = 32,
-                    frame_count = 1,
-                    variation_count = 1
-                }
-            },
+                filename = "__Colonists__/graphics/icons/colonist.png",
+                priority = "extra-high",
+                width = 32,
+                height = 32,
+                frame_count = 1,
+                variation_count = 1
+            }
+--            stages =
+--            {
+--                sheet =
+--                {
+--                    filename = "__Colonists__/graphics/icons/colonist.png",
+--                    priority = "extra-high",
+--                    width = 32,
+--                    height = 32,
+--                    frame_count = 1,
+--                    variation_count = 1
+--                }
+--            },
         },
         --        {
         --            type = "item",
