@@ -79,7 +79,7 @@ function CreateGui(index)
         type = "sprite",
         name = "lbljobs",
         tooltip = {"property.vacancies"},
-        sprite = "jobs-sprite"
+        sprite = "vacancy-sprite"
     }
     pb = layout1.add{
         type = "progressbar",
