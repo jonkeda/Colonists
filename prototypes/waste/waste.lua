@@ -9,13 +9,6 @@ data:extend({
 
     {
         type = "item-subgroup",
-        name = "colonists-waste",
-        group = "colonists",
-        order = "g"
-    },
-
-    {
-        type = "item-subgroup",
         name = "colonists-food-items",
         group = "colonists",
         order = "g"
@@ -382,7 +375,7 @@ data:extend({
         category = "chemistry",
         energy_required = 1,
         enabled = false,
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         ingredients =
         {
             {type="fluid", name="waste", amount=3},
@@ -415,7 +408,7 @@ data:extend({
         },
         icon = "__base__/graphics/icons/solid-fuel-from-light-oil.png",
         icon_size = 32,
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         enabled = false,
         order = "b[fluid-chemistry]-c[solid-fuel-from-light-oil]",
         crafting_machine_tint =

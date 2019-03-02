@@ -30,5 +30,7 @@ require("prototypes.ambulance.ambulance_data")
 require("prototypes.ambulance.ambulance_radar_data")
 
 require("prototypes.colonists.clone_duplicator")
+require("prototypes.colonists.comsdish")
+require("prototypes.colonists.landingsite")
 
 require("data_raw_edits")

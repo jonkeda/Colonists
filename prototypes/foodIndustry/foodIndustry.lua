@@ -46,7 +46,7 @@ if fi == nil then
             },
             icon = "__Colonists__/graphics/icons/items/fertilizer.png",
             icon_size = 32,
-            subgroup="colonists-waste",
+            subgroup="colonists-products",
             enabled = false,
             order = "b[fluid-chemistry]-c[solid-fuel-from-light-oil]",
             crafting_machine_tint =

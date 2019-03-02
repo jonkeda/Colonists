@@ -18,6 +18,13 @@ data:extend({
         order = "a-a",
     },
 
+    {
+        type = "item-subgroup",
+        name = "colonists-products",
+        group = "colonists",
+        order = "g"
+    },
+
     -- void
     {
         type = "item",
@@ -25,7 +32,7 @@ data:extend({
         icon = "__Colonists__/graphics/icons/fluid/oxygen.png",
         icon_size = 32,
         flags = {"hidden"},
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         --subgroup = "void",
         order = "void",
         stack_size = 100
@@ -38,7 +45,7 @@ data:extend({
         icon = "__Colonists__/graphics/icons/housing/houseWarm.png",
         icon_size = 32,
         flags = {"hidden"},
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         --subgroup = "void",
         order = "heat",
         stack_size = 100
@@ -51,7 +58,7 @@ data:extend({
         icon = "__Colonists__/graphics/icons/housing/houseCold.png",
         icon_size = 32,
         flags = {"hidden"},
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         --subgroup = "void",
         order = "cold",
         stack_size = 100
@@ -62,7 +69,7 @@ data:extend({
         type = "recipe",
         name = "free-air",
         category = "void-air",
-        subgroup="colonists-waste",
+        subgroup="colonists-products",
         energy_required = 100,
         ingredients =
         {

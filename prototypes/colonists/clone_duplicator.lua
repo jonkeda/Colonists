@@ -69,7 +69,7 @@ data:extend({
         name = "clone-duplicator",
         icon = "__Colonists__/graphics/icons/colonists/clone-duplicator.png",
         icon_size = 32,
-        subgroup = "colonists-buildings-housing",
+        subgroup = "colonists-buildings",
         order = "a[clone-duplicator]",
         stack_size = 50,
         place_result = "clone-duplicator",
@@ -114,9 +114,10 @@ data:extend({
     {
         type = "technology",
         name = "clone-duplicator",
-        icon = "__Colonists__/graphics/icons/colonists/clone-duplicator.png",
+        icon = "__Colonists__/graphics/entity/clone-duplicator/clone-duplicator.png",
         icon_size = 32,
         order = "c-m-a",
+        --prerequisites = {"colonial-agriculture"},
         effects = {
             {
                 type = "unlock-recipe",

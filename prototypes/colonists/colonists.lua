@@ -21,7 +21,7 @@ data:extend({
         icon_size = 32,
 
         order = "c[colonist]",
-        subgroup = "colonists-colonist",
+        subgroup = "colonists-products",
         stack_size = 12
     },
 })
