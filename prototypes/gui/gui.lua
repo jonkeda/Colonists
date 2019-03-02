@@ -64,7 +64,7 @@ function CreateGui(index)
         type = "progressbar",
         name = "houses",
         tooltip = {"property.houses"},
-        caption = "0",
+        value = 0,
     }
     pb.style.width = pbWidth
     layout1.add{
@@ -85,7 +85,7 @@ function CreateGui(index)
         type = "progressbar",
         name = "jobspb",
         tooltip = {"property.jobs"},
-        caption = "0"
+        value = 0
     }
     pb.style.width = pbWidth
     layout1.add{
@@ -106,7 +106,7 @@ function CreateGui(index)
         type = "progressbar",
         name = "food",
         tooltip = {"property.food"},
-        caption = "0"
+        value = 0
     }
     pb.style.width = pbWidth
     layout1.add{
@@ -127,7 +127,7 @@ function CreateGui(index)
         type = "progressbar",
         name = "happiness",
         tooltip = {"property.happiness"},
-        caption = "0"
+        value = 0
     }
     pb.style.width = pbWidth
     layout1.add{
