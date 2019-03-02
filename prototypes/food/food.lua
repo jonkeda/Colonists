@@ -106,51 +106,71 @@ data:extend({
             layers =
             {
                 {
-                    filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1.png",
-                    priority = "high",
-                    width = 108,
-                    height = 114,
-                    frame_count = 32,
-                    line_length = 8,
-                    --shift = util.by_pixel(0, 4),
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    -- animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.33,
+                    hr_version =
+                    {
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        -- animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
+                        scale = 0.33,
+                    }
+                },
+                {
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-fan.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 9,
+                    line_length = 3,
+                    animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
                     scale = 0.66,
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/assembling-machine-1/hr-assembling-machine-1.png",
-                        priority = "high",
-                        width = 214,
-                        height = 226,
-                        frame_count = 32,
-                        line_length = 8,
-                        --shift = util.by_pixel(0, 4),
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-fan.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 9,
+                        line_length = 3,
+                        animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
                         scale = 0.33
                     }
                 },
                 {
-                    filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1-shadow.png",
-                    priority = "high",
-                    width = 95,
-                    height = 83,
-                    frame_count = 32,
-                    line_length = 8,
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-shadow.png",
+                    width = 124,
+                    height = 64,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    shift = util.by_pixel(20.5, 10.5),
                     draw_as_shadow = true,
-                    --shift = util.by_pixel(12, 5),
-                    scale = 0.66,
+                    scale = 0.33,
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/assembling-machine-1/hr-assembling-machine-1-shadow.png",
-                        priority = "high",
-                        width = 190,
-                        height = 165,
-                        frame_count = 32,
-                        line_length = 8,
-                        draw_as_shadow = true,
-                        --shift = util.by_pixel(12, 4.75),
-                        scale = 0.33
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-shadow.png",
+                        width = 248,
+                        height = 128,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        shift = util.by_pixel(20.5, 10.5),
+                        scale = 0.33,
+                        draw_as_shadow = true
                     }
                 }
             }
         },
+
         open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
         close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
         vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -251,49 +271,70 @@ data:extend({
             layers =
             {
                 {
-                    filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
-                    priority = "high",
-                    width = 108,
-                    height = 110,
-                    frame_count = 32,
-                    line_length = 8,
-                    shift = util.by_pixel(0, 4),
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    -- animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.5,
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2.png",
-                        priority = "high",
-                        width = 214,
-                        height = 218,
-                        frame_count = 32,
-                        line_length = 8,
-                        shift = util.by_pixel(0, 4),
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        -- animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
+                        scale = 0.5,
+                    }
+                },
+                {
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-fan.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 9,
+                    line_length = 3,
+                    animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
+                    hr_version =
+                    {
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-fan.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 9,
+                        line_length = 3,
+                        animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
                         scale = 0.5
                     }
                 },
                 {
-                    filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-shadow.png",
-                    priority = "high",
-                    width = 98,
-                    height = 82,
-                    frame_count = 32,
-                    line_length = 8,
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-shadow.png",
+                    width = 124,
+                    height = 64,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    shift = util.by_pixel(20.5, 10.5),
                     draw_as_shadow = true,
-                    shift = util.by_pixel(12, 5),
+                    scale = 0.5,
                     hr_version =
                     {
-                        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-shadow.png",
-                        priority = "high",
-                        width = 196,
-                        height = 163,
-                        frame_count = 32,
-                        line_length = 8,
-                        draw_as_shadow = true,
-                        shift = util.by_pixel(12, 4.75),
-                        scale = 0.5
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-shadow.png",
+                        width = 248,
+                        height = 128,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        shift = util.by_pixel(20.5, 10.5),
+                        scale = 0.5,
+                        draw_as_shadow = true
                     }
                 }
             }
         },
+
         open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
         close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
         vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

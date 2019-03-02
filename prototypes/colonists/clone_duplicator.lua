@@ -115,7 +115,7 @@ data:extend({
         type = "technology",
         name = "clone-duplicator",
         icon = "__Colonists__/graphics/entity/clone-duplicator/clone-duplicator.png",
-        icon_size = 32,
+        icon_size = 64,
         order = "c-m-a",
         --prerequisites = {"colonial-agriculture"},
         effects = {

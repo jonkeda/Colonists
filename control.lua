@@ -105,6 +105,12 @@ function OnModInit(event)
 
     CreateGuis()
 
+    for k, force in pairs (game.forces) do
+        -- force.reset_recipes()
+        -- force.reset_technologies()
+        force.reset_technology_effects()
+    end
+
     script.on_event(defines.events.on_tick, OnTick)
 
     OnTick(event)

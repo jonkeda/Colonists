@@ -210,25 +210,11 @@ data:extend({
         },
         height = 1,
         width = 1,
-        --        signal_to_color_mapping =
-        --        {
-        --            {type="virtual", name="signal-red", color={r=1,g=0,b=0}},
-        --            {type="virtual", name="signal-green", color={r=0,g=1,b=0}},
-        --            {type="virtual", name="signal-blue", color={r=0,g=0,b=1}},
-        --            {type="virtual", name="signal-yellow", color={r=1,g=1,b=0}},
-        --            {type="virtual", name="signal-pink", color={r=1,g=0,b=1}},
-        --            {type="virtual", name="signal-cyan", color={r=0,g=1,b=1}}
-        --        },
-        --
-        --        circuit_wire_connection_point = circuit_connector_definitions["lamp"].points,
-        --        circuit_connector_sprites = circuit_connector_definitions["lamp"].sprites,
-        --        circuit_wire_max_distance = default_circuit_wire_max_distance
-        --production = "5kW"
     },
 
-    -- colonial-housing-1
+    -- colonial-housing-2
     {
-        type = "solar-panel",
+        type = "assembling-machine",
         name = "colonial-housing-2",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
@@ -244,7 +230,9 @@ data:extend({
             type = "electric",
             usage_priority = "solar"
         },
-        --        energy_usage_per_tick = "5KW",
+        crafting_categories = {"void-air"},
+        crafting_speed = 5,
+        energy_usage = "5KW",
         darkness_for_all_lamps_on = 0.5,
         darkness_for_all_lamps_off = 0.3,
         light = {intensity = 0.9, size = 40, color = {r=1.0, g=1.0, b=1.0}},
@@ -372,25 +360,12 @@ data:extend({
 --                }
             }
         },
-        --        signal_to_color_mapping =
-        --        {
-        --            {type="virtual", name="signal-red", color={r=1,g=0,b=0}},
-        --            {type="virtual", name="signal-green", color={r=0,g=1,b=0}},
-        --            {type="virtual", name="signal-blue", color={r=0,g=0,b=1}},
-        --            {type="virtual", name="signal-yellow", color={r=1,g=1,b=0}},
-        --            {type="virtual", name="signal-pink", color={r=1,g=0,b=1}},
-        --            {type="virtual", name="signal-cyan", color={r=0,g=1,b=1}}
-        --        },
-        --
-        --        circuit_wire_connection_point = circuit_connector_definitions["lamp"].points,
-        --        circuit_connector_sprites = circuit_connector_definitions["lamp"].sprites,
-        --        circuit_wire_max_distance = default_circuit_wire_max_distance
         production = "10kW"
     },
 
-    -- colonial-housing-1
+    -- colonial-housing-3
     {
-        type = "solar-panel",
+        type = "assembling-machine",
         name = "colonial-housing-3",
         icon = "__Colonists__/graphics/icons/colonial-housing.png",
         icon_size = 32,
@@ -406,7 +381,9 @@ data:extend({
             type = "electric",
             usage_priority = "solar"
         },
-        --        energy_usage_per_tick = "5KW",
+        crafting_categories = {"void-air"},
+        crafting_speed = 5,
+        energy_usage = "15KW",
         darkness_for_all_lamps_on = 0.5,
         darkness_for_all_lamps_off = 0.3,
         light = {intensity = 0.9, size = 40, color = {r=1.0, g=1.0, b=1.0}},
@@ -438,31 +415,6 @@ data:extend({
                         scale = 0.666
                     }
                 },
---                {
---                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
---                    width = 122,
---                    height = 68,
---                    frame_count = 1,
---                    line_length = 1,
---                    repeat_count = 33,
---                    animation_speed = 1 / 3,
---                    shift = util.by_pixel(13, 11),
---                    draw_as_shadow = true,
---                    scale = 1.33,
---                    hr_version =
---                    {
---                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
---                        width = 242,
---                        height = 136,
---                        frame_count = 1,
---                        line_length = 1,
---                        repeat_count = 33,
---                        animation_speed = 1 / 3,
---                        shift = util.by_pixel(13, 11),
---                        scale = 0.666,
---                        draw_as_shadow = true
---                    }
---                }
             }
         },
         overlay =
@@ -512,48 +464,10 @@ data:extend({
                         scale = 0.666
                     }
                 },
---                {
---                    filename = "__Colonists__/graphics/entity/colonial-housing/colonial-housing-shadow.png",
---                    width = 122,
---                    height = 68,
---                    frame_count = 1,
---                    line_length = 1,
---                    repeat_count = 33,
---                    animation_speed = 1 / 3,
---                    shift = util.by_pixel(13, 11),
---                    draw_as_shadow = true,
---                    scale = 1.33,
---                    hr_version =
---                    {
---                        filename = "__Colonists__/graphics/entity/colonial-housing/hr-colonial-housing-shadow.png",
---                        width = 242,
---                        height = 136,
---                        frame_count = 1,
---                        line_length = 1,
---                        repeat_count = 33,
---                        animation_speed = 1 / 3,
---                        shift = util.by_pixel(13, 11),
---                        scale = 0.666,
---                        draw_as_shadow = true
---                    }
---                }
             }
         },
         height = 1,
         width = 1,
-        --        signal_to_color_mapping =
-        --        {
-        --            {type="virtual", name="signal-red", color={r=1,g=0,b=0}},
-        --            {type="virtual", name="signal-green", color={r=0,g=1,b=0}},
-        --            {type="virtual", name="signal-blue", color={r=0,g=0,b=1}},
-        --            {type="virtual", name="signal-yellow", color={r=1,g=1,b=0}},
-        --            {type="virtual", name="signal-pink", color={r=1,g=0,b=1}},
-        --            {type="virtual", name="signal-cyan", color={r=0,g=1,b=1}}
-        --        },
-        --
-        --        circuit_wire_connection_point = circuit_connector_definitions["lamp"].points,
-        --        circuit_connector_sprites = circuit_connector_definitions["lamp"].sprites,
-        --        circuit_wire_max_distance = default_circuit_wire_max_distance
         production = "20kW"
     },
 
@@ -639,3 +553,7 @@ data:extend({
         }
     },
 })
+
+table.insert(data.raw["technology"]["steel-processing"].effects, {type = "unlock-recipe",recipe = "colonial-housing-2"})
+table.insert(data.raw["technology"]["plastics"].effects, {type = "unlock-recipe",recipe = "colonial-housing-3"})
+

@@ -98,4 +98,10 @@ if fi == nil then
         },
 
     })
+else
+    if data.raw["technology"]["cooking"] ~= nil then
+        table.insert(data.raw["technology"]["cooking"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-1"})
+        table.insert(data.raw["technology"]["frying"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-2"})
+        table.insert(data.raw["technology"]["complex-foods"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-3"})
+    end
 end
