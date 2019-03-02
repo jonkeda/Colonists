@@ -24,11 +24,11 @@ require("prototypes.training.training")
 require("prototypes.void.void")
 require("prototypes.waste.waste")
 
-require("prototypes.vehicles.ambulance")
-
 require("prototypes.categories.groups")
 
 require("prototypes.ambulance.ambulance_data")
 require("prototypes.ambulance.ambulance_radar_data")
+
+require("prototypes.colonists.clone_duplicator")
 
 require("data_raw_edits")
