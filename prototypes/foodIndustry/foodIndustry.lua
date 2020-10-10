@@ -38,7 +38,7 @@ if fi == nil then
             energy_required = 3,
             ingredients =
             {
-                {type="fluid", name="waste", amount=10}
+                {type="fluid", name="colonists-waste", amount=10}
             },
             results=
             {
@@ -100,8 +100,8 @@ if fi == nil then
     })
 else
     if data.raw["technology"]["cooking"] ~= nil then
-        table.insert(data.raw["technology"]["cooking"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-1"})
-        table.insert(data.raw["technology"]["frying"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-2"})
-        table.insert(data.raw["technology"]["complex-foods"].effects, {type = "unlock-recipe",recipe = "colonists-building-food-3"})
+        table.insert(data.raw["technology"]["cooking"].effects, {type = "unlock-recipe",recipe = "colonists-workshop-furnace-1"})
+        table.insert(data.raw["technology"]["frying"].effects, {type = "unlock-recipe",recipe = "colonists-workshop-furnace-2"})
+        table.insert(data.raw["technology"]["complex-foods"].effects, {type = "unlock-recipe",recipe = "colonists-workshop-furnace-3"})
     end
 end

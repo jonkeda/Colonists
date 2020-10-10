@@ -1,31 +1,25 @@
 local scale = 0.5
 data:extend({
-    {
-        type = "item-subgroup",
-        name = "colonists-vehicles",
-        group = "colonists",
-        order = "d-e"
-    },
 
     {
         type = "item-with-entity-data",
-        name = "ambulance_radar",
+        name = "colonists-ambulance-radar",
         icon = "__Colonists__/graphics/icons/vehicles/ambulance.png",
         icon_size = 64,
         subgroup = "colonists-vehicles",
         order = "a[ambulance]",
         stack_size = 1,
-        place_result = "ambulance_radar",
+        place_result = "colonists-ambulance-radar",
     },
 
     {
         type = "car",
-        name = "ambulance_radar",
+        name = "colonists-ambulance-radar",
         order = "z[programmable]", -- programmable in programmable-vehicles
         icon = "__Colonists__/graphics/icons/vehicles/ambulance.png",
         icon_size = 64,
         flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
-        minable = {mining_time = 1, result = "ambulance_radar"},
+        minable = {mining_time = 1, result = "colonists-ambulance-radar"},
         max_health = 650,
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
@@ -300,7 +294,7 @@ data:extend({
     },
     {
         type = "recipe",
-        name = "ambulance_radar",
+        name = "colonists-ambulance-radar",
         normal = {
             energy_required = 5,
             enabled = false,
@@ -308,22 +302,22 @@ data:extend({
                 {type="item", name="car", amount=1},
                 {type="item", name="long-handed-inserter", amount=2},
             },
-            results= { {type="item", name="ambulance_radar", amount=1} },
+            results= { {type="item", name="colonists-ambulance-radar", amount=1} },
         }
     },
     {
         type = "technology",
-        name = "ambulance_radar",
+        name = "colonists-ambulance-radar",
         icon = "__Colonists__/graphics/technology/ambulance.png",
         icon_size = 128,
         order = "c-m-a",
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "ambulance_radar",
+                recipe = "colonists-ambulance-radar",
             },
         },
-        prerequisites = {"ambulance", "construction-robotics", "personal-roboport-equipment"},
+        prerequisites = {"colonists-ambulance", "construction-robotics", "personal-roboport-equipment"},
         unit = {
             count = 20,
             ingredients = {

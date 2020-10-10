@@ -2,8 +2,8 @@ require("prototypes.scripts.util")
 
 local function calculateTotalWaste(force)
 
-    return force.fluid_production_statistics.get_input_count("waste") +
-           force.item_production_statistics.get_input_count("compostwaste")
+    return force.fluid_production_statistics.get_input_count("colonists-waste") +
+           force.item_production_statistics.get_input_count("colonists-compost-waste")
 
 end
 

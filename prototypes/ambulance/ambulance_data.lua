@@ -1,30 +1,25 @@
 local scale = 0.5
+local turretscale = 0.05
+
 data:extend({
     {
-        type = "item-subgroup",
-        name = "colonists-vehicles",
-        group = "colonists",
-        order = "d-e"
-    },
-
-    {
         type = "item-with-entity-data",
-        name = "ambulance",
+        name = "colonists-ambulance",
         icon = "__Colonists__/graphics/icons/vehicles/ambulance.png",
         icon_size = 64,
         subgroup = "colonists-vehicles",
         order = "a[ambulance]",
         stack_size = 1,
-        place_result = "ambulance",
+        place_result = "colonists-ambulance",
     },
     {
         type = "car",
-        name = "ambulance",
+        name = "colonists-ambulance",
         order = "z[programmable]", -- programmable in programmable-vehicles
         icon = "__Colonists__/graphics/icons/vehicles/ambulance.png",
         icon_size = 64,
         flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
-        minable = {mining_time = 1, result = "ambulance"},
+        minable = {mining_time = 1, result = "colonists-ambulance"},
         max_health = 650,
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
@@ -233,51 +228,51 @@ data:extend({
         {
             layers =
             {
---                {
---                    width = 1952/16,
---                    height = 440/4,
---                    frame_count = 1,
---                    direction_count = 64,
---                    scale = scale,
---                    shift = {0, -50/32},
---                    animation_speed = 8,
---                    line_length = 16,
---                    stripes = {{
---                        filename = "__Colonists__/graphics/entity/warden/warden-turret.png",
---                        width_in_frames = 16,
---                        height_in_frames = 4 }}
---                },
---                {
---                    width = 1952/16,
---                    height = 440/4,
---                    frame_count = 1,
---                    apply_runtime_tint = true,
---                    direction_count = 64,
---                    animation_speed = 8,
---                    line_length = 16,
---                    scale = scale,
---                    shift = {0, -50/32},
---                    stripes = {{
---                        filename = "__Colonists__/graphics/entity/warden/warden-turret-mask.png",
---                        width_in_frames = 16,
---                        height_in_frames = 4 }}
---                },
---                {
---                    width = 966/6,
---                    height = 1100/11,
---                    frame_count = 1,
---                    draw_as_shadow = true,
---                    direction_count = 64,
---                    scale = scale,
---                    shift = {0.98, 0.6},
---                    animation_speed = 8,
---                    stripes = {{
---                        filename = "__Colonists__/graphics/entity/warden/warden-turret-shadow.png",
---                        width_in_frames = 6,
---                        height_in_frames = 11 }}
---                }
-            }
-        },
+               {
+                   width = 1952/16,
+                   height = 440/4,
+                   frame_count = 1,
+                   direction_count = 64,
+                   scale = turretscale,
+                   shift = {0, -50/32},
+                   animation_speed = 8,
+                   line_length = 16,
+                   stripes = {{
+                       filename = "__Colonists__/graphics/entity/ambulance/warden-turret.png",
+                       width_in_frames = 16,
+                       height_in_frames = 4 }}
+               },
+               {
+                   width = 1952/16,
+                   height = 440/4,
+                   frame_count = 1,
+                   apply_runtime_tint = true,
+                   direction_count = 64,
+                   animation_speed = 8,
+                   line_length = 16,
+                   scale = turretscale,
+                   shift = {0, -50/32},
+                   stripes = {{
+                       filename = "__Colonists__/graphics/entity/ambulance/warden-turret-mask.png",
+                       width_in_frames = 16,
+                       height_in_frames = 4 }}
+               },
+               {
+                   width = 966/6,
+                   height = 1100/11,
+                   frame_count = 1,
+                   draw_as_shadow = true,
+                   direction_count = 64,
+                   scale = turretscale,
+                   shift = {0.98, 0.6},
+                   animation_speed = 8,
+                   stripes = {{
+                       filename = "__Colonists__/graphics/entity/ambulance/warden-turret-shadow.png",
+                       width_in_frames = 6,
+                       height_in_frames = 11 }}
+               }
+           }
+       },
 --        turret_rotation_speed = 0.35 / 60,
 --        turret_return_timeout = 150,
         stop_trigger_speed = 0.2,
@@ -299,7 +294,7 @@ data:extend({
     },
     {
         type = "recipe",
-        name = "ambulance",
+        name = "colonists-ambulance",
         normal = {
             energy_required = 5,
             enabled = false,
@@ -307,19 +302,19 @@ data:extend({
                 {type="item", name="car", amount=1},
                 {type="item", name="long-handed-inserter", amount=2},
             },
-            results= { {type="item", name="ambulance", amount=1} },
+            results= { {type="item", name="colonists-ambulance", amount=1} },
         }
     },
     {
         type = "technology",
-        name = "ambulance",
+        name = "colonists-ambulance",
         icon = "__Colonists__/graphics/technology/ambulance.png",
         icon_size = 128,
         order = "c-m-a",
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "ambulance",
+                recipe = "colonists-ambulance",
             },
         },
         prerequisites = {"automobilism", "automation"},

@@ -23,4 +23,12 @@ data:extend(
         icon = "__Colonists__/graphics/icons/fluid/oxygen.png",
         icon_size = 32,
     },
+
+    {
+        type = "item-subgroup",
+        name = "colonists-products",
+        group = "colonists",
+        order = "g"
+    },
+
 })

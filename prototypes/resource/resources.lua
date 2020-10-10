@@ -60,7 +60,6 @@ data:extend(
             minable =
             {
                 hardness = 0.5,
-                --mining_particle = "colonist",
                 mining_time = 1.5,
                 results = {{name = "colonist", amount_min = 1, amount_max = 1}},
             },
@@ -74,7 +73,6 @@ data:extend(
             vehicle_impact_sound =  { filename = "__base__/sound/car-stone-impact.ogg", volume = 1.0 },
             render_layer = "object",
             max_health = 500,
---            colonist_autoplace_settings(0.125, "a[h]", {{0, 0.65}, {1, 1}}),
             autoplace =
             {
                 control = "colonist",
@@ -83,12 +81,6 @@ data:extend(
                 richness_base = 2,
                 size_control_multiplier = 0.006,
                 peaks = {
---                    {
---                        influence = 0.3,
---                        starting_area_weight_optimal = 0,
---                        starting_area_weight_range = 0,
---                        starting_area_weight_max_range = 1,
---                    },
                     {
                         influence = 0.30,
                         min_influence = 0.25,
@@ -112,27 +104,7 @@ data:extend(
                 frame_count = 1,
                 variation_count = 1
             }
---            stages =
---            {
---                sheet =
---                {
---                    filename = "__Colonists__/graphics/icons/colonist.png",
---                    priority = "extra-high",
---                    width = 32,
---                    height = 32,
---                    frame_count = 1,
---                    variation_count = 1
---                }
---            },
         },
-        --        {
-        --            type = "item",
-        --            name = "angels-ore1",
-        --            icon = "__angelsrefining__/graphics/icons/angels-ore1.png",
-        --
-        --            subgroup = "angels-ores",
-        --            order = "a[angels-ore1]",
-        --            stack_size = 200
-        --        },
+
     }
 )

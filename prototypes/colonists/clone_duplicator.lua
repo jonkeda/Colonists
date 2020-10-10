@@ -2,11 +2,12 @@
 data:extend({
     {
         type = "assembling-machine",
-        name = "clone-duplicator",
+        name = "colonists-clone-duplicator",
+        fixed_recipe = "colonist-clone",
         icon = "__Colonists__/graphics/icons/colonists/clone-duplicator.png",
         icon_size = 32,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {hardness = 0.2, mining_time = 0.5, result = "clone-duplicator"},
+        minable = {hardness = 0.2, mining_time = 0.5, result = "colonists-clone-duplicator"},
         max_health = 100,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
@@ -40,7 +41,7 @@ data:extend({
                 },
             }
         },
-        crafting_categories = {"clone-duplicator"},
+        crafting_categories = {"colonists-clone-duplicator"},
         crafting_speed = 5,
         energy_source =
         {
@@ -66,22 +67,22 @@ data:extend({
 
     {
         type = "item-with-entity-data",
-        name = "clone-duplicator",
+        name = "colonists-clone-duplicator",
         icon = "__Colonists__/graphics/icons/colonists/clone-duplicator.png",
         icon_size = 32,
         subgroup = "colonists-buildings",
         order = "a[clone-duplicator]",
         stack_size = 50,
-        place_result = "clone-duplicator",
+        place_result = "colonists-clone-duplicator",
     },
     {
         type = "recipe-category",
-        name = "clone-duplicator"
+        name = "colonists-clone-duplicator"
     },
 
     {
         type = "recipe",
-        name = "clone-duplicator",
+        name = "colonists-clone-duplicator",
         normal = {
             energy_required = 5,
             enabled = false,
@@ -89,31 +90,30 @@ data:extend({
                 {type="item", name="wood", amount=100},
                 {type="item", name="iron-plate", amount=100},
             },
-            results= { {type="item", name="clone-duplicator", amount=1} },
+            results= { {type="item", name="colonists-clone-duplicator", amount=1} },
         }
     },
 
     {
         type = "recipe",
         name = "colonist-clone",
-        category = "clone-duplicator",
+        category = "colonists-clone-duplicator",
         icon = "__Colonists__/graphics/icons/colonist.png",
         icon_size = 32,
-        main_product = "",
-        normal = {
-            energy_required = 5,
-            enabled = false,
-            ingredients = {
-                {type="item", name="wood", amount=100},
-                {type="item", name="iron-plate", amount=100},
-            },
-            results= { {type="item", name="colonist", amount=1} },
-        }
+        energy_required = 5,
+        enabled = true,
+        ingredients = {
+            {type="item", name="wood", amount=100},
+            {type="item", name="iron-plate", amount=100},
+        },
+        results= { {type="item", name="colonist", amount=1} },
+        hide_from_player_crafting = true
+
     },
 
     {
         type = "technology",
-        name = "clone-duplicator",
+        name = "colonists-clone-duplicator",
         icon = "__Colonists__/graphics/entity/clone-duplicator/clone-duplicator.png",
         icon_size = 64,
         order = "c-m-a",
@@ -121,7 +121,7 @@ data:extend({
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "clone-duplicator",
+                recipe = "colonists-clone-duplicator",
             },
             {
                 type = "unlock-recipe",

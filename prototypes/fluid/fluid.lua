@@ -10,7 +10,7 @@ data:extend({
     -- waste
     {
         type = "fluid",
-        name = "waste",
+        name = "colonists-waste",
         subgroup = "colonists-fluids",
         default_temperature = 25,
         heat_capacity = "0.0KJ",

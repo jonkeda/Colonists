@@ -3,11 +3,12 @@ data:extend({
     -- COMS DISH
     {
         type = "assembling-machine",
-        name = "coms-dish",
+        name = "colonists-coms-dish",
+        fixed_recipe = "colonist-arrival-data",
         icon = "__Colonists__/graphics/icons/coms-dish.png",
         icon_size = 32,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {hardness = 0.2, mining_time = 0.5, result = "coms-dish"},
+        minable = {hardness = 0.2, mining_time = 0.5, result = "colonists-coms-dish"},
         max_health = 300,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
@@ -107,12 +108,12 @@ data:extend({
 
     {
         type = "item",
-        name = "coms-dish",
+        name = "colonists-coms-dish",
         icon = "__Colonists__/graphics/icons/coms-dish.png",
         icon_size = 32,
         subgroup = "colonists-buildings",
         order = "a[items]-c[coms-dish]",
-        place_result = "coms-dish",
+        place_result = "colonists-coms-dish",
         stack_size = 20
     },
 
@@ -123,12 +124,12 @@ data:extend({
         icon_size = 32,
         subgroup = "colonists-products",
         order = "f[arrival-data]",
-        stack_size = 100,
+        stack_size = 100
     },
 
     {
         type = "recipe",
-        name = "coms-dish",
+        name = "colonists-coms-dish",
         energy_required = 15,
         ingredients =
         {
@@ -136,7 +137,7 @@ data:extend({
             {"electronic-circuit", 30},
             -- {"concrete ", 80},
         },
-        result = "coms-dish",
+        result = "colonists-coms-dish",
         enabled = false,
     },
 
@@ -151,7 +152,8 @@ data:extend({
         },
         result= "colonist-arrival-data",
         -- allow_decomposition = false,
-        enabled = false,
+        enabled = true,
         subgroup = "colonist-coms",
+        hide_from_player_crafting = true
     },
 })

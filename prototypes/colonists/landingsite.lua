@@ -3,11 +3,12 @@ data:extend({
     -- LANDING SITE
     {
         type = "assembling-machine",
-        name = "landing-site",
+        name = "colonists-landing-site",
+        fixed_recipe = "landing-colonists",
         icon = "__Colonists__/graphics/icons/landing-site.png",
         icon_size = 32,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {hardness = 0.2, mining_time = 0.5, result = "landing-site"},
+        minable = {hardness = 0.2, mining_time = 0.5, result = "colonists-landing-site"},
         max_health = 300,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
@@ -98,18 +99,18 @@ data:extend({
     },
     {
         type = "item",
-        name = "landing-site",
+        name = "colonists-landing-site",
         icon = "__Colonists__/graphics/icons/landing-site.png",
         icon_size = 32,
         subgroup = "colonists-buildings",
         order = "g[items]-e[landing-site]",
-        place_result = "landing-site",
+        place_result = "colonists-landing-site",
         stack_size = 20
     },
 
     {
         type = "recipe",
-        name = "landing-site",
+        name = "colonists-landing-site",
         energy_required = 5,
         ingredients =
         {
@@ -118,7 +119,7 @@ data:extend({
             {"radar", 2},
             -- {"concrete ", 80},
         },
-        result = "landing-site",
+        result = "colonists-landing-site",
         enabled = false,
     },
 
@@ -143,7 +144,8 @@ data:extend({
         allow_decomposition = false,
         category = "colonists-landing",
         subgroup = "colonists-products",
-        enabled = false,
+        enabled = true,
+        hide_from_player_crafting = true
     },
 
     {
@@ -151,12 +153,12 @@ data:extend({
         name = "colonists-landing",
         icon_size = 128,
         icon = "__Colonists__/graphics/technology/colonists-coms.png",
-        prerequisites = {"basic-mapping"},
+        --prerequisites = {"basic-mapping"},
         effects =
         {
-            {type = "unlock-recipe",  recipe = "landing-site"},
+            {type = "unlock-recipe",  recipe = "colonists-landing-site"},
             {type = "unlock-recipe",  recipe = "landing-colonists"},
-            {type = "unlock-recipe",  recipe = "coms-dish"},
+            {type = "unlock-recipe",  recipe = "colonists-coms-dish"},
             {type = "unlock-recipe",  recipe = "colonist-arrival-data"},
         },
         unit =

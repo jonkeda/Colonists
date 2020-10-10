@@ -18,13 +18,6 @@ data:extend({
         order = "a-a",
     },
 
-    {
-        type = "item-subgroup",
-        name = "colonists-products",
-        group = "colonists",
-        order = "g"
-    },
-
     -- void
     {
         type = "item",
@@ -38,45 +31,47 @@ data:extend({
         stack_size = 100
     },
 
-    -- heat item
-    {
-        type = "item",
-        name = "heat",
-        icon = "__Colonists__/graphics/icons/housing/houseWarm.png",
-        icon_size = 32,
-        flags = {"hidden"},
-        subgroup="colonists-products",
-        --subgroup = "void",
-        order = "heat",
-        stack_size = 100
-    },
+    -- -- heat item
+    -- {
+    --     type = "item",
+    --     name = "heat",
+    --     icon = "__Colonists__/graphics/icons/housing/houseWarm.png",
+    --     icon_size = 32,
+    --     flags = {"hidden"},
+    --     subgroup="colonists-products",
+    --     --subgroup = "void",
+    --     order = "heat",
+    --     stack_size = 100
+    -- },
 
-    -- heat item
-    {
-        type = "item",
-        name = "cold",
-        icon = "__Colonists__/graphics/icons/housing/houseCold.png",
-        icon_size = 32,
-        flags = {"hidden"},
-        subgroup="colonists-products",
-        --subgroup = "void",
-        order = "cold",
-        stack_size = 100
-    },
+    -- -- heat item
+    -- {
+    --     type = "item",
+    --     name = "cold",
+    --     icon = "__Colonists__/graphics/icons/housing/houseCold.png",
+    --     icon_size = 32,
+    --     flags = {"hidden"},
+    --     subgroup="colonists-products",
+    --     --subgroup = "void",
+    --     order = "cold",
+    --     stack_size = 100
+    -- },
 
-    -- Gasses
-    {
-        type = "recipe",
-        name = "free-air",
-        category = "void-air",
-        subgroup="colonists-products",
-        energy_required = 100,
-        ingredients =
-        {
-        },
-        results=
-        {
-            { type="item", name="heat", amount=1, probability=0 },
-        },
-        enabled = true,
-    },})
+    -- -- Gasses
+    -- {
+    --     type = "recipe",
+    --     name = "free-air",
+    --     category = "void-air",
+    --     subgroup="colonists-products",
+    --     energy_required = 100,
+    --     ingredients =
+    --     {
+    --     },
+    --     results=
+    --     {
+    --         { type="item", name="heat", amount=1, probability=0 },
+    --     },
+    --     enabled = true,
+    -- },
+
+})

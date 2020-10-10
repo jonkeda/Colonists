@@ -3,15 +3,15 @@ data:extend({
     -- Jobs recipe-category
     {
         type = "recipe-category",
-        name = "colonist-job-basic"
+        name = "colonists-job-basic"
     },
     {
         type = "recipe-category",
-        name = "colonist-job-advanced"
+        name = "colonists-job-advanced"
     },
     {
         type = "recipe-category",
-        name = "colonist-job-expert"
+        name = "colonists-job-expert"
     },
 
     -- Jobs module
@@ -19,7 +19,7 @@ data:extend({
     -- manager
     {
         type = "module",
-        name = "colonist-speed-module-1",
+        name = "colonists-speed-module-1",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
 
@@ -34,7 +34,7 @@ data:extend({
     -- engineer
     {
         type = "module",
-        name = "colonist-effectivity-module-1",
+        name = "colonists-effectivity-module-1",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
 
@@ -49,7 +49,7 @@ data:extend({
     -- worker
     {
         type = "module",
-        name = "colonist-productivity-module-1",
+        name = "colonists-productivity-module-1",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
 
@@ -64,7 +64,7 @@ data:extend({
     -- environmentalist
     {
         type = "module",
-        name = "colonist-pollution-module-1",
+        name = "colonists-pollution-module-1",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
 
@@ -80,7 +80,7 @@ data:extend({
     -- manager
     {
         type = "module",
-        name = "colonist-speed-module-2",
+        name = "colonists-speed-module-2",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
 
@@ -95,7 +95,7 @@ data:extend({
     -- engineer
     {
         type = "module",
-        name = "colonist-effectivity-module-2",
+        name = "colonists-effectivity-module-2",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
 
@@ -110,7 +110,7 @@ data:extend({
     -- worker
     {
         type = "module",
-        name = "colonist-productivity-module-2",
+        name = "colonists-productivity-module-2",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
 
@@ -125,7 +125,7 @@ data:extend({
     -- environmentalist
     {
         type = "module",
-        name = "colonist-pollution-module-2",
+        name = "colonists-pollution-module-2",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
 
@@ -141,7 +141,7 @@ data:extend({
     -- manager
     {
         type = "module",
-        name = "colonist-speed-module-3",
+        name = "colonists-speed-module-3",
         icon = "__Colonists__/graphics/icons/speedworker.png",
         icon_size = 32,
 
@@ -156,7 +156,7 @@ data:extend({
     -- engineer
     {
         type = "module",
-        name = "colonist-effectivity-module-3",
+        name = "colonists-effectivity-module-3",
         icon = "__Colonists__/graphics/icons/effectivityworker.png",
         icon_size = 32,
 
@@ -171,7 +171,7 @@ data:extend({
     -- worker
     {
         type = "module",
-        name = "colonist-productivity-module-3",
+        name = "colonists-productivity-module-3",
         icon = "__Colonists__/graphics/icons/productivityworker.png",
         icon_size = 32,
 
@@ -186,7 +186,7 @@ data:extend({
     -- environmentalist
     {
         type = "module",
-        name = "colonist-pollution-module-3",
+        name = "colonists-pollution-module-3",
         icon = "__Colonists__/graphics/icons/pollutionworker.png",
         icon_size = 32,
 
@@ -203,150 +203,150 @@ data:extend({
     -- Jobs - basic
     {
         type = "recipe",
-        category="colonist-job-basic",
-        name = "colonist-speed-module-1",
+        category="colonists-job-basic",
+        name = "colonists-speed-module-1",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 4},
         },
-        result = "colonist-speed-module-1",
+        result = "colonists-speed-module-1",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-basic",
-        name = "colonist-effectivity-module-1",
+        category="colonists-job-basic",
+        name = "colonists-effectivity-module-1",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 4},
         },
-        result = "colonist-effectivity-module-1",
+        result = "colonists-effectivity-module-1",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-basic",
-        name = "colonist-productivity-module-1",
+        category="colonists-job-basic",
+        name = "colonists-productivity-module-1",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 4},
         },
-        result = "colonist-productivity-module-1",
+        result = "colonists-productivity-module-1",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-basic",
-        name = "colonist-pollution-module-1",
+        category="colonists-job-basic",
+        name = "colonists-pollution-module-1",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 4},
         },
-        result = "colonist-pollution-module-1",
+        result = "colonists-pollution-module-1",
         enabled = false,
     },
 
     -- Jobs - advanced
     {
         type = "recipe",
-        category="colonist-job-advanced",
-        name = "colonist-speed-module-2",
+        category="colonists-job-advanced",
+        name = "colonists-speed-module-2",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 8},
         },
-        result = "colonist-speed-module-2",
+        result = "colonists-speed-module-2",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-advanced",
-        name = "colonist-effectivity-module-2",
+        category="colonists-job-advanced",
+        name = "colonists-effectivity-module-2",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 8},
         },
-        result = "colonist-effectivity-module-2",
+        result = "colonists-effectivity-module-2",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-advanced",
-        name = "colonist-productivity-module-2",
+        category="colonists-job-advanced",
+        name = "colonists-productivity-module-2",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 8},
         },
-        result = "colonist-productivity-module-2",
+        result = "colonists-productivity-module-2",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-advanced",
-        name = "colonist-pollution-module-2",
+        category="colonists-job-advanced",
+        name = "colonists-pollution-module-2",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 8},
         },
-        result = "colonist-pollution-module-2",
+        result = "colonists-pollution-module-2",
         enabled = false,
     },
 
     -- Jobs - expert
     {
         type = "recipe",
-        category="colonist-job-expert",
-        name = "colonist-speed-module-3",
+        category="colonists-job-expert",
+        name = "colonists-speed-module-3",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 12},
         },
-        result = "colonist-speed-module-3",
+        result = "colonists-speed-module-3",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-expert",
-        name = "colonist-effectivity-module-3",
+        category="colonists-job-expert",
+        name = "colonists-effectivity-module-3",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 12},
         },
-        result = "colonist-effectivity-module-3",
+        result = "colonists-effectivity-module-3",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-expert",
-        name = "colonist-productivity-module-3",
+        category="colonists-job-expert",
+        name = "colonists-productivity-module-3",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 12},
         },
-        result = "colonist-productivity-module-3",
+        result = "colonists-productivity-module-3",
         enabled = false,
     },
     {
         type = "recipe",
-        category="colonist-job-expert",
-        name = "colonist-pollution-module-3",
+        category="colonists-job-expert",
+        name = "colonists-pollution-module-3",
         energy_required = 10,
         ingredients =
         {
             {"colonist", 12},
         },
-        result = "colonist-pollution-module-3",
+        result = "colonists-pollution-module-3",
         enabled = false,
     },
 
@@ -354,16 +354,16 @@ data:extend({
 
 --    {
 --        type = "technology",
---        name = "colonist-job-a",
+--        name = "colonists-job-a",
 --        icon = "__Colonists__/graphics/technology/colonists-charter.png",
 --        icon_size = 128,
 --        effects =
 --        {
 --            {type = "unlock-recipe", recipe = "colonists-training-1"},
---            {type = "unlock-recipe", recipe = "colonist-speed-module-1"},
---            {type = "unlock-recipe", recipe = "colonist-effectivity-module-1"},
---            {type = "unlock-recipe", recipe = "colonist-productivity-module-1"},
---            {type = "unlock-recipe", recipe = "colonist-pollution-module-1"},
+--            {type = "unlock-recipe", recipe = "colonists-speed-module-1"},
+--            {type = "unlock-recipe", recipe = "colonists-effectivity-module-1"},
+--            {type = "unlock-recipe", recipe = "colonists-productivity-module-1"},
+--            {type = "unlock-recipe", recipe = "colonists-pollution-module-1"},
 --        },
 --        unit =
 --        {
@@ -378,20 +378,20 @@ data:extend({
 --    },
 --    {
 --        type = "technology",
---        name = "colonist-job-b",
+--        name = "colonists-job-b",
 --        icon = "__Colonists__/graphics/technology/colonists-charter.png",
 --        icon_size = 128,
 --        prerequisites =
 --        {
---            "colonist-job-a"
+--            "colonists-job-a"
 --        },
 --        effects =
 --        {
 --            {type = "unlock-recipe", recipe = "colonists-training-2"},
---            {type = "unlock-recipe", recipe = "colonist-speed-module-2"},
---            {type = "unlock-recipe", recipe = "colonist-effectivity-module-2"},
---            {type = "unlock-recipe", recipe = "colonist-productivity-module-2"},
---            {type = "unlock-recipe", recipe = "colonist-pollution-module-2"},
+--            {type = "unlock-recipe", recipe = "colonists-speed-module-2"},
+--            {type = "unlock-recipe", recipe = "colonists-effectivity-module-2"},
+--            {type = "unlock-recipe", recipe = "colonists-productivity-module-2"},
+--            {type = "unlock-recipe", recipe = "colonists-pollution-module-2"},
 --        },
 --        unit =
 --        {
@@ -407,20 +407,20 @@ data:extend({
 --    },
 --    {
 --        type = "technology",
---        name = "colonist-job-c",
+--        name = "colonists-job-c",
 --        icon = "__Colonists__/graphics/technology/colonists-charter.png",
 --        icon_size = 128,
 --        prerequisites =
 --        {
---            "colonist-job-b"
+--            "colonists-job-b"
 --        },
 --        effects =
 --        {
 --            {type = "unlock-recipe", recipe = "colonists-training-3"},
---            {type = "unlock-recipe", recipe = "colonist-speed-module-3"},
---            {type = "unlock-recipe", recipe = "colonist-effectivity-module-3"},
---            {type = "unlock-recipe", recipe = "colonist-productivity-module-3"},
---            {type = "unlock-recipe", recipe = "colonist-pollution-module-3"},
+--            {type = "unlock-recipe", recipe = "colonists-speed-module-3"},
+--            {type = "unlock-recipe", recipe = "colonists-effectivity-module-3"},
+--            {type = "unlock-recipe", recipe = "colonists-productivity-module-3"},
+--            {type = "unlock-recipe", recipe = "colonists-pollution-module-3"},
 --        },
 --        unit =
 --        {

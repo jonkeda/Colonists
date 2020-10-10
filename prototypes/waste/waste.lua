@@ -17,37 +17,37 @@ data:extend({
     -- waste recipe-category
     {
         type = "recipe-category",
-        name = "waste-fluid"
+        name = "colonists-waste-fluid"
     },
 
     -- waste item
     {
         type = "item",
-        name = "latrine",
+        name = "colonists-latrine",
         icon = "__base__/graphics/icons/storage-tank.png",
-        icon_size = 32,
-
+        icon_size = 64, icon_mipmaps = 4,
+    
         subgroup = "colonists-buildings-waste",
         order = "b[fluid]-a[latrine]",
-        place_result = "latrine",
+        place_result = "colonists-latrine",
         stack_size = 50
     },
 
     {
         type = "item",
-        name = "waste-disposal",
+        name = "colonists-waste-disposal",
         icon = "__Colonists__/graphics/icons/waste-disposal.png",
         icon_size = 32,
 
         subgroup = "colonists-buildings-waste",
         order = "c[waste-disposal]",
-        place_result = "waste-disposal",
+        place_result = "colonists-waste-disposal",
         stack_size = 50
     },
 
     {
         type = "item",
-        name = "compostwaste",
+        name = "colonists-compost-waste",
         icon = "__Colonists__/graphics/icons/items/compost.png",
         icon_size = 32,
 
@@ -62,11 +62,11 @@ data:extend({
     -- latrine
     {
         type = "storage-tank",
-        name = "latrine",
+        name = "colonists-latrine",
         icon = "__base__/graphics/icons/storage-tank.png",
-        icon_size = 32,
+        icon_size = 64, icon_mipmaps = 4,
         flags = {"placeable-player", "player-creation"},
-        minable = {mining_time = 1.5, result = "latrine"},
+        minable = {mining_time = 1.5, result = "colonists-latrine"},
         max_health = 500,
         corpse = "medium-remnants",
         collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
@@ -74,7 +74,7 @@ data:extend({
         fluid_box =
         {
             base_area = 25,
-            filter="waste",
+            filter="colonists-waste",
             pipe_covers = pipecoverspictures(),
             pipe_connections =
             {
@@ -200,19 +200,19 @@ data:extend({
             max_sounds_per_type = 3
         },
 
-        --        circuit_wire_connection_points = circuit_connector_definitions["latrine"].points,
-        --        circuit_connector_sprites = circuit_connector_definitions["latrine"].sprites,
+        --        circuit_wire_connection_points = circuit_connector_definitions["colonists-latrine"].points,
+        --        circuit_connector_sprites = circuit_connector_definitions["colonists-latrine"].sprites,
         --        circuit_wire_max_distance = default_circuit_wire_max_distance
     },
 
     -- waste disposal
     {
         type = "furnace",
-        name = "waste-disposal",
+        name = "colonists-waste-disposal",
         icon = "__Colonists__/graphics/icons/waste-disposal.png",
         icon_size = 32,
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        minable = {mining_time = 1, result = "waste-disposal"},
+        minable = {mining_time = 1, result = "colonists-waste-disposal"},
         max_health = 200,
         corpse = "big-remnants",
         repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
@@ -262,7 +262,7 @@ data:extend({
     },
         collision_box = {{-1.35, -0.85}, {1.35, 0.85}},
         selection_box = {{-1.5, -1}, {1.5, 1}},
-        crafting_categories = {"waste-fluid"},
+        crafting_categories = {"colonists-waste-fluid"},
         result_inventory_size = 1,
         energy_usage = "100kW",
         crafting_speed = 1,
@@ -325,7 +325,7 @@ data:extend({
     -- waste recipe
     {
         type = "recipe",
-        name = "Latrine",
+        name = "colonists-latrine",
         energy_required = 3,
         enabled = false,
         ingredients =
@@ -333,30 +333,30 @@ data:extend({
             {"wood", 4},
             {"stone", 10}
         },
-        result= "latrine"
+        result= "colonists-latrine"
     },
 
     {
         type = "recipe",
-        name = "waste-disposal",
+        name = "colonists-waste-disposal",
         energy_required = 15,
         ingredients =
         {
             {"iron-plate", 1},
         },
-        result = "waste-disposal",
+        result = "colonists-waste-disposal",
         enabled = false,
     },
 
     {
         type = "recipe",
-        name = "void-waste",
+        name = "colonists-void-waste",
         category = "void-fluid",
         hidden = "true",
         energy_required = 1,
         ingredients =
         {
-            { type="fluid", name="waste", amount=25 }
+            { type="fluid", name="colonists-waste", amount=25 }
         },
         results=
         {
@@ -366,19 +366,19 @@ data:extend({
         icon = "__Colonists__/graphics/icons/fluid/oxygen.png",
         icon_size = 32,
         emissions_multiplier = -1,
-        order = "waste"
+        order = "colonists-waste"
     },
 
     {
         type = "recipe",
-        name = "sulfur-from-waste",
+        name = "colonists-sulfur-from-waste",
         category = "chemistry",
         energy_required = 1,
         enabled = false,
         subgroup="colonists-products",
         ingredients =
         {
-            {type="fluid", name="waste", amount=3},
+            {type="fluid", name="colonists-waste", amount=3},
         },
         results=
         {
@@ -395,12 +395,12 @@ data:extend({
 
     {
         type = "recipe",
-        name = "solid-fuel-from-waste",
+        name = "colonists-solid-fuel-from-waste",
         category = "chemistry",
         energy_required = 3,
         ingredients =
         {
-            {type="fluid", name="waste", amount=10}
+            {type="fluid", name="colonists-waste", amount=10}
         },
         results=
         {
@@ -418,4 +418,42 @@ data:extend({
             tertiary = {r = 0.610, g = 0.348, b = 0.000, a = 0.000}, -- #9b580000
         }
     },
+
+    {
+        type = "technology",
+        name = "colonists-waste-disposal",
+        icon = "__Colonists__/graphics/technology/colonists-bio-research.png",
+        icon_size = 128,
+        order = "c-m-a",
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "colonists-latrine",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "colonists-waste-disposal",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "colonists-sulfur-from-waste",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "colonists-solid-fuel-from-waste",
+            },
+
+        },
+        --prerequisites = {"automobilism", "automation"},
+        unit = {
+            count = 20,
+            ingredients = {
+                {"automation-science-pack", 1},
+                {"logistic-science-pack", 1},
+            },
+            time = 10
+        },
+    },
+
+
 })
