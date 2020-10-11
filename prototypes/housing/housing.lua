@@ -37,7 +37,7 @@ local createHousing = function(name, collision_box, selection_box, scale, supply
         selection_box = selection_box,
         damaged_trigger_effect = hit_effects.entity(),
         drawing_box = {{-1.5, -2.2}, {1.5, 1.3}},
-        allowed_effects = {"consumption", "speed", "pollution"},
+        allowed_effects = {},
     
         -- graphics_set = require("__base__/prototypes/entity/beacon-animations"),
     

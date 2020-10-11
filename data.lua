@@ -9,7 +9,7 @@ require("prototypes.engineering.data")
 require("prototypes.ambulance.data")
 require("prototypes.food.data")
 
-require("prototypes.waste.waste")
+require("prototypes.waste.data")
 
 require("prototypes.jobs.jobs")
 

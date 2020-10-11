@@ -305,26 +305,29 @@ data:extend({
             results= { {type="item", name="colonists-ambulance", amount=1} },
         }
     },
-    {
-        type = "technology",
-        name = "colonists-ambulance",
-        icon = "__Colonists__/graphics/technology/ambulance.png",
-        icon_size = 128,
-        order = "c-m-a",
-        effects = {
-            {
-                type = "unlock-recipe",
-                recipe = "colonists-ambulance",
-            },
-        },
-        prerequisites = {"automobilism", "automation"},
-        unit = {
-            count = 20,
-            ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-            },
-            time = 10
-        },
-    },
+    -- {
+    --     type = "technology",
+    --     name = "colonists-ambulance",
+    --     icon = "__Colonists__/graphics/technology/ambulance.png",
+    --     icon_size = 128,
+    --     order = "c-m-a",
+    --     effects = {
+    --         {
+    --             type = "unlock-recipe",
+    --             recipe = "colonists-ambulance",
+    --         },
+    --     },
+    --     prerequisites = {"automobilism", "automation"},
+    --     unit = {
+    --         count = 20,
+    --         ingredients = {
+    --             {"automation-science-pack", 1},
+    --             {"logistic-science-pack", 1},
+    --         },
+    --         time = 10
+    --     },
+    -- },
 })
+
+
+table.insert(data.raw["technology"]["automobilism"].effects, {type = "unlock-recipe",recipe = "colonists-ambulance"})

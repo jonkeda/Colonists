@@ -133,9 +133,8 @@ data:extend({
         energy_required = 15,
         ingredients =
         {
-            {"iron-plate", 60},
-            {"electronic-circuit", 30},
-            -- {"concrete ", 80},
+            {"radar", 2},
+            {"processing-unit", 10},
         },
         result = "colonists-coms-dish",
         enabled = false,
@@ -157,3 +156,5 @@ data:extend({
         hide_from_player_crafting = true
     },
 })
+
+table.insert(data.raw["technology"]["advanced-electronics-2"].effects, {type = "unlock-recipe",recipe = "colonists-coms-dish"})

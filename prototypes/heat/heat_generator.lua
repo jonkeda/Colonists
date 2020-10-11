@@ -26,7 +26,7 @@ local function createHeatGenerator(name, energy_usage, energy_source)
         {"iron-gear-wheel", 1}
       },
       result = name,
-      enabled = true
+      enabled = false
     },
 
     {

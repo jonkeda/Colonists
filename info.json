@@ -7,6 +7,9 @@
     "homepage": "",
     "factorio_version": "0.18",
     "dependencies": ["base >= 0.18.36", 
-        "FoodIndustry >= 0.18.0"],
+        "FoodIndustry >= 0.18.0",
+        "reverse-factory >= 7.0.9"
+    ],
+
     "description": "You are not alone on the planet. Hundreds of pods have crashed on the planet and people are waiting to be saved."
 }

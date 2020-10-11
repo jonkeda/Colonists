@@ -299,33 +299,35 @@ data:extend({
             energy_required = 5,
             enabled = false,
             ingredients = {
-                {type="item", name="car", amount=1},
-                {type="item", name="long-handed-inserter", amount=2},
+                {type="item", name="colonists-ambulance", amount=1},
+                {type="item", name="radar", amount=2},
             },
             results= { {type="item", name="colonists-ambulance-radar", amount=1} },
         }
     },
-    {
-        type = "technology",
-        name = "colonists-ambulance-radar",
-        icon = "__Colonists__/graphics/technology/ambulance.png",
-        icon_size = 128,
-        order = "c-m-a",
-        effects = {
-            {
-                type = "unlock-recipe",
-                recipe = "colonists-ambulance-radar",
-            },
-        },
-        prerequisites = {"colonists-ambulance", "construction-robotics", "personal-roboport-equipment"},
-        unit = {
-            count = 20,
-            ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1}
-            },
-            time = 10
-        },
-    },
+    -- {
+    --     type = "technology",
+    --     name = "colonists-ambulance-radar",
+    --     icon = "__Colonists__/graphics/technology/ambulance.png",
+    --     icon_size = 128,
+    --     order = "c-m-a",
+    --     effects = {
+    --         {
+    --             type = "unlock-recipe",
+    --             recipe = "colonists-ambulance-radar",
+    --         },
+    --     },
+    --     prerequisites = {"colonists-ambulance", "construction-robotics", "personal-roboport-equipment"},
+    --     unit = {
+    --         count = 20,
+    --         ingredients = {
+    --             {"automation-science-pack", 1},
+    --             {"logistic-science-pack", 1},
+    --             {"chemical-science-pack", 1}
+    --         },
+    --         time = 10
+    --     },
+    -- },
+   
 })
+table.insert(data.raw["technology"]["advanced-electronics-2"].effects, {type = "unlock-recipe",recipe = "colonists-ambulance-radar"})

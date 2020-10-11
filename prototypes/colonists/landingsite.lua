@@ -114,10 +114,9 @@ data:extend({
         energy_required = 5,
         ingredients =
         {
-            {"steel-plate", 60},
-            {"electronic-circuit", 30},
+            {"steel-plate", 30},
             {"radar", 2},
-            -- {"concrete ", 80},
+            --{"s ", 40},
         },
         result = "colonists-landing-site",
         enabled = false,
@@ -132,7 +131,7 @@ data:extend({
         main_product = "",
         ingredients =
         {
-            {"colonist-arrival-data", 100},
+            {"colonist-arrival-data", 10},
         },
         results =
         {
@@ -148,30 +147,32 @@ data:extend({
         hide_from_player_crafting = true
     },
 
-    {
-        type = "technology",
-        name = "colonists-landing",
-        icon_size = 128,
-        icon = "__Colonists__/graphics/technology/colonists-coms.png",
-        --prerequisites = {"basic-mapping"},
-        effects =
-        {
-            {type = "unlock-recipe",  recipe = "colonists-landing-site"},
-            {type = "unlock-recipe",  recipe = "landing-colonists"},
-            {type = "unlock-recipe",  recipe = "colonists-coms-dish"},
-            {type = "unlock-recipe",  recipe = "colonist-arrival-data"},
-        },
-        unit =
-        {
-            count = 80,
-            ingredients =
-            {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-            },
-            time = 15
-        },
-        order = "k-b"
-    },
+    -- {
+    --     type = "technology",
+    --     name = "colonists-landing",
+    --     icon_size = 128,
+    --     icon = "__Colonists__/graphics/technology/colonists-coms.png",
+    --     --prerequisites = {"basic-mapping"},
+    --     effects =
+    --     {
+    --         {type = "unlock-recipe",  recipe = "colonists-landing-site"},
+    --         {type = "unlock-recipe",  recipe = "landing-colonists"},
+    --         {type = "unlock-recipe",  recipe = "colonists-coms-dish"},
+    --         {type = "unlock-recipe",  recipe = "colonist-arrival-data"},
+    --     },
+    --     unit =
+    --     {
+    --         count = 80,
+    --         ingredients =
+    --         {
+    --             {"automation-science-pack", 1},
+    --             {"logistic-science-pack", 1},
+    --         },
+    --         time = 15
+    --     },
+    --     order = "k-b"
+    -- },
 
 })
+
+table.insert(data.raw["technology"]["advanced-electronics-2"].effects, {type = "unlock-recipe",recipe = "colonists-landing-site"})

@@ -103,38 +103,41 @@ data:extend({
         energy_required = 5,
         enabled = true,
         ingredients = {
-            {type="item", name="wood", amount=100},
-            {type="item", name="iron-plate", amount=100},
+            {type="item", name="steel-furnace", amount=1},
+            {type="item", name="assembling-machine-2", amount=1},
+            {type="item", name="chemical-plant", amount=1},
         },
         results= { {type="item", name="colonist", amount=1} },
         hide_from_player_crafting = true
 
     },
 
-    {
-        type = "technology",
-        name = "colonists-clone-duplicator",
-        icon = "__Colonists__/graphics/entity/clone-duplicator/clone-duplicator.png",
-        icon_size = 64,
-        order = "c-m-a",
-        --prerequisites = {"colonial-agriculture"},
-        effects = {
-            {
-                type = "unlock-recipe",
-                recipe = "colonists-clone-duplicator",
-            },
-            {
-                type = "unlock-recipe",
-                recipe = "colonist-clone",
-            },
-        },
-        unit = {
-            count = 20,
-            ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-            },
-            time = 10
-        },
-    },
+    -- {
+    --     type = "technology",
+    --     name = "colonists-clone-duplicator",
+    --     icon = "__Colonists__/graphics/entity/clone-duplicator/clone-duplicator.png",
+    --     icon_size = 64,
+    --     order = "c-m-a",
+    --     --prerequisites = {"colonial-agriculture"},
+    --     effects = {
+    --         {
+    --             type = "unlock-recipe",
+    --             recipe = "colonists-clone-duplicator",
+    --         },
+    --         {
+    --             type = "unlock-recipe",
+    --             recipe = "colonist-clone",
+    --         },
+    --     },
+    --     unit = {
+    --         count = 20,
+    --         ingredients = {
+    --             {"automation-science-pack", 1},
+    --             {"logistic-science-pack", 1},
+    --         },
+    --         time = 10
+    --     },
+    -- },
 })
+
+table.insert(data.raw["technology"]["advanced-electronics"].effects, {type = "unlock-recipe",recipe = "colonists-clone-duplicator"})

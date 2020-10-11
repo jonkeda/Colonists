@@ -1,3 +1,16 @@
+# ideas
+
+- Engineering
+    Level engineering buildings
+    Destroy buildings when not fed or cold
+    Mutiny
+
+- scientists
+    
+
+
+
+
 # Todo List
 - holding station for colonists only. - Waiting are in, no idea on exclusivity
 

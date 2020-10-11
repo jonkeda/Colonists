@@ -81,7 +81,7 @@ for i,f in pairs(foods) do
                 {
                     {f[1], 1},
                 },
-                results = {{type="item", name="colonists-compost-waste", amount=f[2]} },
+                results = {{type="item", name="compost", amount=f[2]} },
                 enabled = true,
                 main_product = "",
                 hide_from_player_crafting = true

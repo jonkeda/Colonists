@@ -32,6 +32,8 @@ data:extend({
         icon_size = 32, icon_mipmaps = 4,
         order = "a[fluid]-a[heat]",
 
+        auto_barrel = false, 
+
         fuel_category = "colonists-heat",
         fuel_value = "4MJ",
     },
@@ -42,7 +44,8 @@ data:extend({
         category = "colonists-heat-processing",
         ingredients = { },
         results = {{type="fluid", name="colonists-heat", amount=25}},
-        enabled = true
+        enabled = true,
+        hide_from_player_crafting = true
     },     
 
     -- cold item
@@ -82,3 +85,9 @@ data:extend({
 }
 )
     
+table.insert(data.raw["technology"]["automation"].effects, {type = "unlock-recipe", recipe = "colonists-heat-generator"})
+if data.raw["technology"]["electronics"].effects then
+    table.insert(data.raw["technology"]["electronics"].effects, {type = "unlock-recipe", recipe = "colonists-electric-heat-generator"})
+else
+    data.raw["technology"]["electronics"].effects = { {type = "unlock-recipe", recipe = "colonists-electric-heat-generator" } }
+end

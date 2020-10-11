@@ -15,11 +15,9 @@ function OnPlayerCreated(event)
     local index = event.player_index
     local player = game.players[index]
 
-    player.force.research_all_technologies()
-    player.cheat_mode=true
-
-    -- todo remove Food Industry GUI
-
+    -- player.force.research_all_technologies()
+    -- player.cheat_mode=true
+ 
 end
 
 script.on_event(defines.events.on_player_created, OnPlayerCreated)
