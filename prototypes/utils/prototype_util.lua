@@ -180,14 +180,16 @@ local remove_recipe_from_technologies = function(name)
     local effects = technology.effects
     if effects then
       --log(technology.name.." = "..#effects)
+      local removed = false
       for i = #effects, 1, -1 do
         --log((effects[i].recipe or "nil").. " == "..name)
         if (effects[i].recipe == name) then
           --log("Removed from: "..k)
           table.remove(effects, i)
+          removed = true
         end
       end
-      if #effects == 0 then
+      if #effects == 0 and removed then
         remove_technology(technology.name)
       end
     end

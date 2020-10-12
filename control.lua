@@ -21,3 +21,4 @@ function OnPlayerCreated(event)
 end
 
 script.on_event(defines.events.on_player_created, OnPlayerCreated)
+

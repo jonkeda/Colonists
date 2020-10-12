@@ -20,6 +20,7 @@ data:extend({
             type = "recipe-category",
             name = "colonist-food-1"
         },
+
         {
             type = "recipe-category",
             name = "colonist-food-2"
@@ -35,6 +36,11 @@ data:extend({
             group = "colonists",
             order = "d-b"
         },
-    
+
+        {
+            type = "recipe-category",
+            name = "colonists-research-1"
+        },
+
 }
 )
