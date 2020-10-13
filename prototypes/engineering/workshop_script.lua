@@ -12,6 +12,7 @@ function workshop.new(entity, parameter)
   local position = entity.position
   local force = entity.force
   local surface = entity.surface
+  entity.operable = false
 
   --local beacon = surface.create_entity{name = parameter.beacon, position = position, force = force, player = entity.last_user}
 
@@ -21,8 +22,8 @@ function workshop.new(entity, parameter)
     index = tostring(entity.unit_number),
     tiles = parameter.tiles,
     --beacon = beacon,
-    coldArrow = nil,
-    hungryArrow = nil,
+    -- coldArrow = nil,
+    -- hungryArrow = nil,
     hasModule = false
   }
 
@@ -47,7 +48,7 @@ function workshop:setModule()
     if not self.hasModule then 
       return
     end
-    self.beacon.get_module_inventory().clear()
+    self.entity.get_module_inventory().clear()
     self.hasModule = false
 
   end
@@ -131,7 +132,15 @@ function workshop:on_removed(event)
     --   self.beacon.destroy()
     -- end
   end
+
   -- self:removeColdArrow()
+  self.entity.get_module_inventory().clear()
+
+  if event.name == defines.events.on_player_mined_entity then
+    for name, count in ipairs(self.entity.get_module_inventory().get_contents()) do  
+        event.buffer.remove({name=name})
+    end
+  end
 end
 
 function workshop:on_config_changed()
