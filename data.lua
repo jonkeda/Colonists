@@ -8,6 +8,7 @@ require("prototypes.colonists.data")
 require("prototypes.engineering.data")
 require("prototypes.ambulance.data")
 require("prototypes.food.data")
+require("prototypes.manned.data")
 
 require("prototypes.research.data")
 
@@ -15,7 +16,6 @@ require("prototypes.waste.data")
 
 require("prototypes.jobs.jobs")
 
-require("prototypes.resource.resources")
 
 -- require("prototypes.gui.gui_data")
 -- require("prototypes.foodIndustry.foodIndustry")

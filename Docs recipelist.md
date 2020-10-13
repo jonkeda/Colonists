@@ -30,12 +30,14 @@ Colonists
 
 Heat
 * Heat generator
-  + Automation
   $ Stone furnace, 2 iron plates
 
-* Electric generator
+* Electric Heat generator
   + Electronics
   $ Stone furnace, Electric-engine-unit
+
+* Generator
+  $ Stone furnace, 2 iron plates
 
 Waste
 * waste-storage

@@ -1,7 +1,7 @@
 local hit_effects = require ("__base__/prototypes/entity/demo-hit-effects.lua")
 local sounds = require("__base__/prototypes/entity/demo-sounds.lua")
 
-local function createHeatGenerator(name, energy_usage, energy_source)
+local function createHeatGenerator(name, energy_usage, energy_source, recipeEnabled, order)
   
   data:extend({
   
@@ -11,7 +11,7 @@ local function createHeatGenerator(name, energy_usage, energy_source)
       icon = "__base__/graphics/icons/chemical-plant.png",
       icon_size = 64, icon_mipmaps = 4,
       subgroup = "colonists-heat",
-      order = "b[fluids]-a[heat-generator]",
+      order = order,
       place_result = name,
       stack_size = 20
     },
@@ -26,7 +26,7 @@ local function createHeatGenerator(name, energy_usage, energy_source)
         {"iron-gear-wheel", 1}
       },
       result = name,
-      enabled = false
+      enabled = recipeEnabled
     },
 
     {
@@ -397,11 +397,15 @@ createHeatGenerator("colonists-heat-generator", "210kW",
       starting_vertical_speed = 0.08,
       starting_frame_deviation = 60
     }
-  }
-})
+  }},
+  true,
+  "a[heat]-a[heat-generator]"
+)
 createHeatGenerator("colonists-electric-heat-generator", "210kW",
   {
     type = "electric",
     usage_priority = "secondary-input",
-  }
+  },
+  false,
+  "a[heat]-b[heat-generator]"
 )

@@ -1,3 +1,4 @@
+
 local rename_recipe = function(old, new)
   local recipes = data.raw.recipe
   for k, recipe in pairs (recipes) do

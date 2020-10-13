@@ -128,12 +128,12 @@ for i,f in pairs(foods) do
             energy_required = 10,
             ingredients =
             {
-                {f[1], 1},
+                {f[1], 4},
             },
             result = f[10],
             enabled = f[6] == "compost",
             main_product = "",
-            hide_from_player_crafting = true
+            hide_from_player_crafting = f[6] ~= "compost"
         },
         })
         local tech = f[7]

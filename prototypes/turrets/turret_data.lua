@@ -1,8 +1,11 @@
 -- Turrets have higher speed, health, healing_per_tick and damage_modifier
 
+local util = require("prototypes/utils/tf_util")
+
 local newEntities = {}
 local newItems = {}
 local newRecipies = {}
+
 
 local function addToTechnology(prototypeName, copyName)
     for _,tech in pairs(data.raw["technology"]) do
@@ -24,7 +27,6 @@ local function copyRecipe(prototypeName, copyName, nrColonists)
             local recipeCopy = util.table.deepcopy(recipe)
             recipeCopy.name = "colonists-"..recipeCopy.name
             recipeCopy.result = copyName
-
             recipeCopy.ingredients = {{prototypeName, 1}, {"colonist", nrColonists}}
 
             newRecipies[recipeCopy.name] = recipeCopy
@@ -40,12 +42,15 @@ local function copyItems(prototypeName, copyName, nrColonists)
             local itemCopy = util.table.deepcopy(item)
             itemCopy.name = "colonists-"..itemCopy.name
             itemCopy.place_result = copyName
+            util.createMannedIcon(itemCopy)
             newItems[itemCopy.name] = itemCopy
-        
+            itemCopy.place_result = itemCopy.name,
+
             copyRecipe(item.name, itemCopy.name, nrColonists)
         end
     end
 end
+
 
 local function copyTurrets(prototypeName, nrColonists, modifier, damage_modifier)
 
@@ -58,6 +63,7 @@ local function copyTurrets(prototypeName, nrColonists, modifier, damage_modifier
 
         entityCopy.localised_name = {"description.manned", entityCopy.localised_name or {"entity-name." .. entity.name}}
         --entityCopy.localised_name = {"item-name.filled-barrel", entityCopy.localised_name or {"fluid-name." .. fluid.name}},
+        util.createMannedIcon(entityCopy)
 
         entityCopy.max_health = modifier * entityCopy.max_health
 

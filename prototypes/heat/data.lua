@@ -1,4 +1,5 @@
 require("prototypes.heat.heat_generator")
+require("prototypes.heat.generator")
 
 
  

@@ -18,6 +18,16 @@ function OnPlayerCreated(event)
     -- player.force.research_all_technologies()
     -- player.cheat_mode=true
  
+    -- local character = player.character
+    -- character.insert{name = "iron-plate", count = 20}
+    -- character.insert{name = "copper-plate", count = 15}
+    -- character.insert{name = "coal", count = 20}
+    -- character.insert{name = "transport-belt", count = 50}
+    -- character.insert{name = "electric-mining-drill", count = 2}
+    -- character.insert{name = "inserter", count = 10}
+    -- character.insert{name = "stone-furnace", count = 10}
+    -- character.insert{name = "pistol", count = 1}
+    -- character.insert{name = "firearm-magazine", count = 5}
 end
 
 script.on_event(defines.events.on_player_created, OnPlayerCreated)

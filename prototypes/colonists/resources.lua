@@ -49,7 +49,7 @@ data:extend(
         {
             type = "simple-entity",
             name = "colonist",
-            icon = "__Colonists__/graphics/icons/colonist.png",
+            icon = "__Colonists__/graphics/icons/colonist-pod.png",
             icon_size=32,
             flags = {"placeable-neutral"},
             order="a-b-a",
@@ -60,8 +60,11 @@ data:extend(
             minable =
             {
                 hardness = 0.5,
-                mining_time = 1.5,
-                results = {{name = "colonist", amount_min = 1, amount_max = 1}},
+                mining_time = 0.5,
+                results = {
+                    {name = "colonist", amount_min = 1, amount_max = 1},
+                    {name = "iron-plate", amount_min = 2, amount_max = 2},
+                },
             },
             loot =
             {
@@ -97,7 +100,7 @@ data:extend(
             stage_counts = {1},
             picture =
             {
-                filename = "__Colonists__/graphics/icons/colonist.png",
+                filename = "__Colonists__/graphics/icons/colonist-pod.png",
                 priority = "extra-high",
                 width = 32,
                 height = 32,
