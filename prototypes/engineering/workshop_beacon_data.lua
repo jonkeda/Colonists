@@ -4,20 +4,40 @@ local sounds = require("__base__/prototypes/entity/demo-sounds.lua")
 local createWorkshop = function(name, collision_box, selection_box, scale, supply_area_distance, recipe_enabled, ingredients)
     data:extend({
 
+      {
+        type = "item",
+        name = name,
+        icon = "__Colonists__/graphics/icons/atmospheric-sequestor.png",
+        icon_size = 32,
+
+        subgroup = "colonists-buildings-food",
+        order = "a["..name.."]",
+        place_result = name,
+        stack_size = 50
+    },
+
+    {
+        type = "recipe",
+        name = name,
+        ingredients = ingredients,
+        result = name,
+        enabled = recipe_enabled,
+    },
+
     {
         type = "beacon",
         name = name,
         icon = "__base__/graphics/icons/beacon.png",
         icon_size = 64, icon_mipmaps = 4,
         flags = {"placeable-player", "player-creation"},
-        --minable = {mining_time = 0.2, result = name},
+        minable = {mining_time = 0.2, result = name},
         max_health = 200,
         corpse = "beacon-remnants",
         dying_explosion = "beacon-explosion",
         collision_box = collision_box,
         selection_box = selection_box,
         damaged_trigger_effect = hit_effects.entity(),
-        drawing_box = {{-1.5, -2.2}, {1.5, 1.3}},
+        --drawing_box = {{-1.5, -2.2}, {1.5, 1.3}},
         allowed_effects = {"consumption", "speed", "pollution"},
 
         radius_visualisation_picture =
@@ -63,6 +83,77 @@ local createWorkshop = function(name, collision_box, selection_box, scale, suppl
           module_info_multi_row_initial_height_modifier = -0.3,
           module_info_max_icons_per_row = 2,
         },
+
+        animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    -- animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
+                    scale = scale,
+                    hr_version =
+                    {
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        -- animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
+                        scale = scale,
+                    }
+                },
+                {
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-fan.png",
+                    width = 90,
+                    height = 97,
+                    frame_count = 9,
+                    line_length = 3,
+                    animation_speed = 1/10,
+                    shift = util.by_pixel(0, 0),
+                    scale = 0.66,
+                    hr_version =
+                    {
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-fan.png",
+                        width = 180,
+                        height = 194,
+                        frame_count = 9,
+                        line_length = 3,
+                        animation_speed = 1/10,
+                        shift = util.by_pixel(0, 0),
+                        scale = scale
+                    }
+                },
+                {
+                    filename = "__Colonists__/graphics/entity/atmospheric-sequestor/atmospheric-sequestor-shadow.png",
+                    width = 124,
+                    height = 64,
+                    frame_count = 1,
+                    repeat_count = 9,
+                    shift = util.by_pixel(20.5, 10.5),
+                    draw_as_shadow = true,
+                    scale = scale,
+                    hr_version =
+                    {
+                        filename = "__Colonists__/graphics/entity/atmospheric-sequestor/hr-atmospheric-sequestor-shadow.png",
+                        width = 248,
+                        height = 128,
+                        frame_count = 1,
+                        repeat_count = 9,
+                        shift = util.by_pixel(20.5, 10.5),
+                        scale = scale,
+                        draw_as_shadow = true
+                    }
+                }
+            }
+        },
+
         water_reflection =
         {
           pictures =

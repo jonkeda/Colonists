@@ -26,9 +26,9 @@ local add_housing_lib = function(entity_name, lib, parameters)
   housing_libs[entity_name] = {lib = lib, parameters = parameters } 
 end
 
-add_housing_lib("colonial-housing-1", require("prototypes/housing/house_script"), {radius = 3})
-add_housing_lib("colonial-housing-2", require("prototypes/housing/house_script"), {radius = 6})
-add_housing_lib("colonial-housing-3", require("prototypes/housing/house_script"), {radius = 12})
+add_housing_lib("colonists-housing-1", require("prototypes/housing/house_script"), {radius = 3})
+add_housing_lib("colonists-housing-2", require("prototypes/housing/house_script"), {radius = 6})
+add_housing_lib("colonists-housing-3", require("prototypes/housing/house_script"), {radius = 12})
 
 local script_data = {
   housings = {},

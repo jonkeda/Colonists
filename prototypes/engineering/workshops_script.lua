@@ -26,9 +26,9 @@ local add_workshop_lib = function(entity_name, lib, parameters)
   workshop_libs[entity_name] = {lib = lib, parameters = parameters } 
 end
 
-add_workshop_lib("colonists-workshop-furnace-1", require("prototypes/engineering/workshop_script"), {radius = 3, beacon = "colonists-workshop-beacon-1"})
-add_workshop_lib("colonists-workshop-furnace-2", require("prototypes/engineering/workshop_script"), {radius = 6, beacon = "colonists-workshop-beacon-2"})
-add_workshop_lib("colonists-workshop-furnace-3", require("prototypes/engineering/workshop_script"), {radius = 12, beacon = "colonists-workshop-beacon-3"})
+add_workshop_lib("colonists-workshop-beacon-1", require("prototypes/engineering/workshop_script"), {radius = 3, beacon = "colonists-workshop-beacon-1"})
+add_workshop_lib("colonists-workshop-beacon-2", require("prototypes/engineering/workshop_script"), {radius = 6, beacon = "colonists-workshop-beacon-2"})
+add_workshop_lib("colonists-workshop-beacon-3", require("prototypes/engineering/workshop_script"), {radius = 12, beacon = "colonists-workshop-beacon-3"})
 
 local script_data = {
   workshops = {},
@@ -160,7 +160,7 @@ local update_workshops = function(tick)
       return
     end
     local workshop = workshops[workshop_index]
-    if not (workshop and workshop.furnace.valid) then
+    if not (workshop and workshop.entity.valid) then
       workshops[workshop_index] = nil
       local last = #update_list
       if k == last then
@@ -247,11 +247,11 @@ lib.on_configuration_changed = function()
   global.transport_workshops = global.transport_workshops or script_data
 
   for k, workshop in pairs(script_data.workshops) do
-    if not workshop.furnace.valid then
+    if not workshop.entity.valid then
       script_data.workshops[k] = nil
     else
-      script.register_on_entity_destroyed(workshop.furnace)
-      workshop.surface_index = workshop.furnace.surface.index
+      script.register_on_entity_destroyed(workshop.entity)
+      workshop.surface_index = workshop.entity.surface.index
       if workshop.on_config_changed then
         workshop:on_config_changed()
       end

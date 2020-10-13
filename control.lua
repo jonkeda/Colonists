@@ -8,7 +8,7 @@
 local handler = require("event_handler")
 
 handler.add_lib(require("prototypes/vehicle_script"))
-handler.add_lib(require("prototypes/housing_script"))
+handler.add_lib(require("prototypes/housing/housing_script"))
 handler.add_lib(require("prototypes/engineering/workshops_script"))
 
 function OnPlayerCreated(event)

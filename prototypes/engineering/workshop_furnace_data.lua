@@ -27,7 +27,6 @@ local function createWorkShopFurnace(name, collision_box, selection_box, scale, 
 
 data:extend({
 
-    -- food building item
     {
         type = "item",
         name = name,
