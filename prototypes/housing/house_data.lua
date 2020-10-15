@@ -235,9 +235,9 @@ local createHousing = function(name, collision_box, selection_box, scale, fluid_
   end
 
   --             name               collision_box,              selection_box,     scale, crafting_speed, recipe_enabled, crafting_speed, ingredients, crafting_categories, 
-createHousing("colonists-housing-1", {{-0.8, -0.8}, {0.8, 0.8}}, {{-1.0, -1.0}, {1.0, 1.0}},  0.66,     {-1.5, -0.5},       {1.5, 0.5}, 1,                 true,           { {"iron-plate", 5}, {"wood", 5}, {"colonist", 4} }, {"colonist-food-1", "colonist-food-2" , "colonist-food-3"} );
-createHousing("colonists-housing-2", {{-1.2, -1.2}, {1.2, 1.2}}, {{-1.5, -1.5}, {1.5, 1.5}},  1.0,      {-2.0, 1.0},        {2.0, 1.0}, 2,                 false,          { {"steel-plate", 16}, {"colonist", 8} }, {"colonist-food-2", "colonist-food-3" });
-createHousing("colonists-housing-3", {{-1.6, -1.6}, {1.6, 1.6}}, {{-2.0, -2.0}, {2.0, 2.0}},  1.33,     {-2.5, 0.5},        {2.5, 0.5}, 4,                false,          { {"steel-plate", 32}, {"plastic-bar", 16}, {"colonist", 16} }, {"colonist-food-3" } );
+createHousing("colonists-housing-1", {{-0.8, -0.8}, {0.8, 0.8}}, {{-1.0, -1.0}, {1.0, 1.0}},  0.66,     {-1.5, -0.5},       {1.5, 0.5}, 0.1,                 true,           { {"iron-plate", 5}, {"wood", 5}, {"colonist", 4} }, {"colonist-food-1", "colonist-food-2" , "colonist-food-3"} );
+createHousing("colonists-housing-2", {{-1.2, -1.2}, {1.2, 1.2}}, {{-1.5, -1.5}, {1.5, 1.5}},  1.0,      {-2.0, 1.0},        {2.0, 1.0}, 0.2,                 false,          { {"steel-plate", 16}, {"colonist", 8} }, {"colonist-food-2", "colonist-food-3" });
+createHousing("colonists-housing-3", {{-1.6, -1.6}, {1.6, 1.6}}, {{-2.0, -2.0}, {2.0, 2.0}},  1.33,     {-2.5, 0.5},        {2.5, 0.5}, 0.4,                false,          { {"steel-plate", 32}, {"plastic-bar", 16}, {"colonist", 16} }, {"colonist-food-3" } );
 
 
 data:extend({

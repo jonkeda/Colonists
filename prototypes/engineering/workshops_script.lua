@@ -120,6 +120,18 @@ local on_entity_removed = function(event)
   end
 end
 
+local on_pre_player_mined_item = function(event)
+  local unit_number = event.entity.unit_number
+  if not unit_number then
+    return
+  end
+
+  local workshop = get_workshop_by_index(tostring(unit_number))
+  if workshop then
+    workshop:pre_player_mined_item(workshop, event)
+  end
+end
+
 local on_entity_destroyed = function(event)
   local unit_number = event.unit_number
   if not unit_number then
@@ -200,7 +212,7 @@ local refresh_update_buckets = function()
 end
 
 local refresh_update_rate = function()
-  local update_rate = settings.global["transport-vehicle-update-interval"].value
+  local update_rate = settings.global["colonists-update-interval"].value
   if script_data.update_rate == update_rate then
     return
   end
@@ -226,7 +238,10 @@ lib.events = {
   [defines.events.on_player_mined_entity] = on_entity_removed,
   [defines.events.on_entity_destroyed] = on_entity_destroyed,
   [defines.events.on_tick] = on_tick,
-  [defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed
+  [defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed,
+
+  [defines.events.on_pre_player_mined_item] = on_pre_player_mined_item
+
 }
 
 lib.on_init = function()

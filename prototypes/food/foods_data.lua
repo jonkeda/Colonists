@@ -59,6 +59,8 @@ for i,f in pairs(foods) do
         modPath = "__Colonists__"
     end
 
+    -- data.raw["item"][f1].stack_size = 50
+
     if data.raw["capsule"][food] ~= nil then
         local folder
         if fiV2 ~= nil then
@@ -77,7 +79,7 @@ for i,f in pairs(foods) do
                 icon_size = f[9],
                 category = f[5],
                 subgroup = "colonists-fluids",
-                energy_required = 10,
+                energy_required = f[2],
                 ingredients =
                 {
                     {f[1], 1},
@@ -98,7 +100,7 @@ for i,f in pairs(foods) do
                 icon_size = f[9],
                 category = f[5],
                 subgroup = "colonists-fluids",
-                energy_required = 10,
+                energy_required = f[2],
                 ingredients =
                 {
                     {f[1], 1},

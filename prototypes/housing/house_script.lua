@@ -1,20 +1,25 @@
 local house = {}
 house.metatable = {__index = house}
 
+local MESSAGE_COLONISTS_ARE_HUNGRY = { "description.colonists_are_hungry" }
+local MESSAGE_HOUSE_IS_COLD = { "description.house_is_cold" }
+
 function house.new(entity, parameter)
 
   local force = entity.force
   local surface = entity.surface
 
-  local vehicle =
+  local newhouse =
   {
     entity = entity,
     index = tostring(entity.unit_number),
-    tiles = parameter.tiles
-  }
-  setmetatable(vehicle, house.metatable)
+    colonists = parameter.colonists,
+    ok = true
 
-  return vehicle
+  }
+  setmetatable(newhouse, house.metatable)
+
+  return newhouse
 
 end
 
@@ -56,24 +61,28 @@ function house:removeColdArrow()
   end
 end
 
-
 function house:update()
   
+  self.ok = true
   if not self.entity.valid then return end 
 
   if self.entity.status == defines.entity_status.no_power then
     self:addColdArrow()
+    self.ok = false
   else
     self:removeColdArrow()
   end
 
   if self.entity.status ~= defines.entity_status.working then
     self:addHungryArrow()
+    self.ok = false
   else
     self:removeHungryArrow()
   end
+end
 
- -- self:setModule()
+function house:check_status()
+  return self.ok, self.colonists
 end
 
 function house:say(string)

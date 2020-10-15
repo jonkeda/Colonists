@@ -174,10 +174,10 @@ local createWorkshop = function(name, collision_box, selection_box, scale, suppl
     });    
   end
 
-  --             name               collision_box,              selection_box,              scale, supply_area_distance, recipe_enabled, ingredients
-createWorkshop("colonists-workshop-beacon-1", {{-0.8, -0.8}, {0.8, 0.8}}, {{-1.0, -1.0}, {1.0, 1.0}},  0.66,     3,                 true,           { {"iron-plate", 5}, {"wood", 5}, {"colonist", 4} });
-createWorkshop("colonists-workshop-beacon-2", {{-1.2, -1.2}, {1.2, 1.2}}, {{-1.5, -1.5}, {1.5, 1.5}},  1.0,      6,                 false,          { {"steel-plate", 16}, {"colonist", 8} });
-createWorkshop("colonists-workshop-beacon-3", {{-1.6, -1.6}, {1.6, 1.6}}, {{-2.0, -2.0}, {2.0, 2.0}},  1.33,     12,                false,          { {"steel-plate", 32}, {"plastic-bar", 16}, {"colonist", 16} });
+  --             name                         collision_box,              selection_box,              scale, supply_area_distance, recipe_enabled, ingredients
+createWorkshop("colonists-workshop-beacon-1", {{-0.8, -0.8}, {0.8, 0.8}}, {{-1.0, -1.0}, {1.0, 1.0}},  0.33,     3,                 true,           { {"iron-plate", 5}, {"wood", 5}, {"colonist", 4} });
+createWorkshop("colonists-workshop-beacon-2", {{-1.2, -1.2}, {1.2, 1.2}}, {{-1.5, -1.5}, {1.5, 1.5}},  0.5,      6,                 false,          { {"steel-plate", 16}, {"colonist", 8} });
+createWorkshop("colonists-workshop-beacon-3", {{-1.6, -1.6}, {1.6, 1.6}}, {{-2.0, -2.0}, {2.0, 2.0}},  0.66,     12,                false,          { {"steel-plate", 32}, {"plastic-bar", 16}, {"colonist", 16} });
 
 
 data:extend({

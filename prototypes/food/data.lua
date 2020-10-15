@@ -1,4 +1,4 @@
-require("prototypes.food.foods")
+require("prototypes.food.foods_data")
 
 
 data:extend({

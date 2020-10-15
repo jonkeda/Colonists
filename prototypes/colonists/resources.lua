@@ -63,8 +63,9 @@ data:extend(
                 mining_time = 0.5,
                 results = {
                     {name = "colonist", amount_min = 1, amount_max = 1},
-                    {name = "iron-plate", amount_min = 2, amount_max = 2},
+                    {name = "iron-plate", amount_min = 2, amount_max = 1},
                 },
+                mining_particle="shell-particle"
             },
             loot =
             {

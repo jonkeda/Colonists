@@ -204,7 +204,7 @@ end
 
 local function createWorkShopFurnaces()
 
-      --                         name,              collision_box,              selection_box,              scale, fluid_position_out, fluid_position_in, recipe_enabled,  ingredients,                                     crafting_speed, crafting_categories
+      --                         name,                    collision_box,              selection_box,              scale, fluid_position_out, fluid_position_in, recipe_enabled,  ingredients,                                     crafting_speed, crafting_categories
     createWorkShopFurnace("colonists-workshop-furnace-1", {{-0.8, -0.8}, {0.8, 0.8}}, {{-1.0, -1.0}, {1.0, 1.0}},  0.33,  {-1.5, -0.5},       {1.5, 0.5},        false,    { {"assembling-machine-1", 1}, {"colonist", 4} },   1, {"colonist-food-1", "colonist-food-2" , "colonist-food-3"});
     createWorkShopFurnace("colonists-workshop-furnace-2", {{-1.2, -1.2}, {1.2, 1.2}}, {{-1.5, -1.5}, {1.5, 1.5}},  0.49,  {-2.0, 1.0},        {2.0, 1.0},        false,    { {"assembling-machine-2", 16}, {"colonist", 8} },  2, {"colonist-food-2", "colonist-food-3" });
     createWorkShopFurnace("colonists-workshop-furnace-3", {{-1.6, -1.6}, {1.6, 1.6}}, {{-2.0, -2.0}, {2.0, 2.0}},  0.66,  {-2.5, 0.5},        {2.5, 0.5},        false,    { {"assembling-machine-3", 32}, {"colonist", 16} }, 4, {"colonist-food-3" });

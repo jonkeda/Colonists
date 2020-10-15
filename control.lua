@@ -11,23 +11,40 @@ handler.add_lib(require("prototypes/vehicle_script"))
 handler.add_lib(require("prototypes/housing/housing_script"))
 handler.add_lib(require("prototypes/engineering/workshops_script"))
 
-function OnPlayerCreated(event)
-    local index = event.player_index
-    local player = game.players[index]
+script.on_event(defines.events.on_player_created, function(event)
+	local player = game.players[event.player_index]
+	if not player.character == nil then
+		on_player_creation(player)
+	end
+end)
 
+-- fires on the end of the cutscene (singleplayer)
+script.on_event(defines.events.on_cutscene_cancelled, function(event)
+	local player = game.players[event.player_index]
+	on_player_creation(player)
+end)
+
+
+function on_player_creation(player)
     -- player.force.research_all_technologies()
     -- player.cheat_mode=true
  
-    -- local character = player.character
-    -- character.insert{name = "iron-plate", count = 20}
-    -- character.insert{name = "copper-plate", count = 15}
-    -- character.insert{name = "coal", count = 20}
-    -- character.insert{name = "transport-belt", count = 50}
-    -- character.insert{name = "electric-mining-drill", count = 2}
-    -- character.insert{name = "inserter", count = 10}
-    -- character.insert{name = "stone-furnace", count = 10}
-    -- character.insert{name = "pistol", count = 1}
-    -- character.insert{name = "firearm-magazine", count = 5}
+    -- Remove standard items
+    local playerInventory = player.get_main_inventory()
+    playerInventory.remove({name="iron-plate", count=8})
+    playerInventory.remove({name="burner-mining-drill", count=1})
+    playerInventory.remove({name="stone-furnace", count=1})
+    playerInventory.remove({name="wood", count=1})
+
+    player.insert{name = "colonist", count = 12}
+    player.insert{name = "colonists-housing-1", count = 1}
+    player.insert{name = "apple", count = 24}
+    player.insert{name = "colonists-mining-drill", count = 2}
+    player.insert{name = "colonists-heat-generator", count = 1}
+    player.insert{name = "coal", count = 5}
+    player.insert{name = "stone-furnace", count = 2}
+    -- player.insert{name = "pistol", count = 1}
+    -- player.insert{name = "firearm-magazine", count = 5}
 end
 
 script.on_event(defines.events.on_player_created, OnPlayerCreated)

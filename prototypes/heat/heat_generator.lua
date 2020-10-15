@@ -100,7 +100,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 32,
             height = 24,
-            shift = util.by_pixel(24, 14),
+            shift = util.by_pixel(24 / 3, 14 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -109,7 +109,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 66,
               height = 44,
-              shift = util.by_pixel(23, 15),
+              shift = util.by_pixel(23 / 3, 15 / 3),
               scale = 0.5 / 3
             }
           },
@@ -120,7 +120,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 36,
             height = 18,
-            shift = util.by_pixel(0, 22),
+            shift = util.by_pixel(0, 22 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -129,7 +129,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 70,
               height = 36,
-              shift = util.by_pixel(0, 22),
+              shift = util.by_pixel(0, 22 / 3),
               scale = 0.5 / 3
             }
           },
@@ -140,7 +140,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 34,
             height = 24,
-            shift = util.by_pixel(0, 16),
+            shift = util.by_pixel(0, 16 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -149,7 +149,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 66,
               height = 42,
-              shift = util.by_pixel(0, 17),
+              shift = util.by_pixel(0, 17 / 3),
               scale = 0.5 / 3
             }
           },
@@ -160,7 +160,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 38,
             height = 20,
-            shift = util.by_pixel(-10, 12),
+            shift = util.by_pixel(-10 / 3, 12 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -169,7 +169,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 74,
               height = 36,
-              shift = util.by_pixel(-10, 13),
+              shift = util.by_pixel(-10 / 3, 13 / 3),
               scale = 0.5 / 3
             }
           }
@@ -183,7 +183,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 32,
             height = 22,
-            shift = util.by_pixel(24, 14),
+            shift = util.by_pixel(24 / 3, 14 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -192,7 +192,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 62,
               height = 42,
-              shift = util.by_pixel(24, 15),
+              shift = util.by_pixel(24 / 3, 15 / 3),
               scale = 0.5 / 3
             }
           },
@@ -203,7 +203,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 34,
             height = 18,
-            shift = util.by_pixel(0, 22),
+            shift = util.by_pixel(0, 22 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -212,7 +212,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 68,
               height = 36,
-              shift = util.by_pixel(0, 22),
+              shift = util.by_pixel(0, 22 / 3),
               scale = 0.5 / 3
             }
           },
@@ -223,7 +223,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 32,
             height = 18,
-            shift = util.by_pixel(0, 18),
+            shift = util.by_pixel(0, 18 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -232,7 +232,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 60,
               height = 40,
-              shift = util.by_pixel(1, 17),
+              shift = util.by_pixel(1 / 3, 17 / 3),
               scale = 0.5 / 3
             }
           },
@@ -243,7 +243,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             line_length = 6,
             width = 36,
             height = 16,
-            shift = util.by_pixel(-10, 14),
+            shift = util.by_pixel(-10 / 3, 14 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -252,7 +252,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               line_length = 6,
               width = 68,
               height = 28,
-              shift = util.by_pixel(-9, 15),
+              shift = util.by_pixel(-9 / 3, 15 / 3),
               scale = 0.5 / 3
             }
           }
@@ -261,10 +261,10 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
           apply_recipe_tint = "tertiary",
           fadeout = true,
           constant_speed = true,
-          north_position = util.by_pixel_hr(-30, -161),
-          east_position = util.by_pixel_hr(29, -150),
-          south_position = util.by_pixel_hr(12, -134),
-          west_position = util.by_pixel_hr(-32, -130),
+          north_position = util.by_pixel_hr(-30 / 3, -161 / 3),
+          east_position = util.by_pixel_hr(29 / 3, -150 / 3),
+          south_position = util.by_pixel_hr(12 / 3, -134 / 3),
+          west_position = util.by_pixel_hr(-32 / 3, -130 / 3),
           render_layer = "wires",
           animation =
           {
@@ -274,7 +274,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             width = 46,
             height = 94,
             animation_speed = 0.5,
-            shift = util.by_pixel(-2, -40),
+            shift = util.by_pixel(-2 / 3, -40 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -284,7 +284,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               width = 90,
               height = 188,
               animation_speed = 0.5,
-              shift = util.by_pixel(-2, -40),
+              shift = util.by_pixel(-2 / 3, -40 / 3),
               scale = 0.5 / 3
             }
           }
@@ -293,10 +293,10 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
           apply_recipe_tint = "quaternary",
           fadeout = true,
           constant_speed = true,
-          north_position = util.by_pixel_hr(-30, -161),
-          east_position = util.by_pixel_hr(29, -150),
-          south_position = util.by_pixel_hr(12, -134),
-          west_position = util.by_pixel_hr(-32, -130),
+          north_position = util.by_pixel_hr(-30 / 3, -161 / 3),
+          east_position = util.by_pixel_hr(29 / 3, -150 / 3),
+          south_position = util.by_pixel_hr(12 / 3, -134 / 3),
+          west_position = util.by_pixel_hr(-32 / 3, -130 / 3),
           render_layer = "wires",
           animation =
           {
@@ -306,7 +306,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
             width = 20,
             height = 42,
             animation_speed = 0.5,
-            shift = util.by_pixel(0, -14),
+            shift = util.by_pixel(0, -14 / 3),
             scale = 1 / 3,
             hr_version =
             {
@@ -316,7 +316,7 @@ local function createHeatGenerator(name, energy_usage, energy_source, recipeEnab
               width = 40,
               height = 84,
               animation_speed = 0.5,
-              shift = util.by_pixel(0, -14),
+              shift = util.by_pixel(0, -14 / 3),
               scale = 0.5 / 3
             }
           }

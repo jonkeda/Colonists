@@ -8,7 +8,7 @@ local required_interfaces =
   update = "function"
 }
 
-local add_vehicle_lib = function(entity_name, lib)
+local add_vehicle_lib = function(entity_name, lib, parameters)
   for name, value_type in pairs (required_interfaces) do
     if not lib[name] or type(lib[name]) ~= value_type then
       error("Trying to add lib without all required interfaces: "..serpent.block(
@@ -21,6 +21,7 @@ local add_vehicle_lib = function(entity_name, lib)
     end
   end
   vehicle_libs[entity_name] = lib
+  lib.parameters = parameters
 end
 
 add_vehicle_lib("colonists-ambulance", require("prototypes/ambulance/ambulance_script"), { tiles = 5 })
@@ -89,7 +90,7 @@ local on_created_entity = function(event)
     return
   end
 
-  local vehicle = vehicle_lib.new(entity)
+  local vehicle = vehicle_lib.new(entity, vehicle_lib.parameters)
   script.register_on_entity_destroyed(entity)
   vehicle.surface_index = entity.surface.index
   script_data.vehicles[vehicle.index] = vehicle
@@ -100,8 +101,8 @@ end
 local remove_vehicle = function(vehicle, event)
   local surface = vehicle.surface_index
   local index = vehicle.index
-  local x, y = vehicle.node_position[1], vehicle.node_position[2]
-  remove_vehicle_from_node(surface, x, y, index)
+  --local x, y = vehicle.node_position[1], vehicle.node_position[2]
+  --remove_vehicle_from_node(surface, x, y, index)
   script_data.vehicles[index] = nil
   vehicle:on_removed(event)
 end
@@ -209,7 +210,7 @@ local refresh_update_buckets = function()
 end
 
 local refresh_update_rate = function()
-  local update_rate = settings.global["transport-vehicle-update-interval"].value
+  local update_rate = settings.global["colonists-update-interval"].value
   if script_data.update_rate == update_rate then return end
   script_data.update_rate = update_rate
   refresh_update_buckets()

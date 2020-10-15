@@ -40,8 +40,7 @@ inserter.rotation_speed = inserter.rotation_speed / 2
 recipeCopy.ingredients =
 {
   {"wood", 2},
-  {"iron-plate", 2},
-  {"colonist", 1} 
+  {"iron-plate", 2}
 }
 data:extend({ inserter, itemCopy, recipeCopy })
 
@@ -51,8 +50,7 @@ recipeCopy.ingredients =
 {
   {"wood", 5},
   {"iron-plate", 4},
-  {"stone", 2},
-  {"colonist", 2} 
+  {"stone", 2} 
 }
 data:extend({ assembling_machine, itemCopy, recipeCopy })
 
@@ -65,8 +63,7 @@ recipeCopy.normal =
   {
     {"iron-gear-wheel", 3},
     {"stone", 1},
-    {"iron-plate", 2},
-    {"colonist", 2} 
+    {"iron-plate", 2}
     },
   result = "colonists-mining-drill"
 }
@@ -78,8 +75,7 @@ recipeCopy.expensive =
   {
     {"iron-gear-wheel", 3},
     {"stone", 1},
-    {"iron-plate", 2},
-    {"colonist", 2} 
+    {"iron-plate", 2}
     },
   result = "colonists-mining-drill"
 }
@@ -92,8 +88,7 @@ recipeCopy.ingredients =
 {
   {"wood", 10},
   {"stone", 8},
-  {"iron-plate", 5},
-  {"colonist", 2} 
+  {"iron-plate", 5}
 }
 data:extend({ lab, itemCopy, recipeCopy })
 
@@ -103,8 +98,7 @@ recipeCopy.ingredients =
 {
   {"wood", 5},
   {"stone", 4},
-  {"iron-plate", 2},
-  {"colonist", 1} 
+  {"iron-plate", 2}
 }
 data:extend({ reverse, itemCopy, recipeCopy })
 
@@ -123,8 +117,7 @@ splitter.speed = splitter.speed / 2
 recipeCopy.ingredients =
 {
   {"wood", 4},
-  {"stone", 4}, 
-  {"colonist", 1} 
+  {"stone", 4} 
 }
 data:extend({ splitter, itemCopy, recipeCopy })
 
