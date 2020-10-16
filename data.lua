@@ -28,5 +28,7 @@ require("prototypes.fluid.fluid")
 require("prototypes.void.void")
 
 
+require("prototypes/informatron/informatron_data")
+
 
 require("data_raw_edits")

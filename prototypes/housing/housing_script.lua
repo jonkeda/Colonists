@@ -85,8 +85,8 @@ entity_cost["colonists-workshop-beacon-1"]  = 1
 entity_cost["colonists-workshop-beacon-2"]  = 2 
 entity_cost["colonists-workshop-beacon-3"]  = 3 
 
-entity_cost["colonists-heat-generator"]  = 0.2
-entity_cost["colonists-electric-heat-generator"]  = 0.2
+-- entity_cost["colonists-heat-generator"]  = 0.2
+-- entity_cost["colonists-electric-heat-generator"]  = 0.2
 entity_cost["colonists-generator"]  = 0.2
 
 entity_cost["colonists-workshop-beacon-3"]  = 3 
@@ -217,10 +217,12 @@ local function update_working_colonists()
           total_cost = total_cost + amount
           entity.active = total_cost < ok_colonists
           local player = entity.last_user
-          if entity.active then
-            player.remove_alert({ entity = entity, icon = { type = "item", name = "colonists-hungry" } })
-          else
-            player.add_custom_alert(entity, { type = "item", name = "colonists-hungry" }, {"description.entity_set_to_inactive", entity.localised_name }, true)
+          if player then
+            if entity.active then
+              player.remove_alert({ entity = entity, icon = { type = "item", name = "colonists-hungry" } })
+            else
+              player.add_custom_alert(entity, { type = "item", name = "colonists-hungry" }, {"description.entity_set_to_inactive", entity.localised_name }, true)
+            end
           end
         end
       end

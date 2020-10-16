@@ -1,6 +1,6 @@
 {
     "name": "Colonists",
-    "version": "0.24.0",
+    "version": "0.26.0",
     "title": "Colonists",
     "author": "Jonkeda",
     "contact": "",
@@ -13,11 +13,11 @@
         "A_Total_Automization_Illy_Varient >= 0.2.5",
         "boblibrary >= 1.0.0",
         
-        "? Informatron >= 0.1.14",
+        "informatron >= 0.1.14",
         "? sonaxaton-research-queue >= 0.1.0",
-        "? Bio Industries >= 0.18.28",
+        "? Bio_Industries >= 0.18.28",
         "? Natural_Evolution_Enemies >= 0.18.05",
-        "? More Achievements >= 0.6.0",
+        "? MoreAchievements >= 0.6.0",
         "? Supply Drop >= 0.3.1"
     ],
 

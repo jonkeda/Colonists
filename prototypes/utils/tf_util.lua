@@ -60,6 +60,11 @@ local createMannedIcon = function(item)
     mergeItemIcon(item, "__Colonists__/graphics/icons/Manned.png", 32)
 end
 
+util.path = function(str)
+    return "__Colonists__/" .. str
+  end
+  
+
 util.prototype = require("prototypes/utils/prototype_util")
 util.createMannedIcon = createMannedIcon
 util.mergeItemIcon = mergeItemIcon

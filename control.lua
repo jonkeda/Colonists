@@ -49,3 +49,4 @@ end
 
 script.on_event(defines.events.on_player_created, OnPlayerCreated)
 
+require("prototypes/scripts/remote_interface")
