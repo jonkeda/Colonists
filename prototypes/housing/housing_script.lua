@@ -49,7 +49,7 @@ entity_cost["underground-belt"]  = 0.1
 entity_cost["fast-underground-belt"]  = 0.1
 entity_cost["express-underground-belt"]  = 0.1
 
-entity_cost["solar-panel"]  = 0.5
+-- entity_cost["solar-panel"]  = 0.5
 
 entity_cost["loader"]  = 0.1
 entity_cost["loader-1x1"]  = 0.1
